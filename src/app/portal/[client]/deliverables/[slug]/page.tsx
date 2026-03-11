@@ -1,5 +1,3 @@
-"use client";
-
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getClient, getAllClientSlugs } from '@/lib/clients';
