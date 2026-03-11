@@ -1,8 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getClient, getAllClientSlugs } from '@/lib/clients';
-import { ISL_CONFIG } from '@/lib/clients/jamila-dugan/config';
-import { Mail, Linkedin, FileText, BarChart3, BookOpen, Video, Globe, Copy, ExternalLink, TrendingUp, Calendar, CheckCircle2, Clock, Users } from 'lucide-react';
 
 type Props = { params: Promise<{ client: string; slug: string }> };
 
@@ -43,809 +41,605 @@ const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
   switch (type) {
     case 'email_sequence':
       return (
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 30 }}>
-            <Mail size={24} style={{ color: T.teal }} />
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: T.slate, margin: 0, fontFamily: 'Georgia, serif' }}>
-              12-Email Nurture Sequence
-            </h2>
-          </div>
-
-          {/* Email #1 - Full Content */}
-          <div style={{
-            background: T.bgSecondary,
-            padding: 30,
-            borderRadius: 16,
-            border: `2px solid ${T.teal}`,
-            boxShadow: `0 4px 16px ${T.shadow}`,
-            marginBottom: 30
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
-              <span style={{
-                background: T.teal,
-                color: 'white',
-                padding: '8px 16px',
-                borderRadius: 24,
-                fontSize: '0.9rem',
-                fontWeight: 600
-              }}>
-                Email #1 — Complete Copy
-              </span>
-              <span style={{
-                background: T.green,
-                color: 'white',
-                padding: '6px 14px',
-                borderRadius: 20,
-                fontSize: '0.8rem',
-                fontWeight: 500
-              }}>
-                Ready to Send
-              </span>
-            </div>
-
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 600, color: T.slate, marginBottom: 8, fontFamily: 'Georgia, serif' }}>
-              Your 7-Layer IP Architecture Audit: It's Here
-            </h3>
-            
-            <p style={{ fontSize: '0.9rem', color: T.textSecondary, marginBottom: 16, fontStyle: 'italic' }}>
-              Immediate (upon opt-in) • Welcome Sequence
-            </p>
-
-            <div style={{ 
-              background: T.bgLight, 
-              padding: 24, 
-              borderRadius: 12, 
-              marginBottom: 20,
-              border: `1px solid ${T.lightGray}`
-            }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.slate, marginBottom: 12 }}>Email Body:</h4>
-              <div style={{ fontSize: '1rem', color: T.textPrimary, lineHeight: 1.6, fontFamily: 'Georgia, serif' }}>
-                <p>Subject: Your 7-Layer IP Architecture Audit: It's Here</p>
-                <br />
-                <p>Hi [First Name],</p>
-                <br />
-                <p>Attached is the 7-Layer IP Architecture Audit, a nine-page guide to seeing the full scope of what you carry. Most people who read it find at least two layers they had never named before.</p>
-                <br />
-                <p>This isn't a checklist. It's a diagnostic tool designed to surface the intellectual property you may not have recognized as valuable and help you establish protection priorities.</p>
-                <br />
-                <p>The seven layers are:</p>
-                <ul style={{ marginLeft: 20, marginBottom: 16 }}>
-                  <li>Foundational Knowledge</li>
-                  <li>Applied Frameworks</li>
-                  <li>Relational Wisdom</li>
-                  <li>Systems & Processes</li>
-                  <li>Cultural Intelligence</li>
-                  <li>Innovation Capacity</li>
-                  <li>Stewardship Philosophy</li>
-                </ul>
-                <p>Take your time with this. The goal is not completion but recognition, seeing the full architecture of what you've built.</p>
-                <br />
-                <p>What questions come up as you work through it? I read every response.</p>
-                <br />
-                <p>In stewardship,<br />Jamila</p>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: 12 }}>
-              <div 
-                style={{
-                  background: T.teal,
-                  color: 'white',
-                  border: 'none',
-                  padding: '10px 16px',
-                  borderRadius: 8,
-                  fontSize: '0.9rem',
-                  fontWeight: 500,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6
-                }}
-              >
-                <Copy size={16} />
-                Copy Email (Click to Copy)
-              </div>
-            </div>
-          </div>
-
-          {/* Remaining Emails - Table Format */}
-          <div style={{
-            background: T.bgSecondary,
-            padding: 25,
-            borderRadius: 12,
-            border: `1px solid ${T.lightGray}`,
-            boxShadow: `0 2px 8px ${T.shadow}`
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, margin: 0 }}>
-                Emails #2-12: Production Pipeline
-              </h3>
-              <span style={{
-                background: T.amber,
-                color: T.slate,
-                padding: '6px 12px',
-                borderRadius: 20,
-                fontSize: '0.8rem',
-                fontWeight: 500
-              }}>
-                Pending Review
-              </span>
-            </div>
-
-            <div style={{ overflowX: 'auto' }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                <thead>
-                  <tr style={{ background: T.tableHeader }}>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>#</th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Subject</th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Trigger</th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ISL_CONFIG.emails.slice(1).map((email) => (
-                    <tr key={email.number} style={{ borderBottom: `1px solid ${T.lightGray}` }}>
-                      <td style={{ padding: '12px 16px', color: T.textPrimary, fontWeight: 500 }}>{email.number}</td>
-                      <td style={{ padding: '12px 16px', color: T.textPrimary }}>{email.subject}</td>
-                      <td style={{ padding: '12px 16px', color: T.textSecondary, fontSize: '0.9rem' }}>{email.trigger}</td>
-                      <td style={{ padding: '12px 16px' }}>
-                        <span style={{
-                          background: T.coral,
-                          color: 'white',
-                          padding: '4px 8px',
-                          borderRadius: 12,
-                          fontSize: '0.75rem',
-                          fontWeight: 500
-                        }}>
-                          Draft
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+        <div style={{ background: T.bgSecondary, borderRadius: 12, padding: '2rem', maxWidth: 800, margin: '0 auto', border: `1px solid ${T.lightGray}`, boxShadow: `0 2px 16px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04)` }}>
+          <h1 style={{ fontSize: '1.65rem', fontWeight: 700, color: T.slate, margin: '0 0 0.5rem', lineHeight: 1.25, fontFamily: 'system-ui, sans-serif' }}>
+            Welcome Email Sequence — Sample for Review
+          </h1>
+          
+          <h2 style={{ fontSize: '1.05rem', fontWeight: 700, color: T.slate, margin: '1.75rem 0 0.5rem', fontFamily: 'system-ui, sans-serif', borderBottom: `2px solid ${T.tableHeader}`, paddingBottom: '0.3rem' }}>
+            IP Stewardship Lab — Dr. Jamila Dugan
+          </h2>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          <hr style={{ borderTop: `1px solid ${T.lightGray}`, borderRight: 'none', borderBottom: 'none', borderLeft: 'none', margin: '1.5rem 0' }} />
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            &gt; This is Email 1 of your 5-email welcome sequence. We're sharing this first email as a sample so you can review the tone, structure, and messaging before we finalize the remaining four.
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          <hr style={{ borderTop: `1px solid ${T.lightGray}`, borderRight: 'none', borderBottom: 'none', borderLeft: 'none', margin: '1.5rem 0' }} />
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <h2 style={{ fontSize: '1.05rem', fontWeight: 700, color: T.slate, margin: '1.75rem 0 0.5rem', fontFamily: 'system-ui, sans-serif', borderBottom: `2px solid ${T.tableHeader}`, paddingBottom: '0.3rem' }}>
+            Email 1 of 5 — Welcome + Audit Delivery
+          </h2>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            <strong>Subject Line:</strong> Your 7-Layer IP Architecture Audit is here
+          </p>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            <strong>From:</strong> Dr. Jamila Dugan &lt;hello@jamiladugan.com&gt;
+          </p>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            <strong>Sent:</strong> Immediately when someone downloads the free audit
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          <hr style={{ borderTop: `1px solid ${T.lightGray}`, borderRight: 'none', borderBottom: 'none', borderLeft: 'none', margin: '1.5rem 0' }} />
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            Hi [First Name],
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            Thank you for downloading the 7-Layer IP Architecture Audit.
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            This is not a checklist. It is a diagnostic — designed to help you see the full scope of what you carry as a practitioner, and to identify the layers of your intellectual property that may be unprotected, unstructured, or unnamed.
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            Most people who take this audit discover that they have significantly more intellectual property than they realized. The frameworks they have built, the facilitation moves they have refined, the relational knowledge they carry into every room — all of it is IP. And most of it has no infrastructure around it.
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            That is not a failure. It is a starting point.
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            Here is your audit: [Download Link]
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            Take your time with it. There are seven layers, and each one asks a different question about how your work lives in the world. When you are finished, you will have a clearer picture of what you have built — and where the gaps are.
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            Over the next week, I am going to send you a few short emails that go deeper into the ideas behind this audit. Not sales emails — thinking emails. The kind of thing I would send to a colleague I respected.
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            The first one will arrive in a couple of days. It is about the difference between stewarding your IP and extracting from it — and why that distinction matters more than most people realize.
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            Until then, take the audit. See what you find.
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            With intention,
+          </p>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            Dr. Jamila Dugan
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            P.S. — If you score below 15 on the audit, at least one layer of your IP is significantly unprotected. That is worth knowing.
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          <hr style={{ borderTop: `1px solid ${T.lightGray}`, borderRight: 'none', borderBottom: 'none', borderLeft: 'none', margin: '1.5rem 0' }} />
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <h2 style={{ fontSize: '1.05rem', fontWeight: 700, color: T.slate, margin: '1.75rem 0 0.5rem', fontFamily: 'system-ui, sans-serif', borderBottom: `2px solid ${T.tableHeader}`, paddingBottom: '0.3rem' }}>
+            Remaining Emails (Pending Your Review)
+          </h2>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            Once you approve the tone and direction of Email 1, we will finalize:
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <table style={{ width: '100%', borderCollapse: 'collapse', margin: '1rem 0', fontSize: '0.875rem', fontFamily: 'system-ui, sans-serif' }}>
+            <thead>
+              <tr>
+                <th style={{ background: T.bgLight, color: T.textPrimary, fontWeight: 700, padding: '0.5rem 0.75rem', textAlign: 'left', border: `1px solid ${T.lightGray}`, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+                  Email
+                </th>
+                <th style={{ background: T.bgLight, color: T.textPrimary, fontWeight: 700, padding: '0.5rem 0.75rem', textAlign: 'left', border: `1px solid ${T.lightGray}`, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+                  Subject
+                </th>
+                <th style={{ background: T.bgLight, color: T.textPrimary, fontWeight: 700, padding: '0.5rem 0.75rem', textAlign: 'left', border: `1px solid ${T.lightGray}`, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+                  Sends
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                  <strong>Email 2</strong>
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                  "Stewarding and extracting are not the same thing"
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                  Day 2
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                  <strong>Email 3</strong>
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                  "One question I want you to sit with this week"
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                  Day 3
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                  <strong>Email 4</strong>
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                  "3 signs your framework is ready to steward"
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                  Day 5
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                  <strong>Email 5</strong>
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                  "Your next step (if you scored below 15)"
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                  Day 7
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            Each email builds on the previous one, moving from the core distinction (stewarding vs. extracting) through the signs of readiness, to the direct invitation to join the IP Stewardship Lab waitlist.
+          </p>
+          
+          <div style={{ height: '0.4rem' }}></div>
+          <hr style={{ borderTop: `1px solid ${T.lightGray}`, borderRight: 'none', borderBottom: 'none', borderLeft: 'none', margin: '1.5rem 0' }} />
+          <div style={{ height: '0.4rem' }}></div>
+          
+          <p style={{ fontSize: '0.875rem', color: T.textSecondary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif', fontStyle: 'italic' }}>
+            Please review and let us know: Does the tone feel right? Is this how you would write to your audience? Any adjustments to voice, length, or approach?
+          </p>
         </div>
       );
 
     case 'linkedin_content':
       return (
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 30 }}>
-            <Linkedin size={24} style={{ color: T.teal }} />
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: T.slate, margin: 0, fontFamily: 'Georgia, serif' }}>
-              LinkedIn Content Strategy
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div style={{ background: T.bgSecondary, borderRadius: 12, border: `1px solid ${T.lightGray}`, boxShadow: `0 2px 16px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04)`, padding: '1.5rem' }}>
+            <div style={{ marginBottom: '1rem' }}>
+              <h1 style={{ fontSize: '1.65rem', fontWeight: 700, color: T.slate, margin: '0 0 0.5rem', lineHeight: 1.25, fontFamily: 'system-ui, sans-serif' }}>
+                LinkedIn Post Templates — Dr. Jamila Dugan / IP Stewardship Lab
+              </h1>
+              <p style={{ fontSize: '0.875rem', color: T.textSecondary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif', fontStyle: 'italic' }}>
+                *Prepared by Maple 360 | February 2026*
+              </p>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                <strong>Tone reference:</strong> Writing Style Guide — Dr. Jamila Dugan
+              </p>
+              <p style={{ fontSize: '0.875rem', color: T.textSecondary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif', fontStyle: 'italic' }}>
+                *Total posts: 20 | Posting notes included with each*
+              </p>
+              <div style={{ height: '0.4rem' }}></div>
+              <hr style={{ borderTop: `1px solid ${T.lightGray}`, margin: '1.5rem 0' }} />
+              <div style={{ height: '0.4rem' }}></div>
+              <h2 style={{ fontSize: '1.05rem', fontWeight: 700, color: T.slate, margin: '1.75rem 0 0.5rem', fontFamily: 'system-ui, sans-serif', borderBottom: `2px solid ${T.tableHeader}`, paddingBottom: '0.3rem' }}>
+                Thought Leadership (Posts 1–6)
+              </h2>
+              <div style={{ height: '0.4rem' }}></div>
+              <hr style={{ borderTop: `1px solid ${T.lightGray}`, margin: '1.5rem 0' }} />
+            </div>
+          </div>
+
+          <div style={{ background: T.bgSecondary, borderRadius: 12, border: `1px solid ${T.lightGray}`, boxShadow: `0 2px 16px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04)`, padding: '1.5rem' }}>
+            <div style={{ marginBottom: '1rem' }}>
+              <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: T.textPrimary, margin: '1.25rem 0 0.3rem', fontFamily: 'system-ui, sans-serif' }}>
+                Post 1: The Reframe
+              </h3>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                <strong>Theme:</strong> Rejecting "extraction" as the frame for sharing expertise
+              </p>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                <strong>Best time to post:</strong> Tuesday or Wednesday, 8–10am
+              </p>
+              <div style={{ height: '0.4rem' }}></div>
+              <hr style={{ borderTop: `1px solid ${T.lightGray}`, margin: '1.5rem 0' }} />
+              <div style={{ height: '0.4rem' }}></div>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                I refuse to accept the framing that our intellectual property needs to be "extracted from."
+              </p>
+              <div style={{ height: '0.4rem' }}></div>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                Not because income doesn't matter. It does.
+              </p>
+              <div style={{ height: '0.4rem' }}></div>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                But because the word "extraction" carries a logic inside it — a logic that says your knowledge is a raw material waiting to be processed into product. That the move from practitioner to course creator is primarily a transaction. That what you know is most valuable as a revenue stream.
+              </p>
+              <div style={{ height: '0.4rem' }}></div>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                I've spent fifteen years watching what happens to practitioners who accept that framing. Their frameworks get simplified to fit a template. Their relational knowledge gets flattened into bullets. The context that makes their methods work in rooms gets stripped out to improve completion rates.
+              </p>
+              <div style={{ height: '0.4rem' }}></div>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                What's left may still sell. But it is not what they built.
+              </p>
+              <div style={{ height: '0.4rem' }}></div>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                Stewardship is a different posture. It asks: what conditions would allow your IP to move in the world without losing what makes it alive? What infrastructure does it need — not just to generate revenue, but to remain faithful to the communities it was built with?
+              </p>
+              <div style={{ height: '0.4rem' }}></div>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                Those are not the same questions. They do not produce the same outcomes.
+              </p>
+              <div style={{ height: '0.4rem' }}></div>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                I am not anti-income. I am anti-extraction. There is a way to build a sustainable, values-aligned knowledge practice that generates real revenue while protecting what matters. That is what I'm building infrastructure for.
+              </p>
+              <div style={{ height: '0.4rem' }}></div>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                What word do you use — or wish you could use — instead of "extract"?
+              </p>
+              <div style={{ height: '0.4rem' }}></div>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                #IPStewardship #IntellectualProperty #KnowledgeWork #EquityCentered #ConsultantLife
+              </p>
+            </div>
+          </div>
+
+          <div style={{ background: T.bgSecondary, borderRadius: 12, border: `1px solid ${T.lightGray}`, boxShadow: `0 2px 16px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04)`, padding: '1.5rem' }}>
+            <h2 style={{ fontSize: '1.05rem', fontWeight: 700, color: T.slate, margin: '1.75rem 0 0.5rem', fontFamily: 'system-ui, sans-serif', borderBottom: `2px solid ${T.tableHeader}`, paddingBottom: '0.3rem' }}>
+              Remaining Posts (Pending Your Review)
             </h2>
-          </div>
-
-          {/* Featured Posts - Full Copy */}
-          <div style={{ marginBottom: 30 }}>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 600, color: T.slate, marginBottom: 20, fontFamily: 'Georgia, serif' }}>
-              Featured Posts — Ready to Publish
-            </h3>
-            
-            {ISL_CONFIG.linkedinStrategy.samplePosts.slice(0, 4).map((post) => (
-              <div key={post.number} style={{
-                background: T.bgSecondary,
-                padding: 25,
-                borderRadius: 12,
-                border: `1px solid ${T.lightGray}`,
-                boxShadow: `0 2px 8px ${T.shadow}`,
-                marginBottom: 20
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 15 }}>
-                  <div style={{ display: 'flex', gap: 12 }}>
-                    <span style={{
-                      background: T.teal,
-                      color: 'white',
-                      padding: '6px 12px',
-                      borderRadius: 20,
-                      fontSize: '0.8rem',
-                      fontWeight: 600
-                    }}>
-                      Post #{post.number}
-                    </span>
-                    <span style={{
-                      background: T.bgLight,
-                      color: T.slate,
-                      padding: '6px 12px',
-                      borderRadius: 20,
-                      fontSize: '0.8rem',
-                      fontWeight: 500
-                    }}>
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-                
-                <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.slate, marginBottom: 12 }}>
-                  {post.title}
-                </h4>
-
-                <div style={{
-                  background: T.bgLight,
-                  padding: 20,
-                  borderRadius: 10,
-                  marginBottom: 15,
-                  border: `1px solid ${T.lightGray}`
-                }}>
-                  <p style={{ fontSize: '1rem', color: T.textPrimary, lineHeight: 1.6, margin: 0, fontFamily: 'Georgia, serif' }}>
-                    {post.hook}
-                  </p>
-                  <div style={{ marginTop: 12, color: T.textSecondary, fontSize: '0.9rem' }}>
-                    <p>#{post.category.replace(' ', '')} #IPStewardship #ThoughtLeadership #EquityWork #IntellectualProperty</p>
-                  </div>
-                </div>
-
-                <p style={{ fontSize: '0.9rem', color: T.textSecondary, marginBottom: 15, fontStyle: 'italic' }}>
-                  Purpose: {post.purpose}
-                </p>
-
-                <div 
-                  style={{
-                    background: T.teal,
-                    color: 'white',
-                    border: 'none',
-                    padding: '8px 14px',
-                    borderRadius: 8,
-                    fontSize: '0.9rem',
-                    fontWeight: 500,
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 6
-                  }}
-                >
-                  <Copy size={16} />
-                  Copy to Clipboard
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Additional Posts - Table */}
-          <div style={{
-            background: T.bgSecondary,
-            padding: 25,
-            borderRadius: 12,
-            border: `1px solid ${T.lightGray}`,
-            boxShadow: `0 2px 8px ${T.shadow}`
-          }}>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, marginBottom: 20 }}>
-              Additional Posts — Coming Soon
-            </h3>
-            
-            <div style={{ overflowX: 'auto' }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                <thead>
-                  <tr style={{ background: T.tableHeader }}>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Week</th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Content Type</th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Frequency</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ISL_CONFIG.linkedinStrategy.weeklyPlan.contentMix.map((content, index) => (
-                    <tr key={index} style={{ borderBottom: `1px solid ${T.lightGray}` }}>
-                      <td style={{ padding: '12px 16px', color: T.textPrimary, fontWeight: 500 }}>Week {index + 1}</td>
-                      <td style={{ padding: '12px 16px', color: T.textPrimary }}>{content.type}</td>
-                      <td style={{ padding: '12px 16px', color: T.textSecondary, fontSize: '0.9rem' }}>{content.frequency}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      );
-
-    case 'kpi_dashboard':
-      return (
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 30 }}>
-            <BarChart3 size={24} style={{ color: T.teal }} />
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: T.slate, margin: 0, fontFamily: 'Georgia, serif' }}>
-              KPI Dashboard & Real-Time Analytics
-            </h2>
-          </div>
-
-          {/* Key Metrics Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, marginBottom: 30 }}>
-            {[
-              { title: 'Email Conversion', value: '34.2%', target: '25-40%', status: 'above-target', trend: '+12%' },
-              { title: 'LinkedIn Growth', value: '1,847', target: '1,600-1,800', status: 'on-target', trend: '+432' },
-              { title: 'Course Enrollment', value: '3.1%', target: '2-5%', status: 'above-target', trend: '+0.8%' },
-              { title: 'Revenue Tracking', value: '$4,200', target: '$5,000', status: 'approaching', trend: '+$1,100' }
-            ].map((metric, index) => (
-              <div key={index} style={{
-                background: T.bgSecondary,
-                padding: 20,
-                borderRadius: 12,
-                border: `2px solid ${metric.status === 'above-target' ? T.green : metric.status === 'on-target' ? T.teal : T.amber}`,
-                boxShadow: `0 4px 12px ${T.shadow}`
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
-                  <h4 style={{ fontSize: '1rem', fontWeight: 600, color: T.slate, margin: 0 }}>{metric.title}</h4>
-                  <span style={{
-                    background: metric.status === 'above-target' ? T.green : metric.status === 'on-target' ? T.teal : T.amber,
-                    color: 'white',
-                    padding: '4px 8px',
-                    borderRadius: 12,
-                    fontSize: '0.7rem',
-                    fontWeight: 500
-                  }}>
-                    <TrendingUp size={12} style={{ marginRight: 4 }} />
-                    {metric.trend}
-                  </span>
-                </div>
-                <div style={{ fontSize: '1.8rem', fontWeight: 700, color: T.slate, marginBottom: 4 }}>{metric.value}</div>
-                <div style={{ fontSize: '0.85rem', color: T.textSecondary }}>Target: {metric.target}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* SEO Comparison Table */}
-          <div style={{
-            background: T.bgSecondary,
-            padding: 25,
-            borderRadius: 12,
-            border: `1px solid ${T.lightGray}`,
-            boxShadow: `0 2px 8px ${T.shadow}`,
-            marginBottom: 20
-          }}>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, marginBottom: 20 }}>
-              SEO Performance Comparison
-            </h3>
-            
-            <div style={{ overflowX: 'auto' }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                <thead>
-                  <tr style={{ background: T.tableHeader }}>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Metric</th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Baseline</th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Current</th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Change</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { metric: 'Organic Traffic', baseline: '245/mo', current: '1,340/mo', change: '+447%' },
-                    { metric: 'Keyword Rankings', baseline: '12 keywords', current: '67 keywords', change: '+458%' },
-                    { metric: 'Domain Authority', baseline: '28', current: '42', change: '+50%' },
-                    { metric: 'Backlinks', baseline: '34', current: '156', change: '+359%' }
-                  ].map((row, index) => (
-                    <tr key={index} style={{ borderBottom: `1px solid ${T.lightGray}` }}>
-                      <td style={{ padding: '12px 16px', color: T.textPrimary, fontWeight: 500 }}>{row.metric}</td>
-                      <td style={{ padding: '12px 16px', color: T.textSecondary }}>{row.baseline}</td>
-                      <td style={{ padding: '12px 16px', color: T.textPrimary, fontWeight: 500 }}>{row.current}</td>
-                      <td style={{ padding: '12px 16px' }}>
-                        <span style={{
-                          background: T.green,
-                          color: 'white',
-                          padding: '4px 8px',
-                          borderRadius: 12,
-                          fontSize: '0.8rem',
-                          fontWeight: 500
-                        }}>
-                          {row.change}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Email Funnel Visualization */}
-          <div style={{
-            background: T.bgSecondary,
-            padding: 25,
-            borderRadius: 12,
-            border: `1px solid ${T.lightGray}`,
-            boxShadow: `0 2px 8px ${T.shadow}`,
-            marginBottom: 20
-          }}>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, marginBottom: 20 }}>
-              Email Funnel Performance
-            </h3>
-            
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              {[
-                { stage: 'Landing Page Visits', count: '2,847', conversion: '100%' },
-                { stage: 'Email Opt-ins', count: '974', conversion: '34.2%' },
-                { stage: 'Email Opens', count: '423', conversion: '43.4%' },
-                { stage: 'Link Clicks', count: '67', conversion: '15.8%' },
-                { stage: 'Course Purchases', count: '30', conversion: '3.1%' }
-              ].map((funnel, index) => (
-                <div key={index} style={{ textAlign: 'center', position: 'relative' }}>
-                  <div style={{
-                    background: index === 0 ? T.teal : index === 4 ? T.green : T.coral,
-                    color: 'white',
-                    padding: '16px 20px',
-                    borderRadius: 12,
-                    marginBottom: 8
-                  }}>
-                    <div style={{ fontSize: '1.4rem', fontWeight: 700 }}>{funnel.count}</div>
-                    <div style={{ fontSize: '0.8rem', opacity: 0.9 }}>{funnel.conversion}</div>
-                  </div>
-                  <div style={{ fontSize: '0.9rem', color: T.textPrimary, fontWeight: 500 }}>{funnel.stage}</div>
-                  {index < 4 && (
-                    <div style={{
-                      position: 'absolute',
-                      right: '-25px',
-                      top: '24px',
-                      color: T.textSecondary,
-                      fontSize: '1.2rem'
-                    }}>→</div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Client Engagement Stats */}
-          <div style={{
-            background: T.bgSecondary,
-            padding: 25,
-            borderRadius: 12,
-            border: `1px solid ${T.lightGray}`,
-            boxShadow: `0 2px 8px ${T.shadow}`,
-            marginBottom: 20
-          }}>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, marginBottom: 20 }}>
-              Client Engagement Timeline
-            </h3>
-            
-            <div style={{ display: 'grid', gap: 16 }}>
-              {[
-                { date: 'Mar 1', milestone: 'Landing Page Launch', status: 'completed', metric: '847 visitors (Day 1)' },
-                { date: 'Mar 5', milestone: 'Email Sequence #1-3 Live', status: 'completed', metric: '34.2% conversion rate' },
-                { date: 'Mar 12', milestone: 'LinkedIn Content Series', status: 'in-progress', metric: '+432 followers' },
-                { date: 'Mar 18', milestone: 'Course Enrollment Opens', status: 'upcoming', metric: 'Target: 50 enrollments' },
-                { date: 'Mar 25', milestone: 'Milestone Review', status: 'scheduled', metric: 'Full KPI assessment' }
-              ].map((item, index) => (
-                <div key={index} style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                  <div style={{
-                    width: 16,
-                    height: 16,
-                    borderRadius: '50%',
-                    background: item.status === 'completed' ? T.green : item.status === 'in-progress' ? T.teal : T.amber,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    {item.status === 'completed' && <CheckCircle2 size={12} color="white" />}
-                    {item.status === 'in-progress' && <Clock size={12} color="white" />}
-                    {item.status === 'upcoming' && <Calendar size={12} color="white" />}
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ color: T.slate, fontWeight: 500 }}>{item.milestone}</span>
-                      <span style={{ color: T.textSecondary, fontSize: '0.9rem' }}>{item.date}</span>
-                    </div>
-                    <div style={{ color: T.textSecondary, fontSize: '0.85rem' }}>{item.metric}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Detailed KPI Table */}
-          <div style={{ display: 'grid', gap: 20 }}>
-            {ISL_CONFIG.kpiDashboard.map((kpi, index) => (
-              <div key={index} style={{
-                background: T.bgSecondary,
-                padding: 25,
-                borderRadius: 12,
-                border: `1px solid ${T.lightGray}`,
-                boxShadow: `0 2px 8px ${T.shadow}`
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
-                  <h4 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, margin: 0, fontFamily: 'Georgia, serif' }}>
-                    {kpi.metric}
-                  </h4>
-                  <span style={{
-                    background: T.teal,
-                    color: 'white',
-                    padding: '4px 12px',
-                    borderRadius: 20,
-                    fontSize: '0.8rem',
-                    fontWeight: 500
-                  }}>
-                    {kpi.frequency}
-                  </span>
-                </div>
-                <p style={{ fontSize: '0.95rem', color: T.textPrimary, marginBottom: 16, lineHeight: 1.5, fontFamily: 'Georgia, serif' }}>
-                  {kpi.description}
-                </p>
-                <div style={{
-                  background: T.bgLight,
-                  padding: 16,
-                  borderRadius: 10,
-                  border: `1px solid ${T.lightGray}`
-                }}>
-                  <strong style={{ color: T.slate, fontSize: '0.95rem' }}>Target: </strong>
-                  <span style={{ color: T.textPrimary, fontSize: '0.95rem' }}>{kpi.target}</span>
-                </div>
-              </div>
-            ))}
+            <div style={{ height: '0.4rem' }}></div>
+            <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+              Once you approve the tone and direction of these three samples, we will finalize the remaining 17 posts:
+            </p>
+            <div style={{ height: '0.4rem' }}></div>
+            <table style={{ width: '100%', borderCollapse: 'collapse', margin: '1rem 0', fontSize: '0.875rem', fontFamily: 'system-ui, sans-serif' }}>
+              <thead>
+                <tr>
+                  <th style={{ background: T.bgLight, color: T.textPrimary, fontWeight: 700, padding: '0.5rem 0.75rem', textAlign: 'left', border: `1px solid ${T.lightGray}`, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+                    Category
+                  </th>
+                  <th style={{ background: T.bgLight, color: T.textPrimary, fontWeight: 700, padding: '0.5rem 0.75rem', textAlign: 'left', border: `1px solid ${T.lightGray}`, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+                    Posts
+                  </th>
+                  <th style={{ background: T.bgLight, color: T.textPrimary, fontWeight: 700, padding: '0.5rem 0.75rem', textAlign: 'left', border: `1px solid ${T.lightGray}`, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+                    Topics
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                    <strong>Thought Leadership</strong>
+                  </td>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                    Posts 4-6
+                  </td>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                    Naming your IP, the infrastructure argument, an open letter to practitioners
+                  </td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                    <strong>Framework Teasers</strong>
+                  </td>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                    Posts 7-10
+                  </td>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                    Street Data connection, 7-Layer audit preview, extraction vs stewardship, knowledge lineage
+                  </td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                    <strong>Community &amp; Story</strong>
+                  </td>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                    Posts 11-14
+                  </td>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                    Client transformations, audience questions, practitioner spotlight, behind the scenes
+                  </td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                    <strong>Course Promotion</strong>
+                  </td>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                    Posts 15-18
+                  </td>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                    Waitlist opening, what the course covers, founding cohort benefits, countdown
+                  </td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                    <strong>Engagement Drivers</strong>
+                  </td>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                    Posts 19-20
+                  </td>
+                  <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                    Polls, conversation starters
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p style={{ fontSize: '0.875rem', color: T.textSecondary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif', fontStyle: 'italic' }}>
+              Please review these three samples and let us know: Does the voice feel authentic? Would you post this? Any adjustments to tone, length, or messaging?
+            </p>
           </div>
         </div>
       );
 
     case 'site_audit':
       return (
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 30 }}>
-            <Globe size={24} style={{ color: T.teal }} />
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: T.slate, margin: 0, fontFamily: 'Georgia, serif' }}>
-              7-Layer IP Architecture Audit
-            </h2>
-          </div>
+        <div style={{ background: T.bgSecondary, borderRadius: 12, padding: '2rem', maxWidth: 800, margin: '0 auto', border: `1px solid ${T.lightGray}`, boxShadow: `0 2px 16px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04)` }}>
+          <h1 style={{ fontSize: '1.65rem', fontWeight: 700, color: T.slate, margin: '0 0 0.5rem', lineHeight: 1.25, fontFamily: 'system-ui, sans-serif' }}>
+            Website Visibility Report
+          </h1>
+          <h2 style={{ fontSize: '1.05rem', fontWeight: 700, color: T.slate, margin: '1.75rem 0 0.5rem', fontFamily: 'system-ui, sans-serif', borderBottom: `2px solid ${T.tableHeader}`, paddingBottom: '0.3rem' }}>
+            Dr. Jamila Dugan — jamiladugan.com &amp; joysource.org
+          </h2>
+          <div style={{ height: '0.4rem' }}></div>
+          <hr style={{ borderTop: `1px solid ${T.lightGray}`, margin: '1.5rem 0' }} />
+          <div style={{ height: '0.4rem' }}></div>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            <strong>Prepared by:</strong> Monmac Labs
+          </p>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            <strong>Date:</strong> February 24, 2026
+          </p>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            <strong>Classification:</strong> Confidential — Client Deliverable
+          </p>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            <strong>Report Reference:</strong> M1-SEO-GEO-AUDIT-2026
+          </p>
+          <div style={{ height: '0.4rem' }}></div>
+          <hr style={{ borderTop: `1px solid ${T.lightGray}`, margin: '1.5rem 0' }} />
+          <div style={{ height: '0.4rem' }}></div>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            &gt; *Milestone 1 deliverable for your IP Stewardship Lab engagement. Two websites audited through the eyes of Google and AI assistants. What we found, what it means, and what we are doing about it.*
+          </p>
+          <div style={{ height: '0.4rem' }}></div>
+          <hr style={{ borderTop: `1px solid ${T.lightGray}`, margin: '1.5rem 0' }} />
+          <div style={{ height: '0.4rem' }}></div>
+          <h2 style={{ fontSize: '1.05rem', fontWeight: 700, color: T.slate, margin: '1.75rem 0 0.5rem', fontFamily: 'system-ui, sans-serif', borderBottom: `2px solid ${T.tableHeader}`, paddingBottom: '0.3rem' }}>
+            Table of Contents
+          </h2>
+          <div style={{ height: '0.4rem' }}></div>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            1. What We Looked At
+          </p>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            2. The Bottom Line
+          </p>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            3. Your Current Visibility at a Glance
+          </p>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            4. What We Found: jamiladugan.com
+          </p>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            5. What We Found: joysource.org
+          </p>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            6. The AI Visibility Opportunity
+          </p>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            7. What Happens Next: Your Action Plan
+          </p>
+          <div style={{ height: '0.4rem' }}></div>
+          <hr style={{ borderTop: `1px solid ${T.lightGray}`, margin: '1.5rem 0' }} />
+          <div style={{ height: '0.4rem' }}></div>
+          <p style={{ fontSize: '0.875rem', color: T.textSecondary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif', fontStyle: 'italic' }}>
+            This is a comprehensive audit covering technical SEO, content discoverability, and AI assistant visibility. The full report contains detailed findings, recommendations, and a prioritized action plan.
+          </p>
+        </div>
+      );
 
-          {/* Audit Overview */}
-          <div style={{
-            background: T.bgSecondary,
-            padding: 30,
-            borderRadius: 16,
-            border: `2px solid ${T.teal}`,
-            boxShadow: `0 4px 16px ${T.shadow}`,
-            marginBottom: 30
-          }}>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 600, color: T.slate, marginBottom: 16, fontFamily: 'Georgia, serif' }}>
-              Comprehensive IP Stewardship Assessment
-            </h3>
-            <p style={{ fontSize: '1rem', color: T.textPrimary, lineHeight: 1.6, marginBottom: 20, fontFamily: 'Georgia, serif' }}>
-              This nine-page diagnostic tool reveals the full architecture of your intellectual property across seven critical layers. 
-              Most practitioners discover 2-3 layers they had never formally recognized as valuable stewardship assets.
-            </p>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
-              <div style={{ textAlign: 'center', padding: 16, background: T.bgLight, borderRadius: 8 }}>
-                <div style={{ fontSize: '2rem', fontWeight: 700, color: T.teal }}>7</div>
-                <div style={{ fontSize: '0.9rem', color: T.textSecondary }}>IP Layers</div>
-              </div>
-              <div style={{ textAlign: 'center', padding: 16, background: T.bgLight, borderRadius: 8 }}>
-                <div style={{ fontSize: '2rem', fontWeight: 700, color: T.coral }}>45</div>
-                <div style={{ fontSize: '0.9rem', color: T.textSecondary }}>Assessment Points</div>
-              </div>
-              <div style={{ textAlign: 'center', padding: 16, background: T.bgLight, borderRadius: 8 }}>
-                <div style={{ fontSize: '2rem', fontWeight: 700, color: T.green }}>9</div>
-                <div style={{ fontSize: '0.9rem', color: T.textSecondary }}>Page Guide</div>
-              </div>
-            </div>
-          </div>
-
-          {/* The Seven Layers */}
-          <div style={{ display: 'grid', gap: 20, marginBottom: 30 }}>
-            {[
-              {
-                layer: 1,
-                title: "Foundational Knowledge",
-                description: "Core expertise, credentials, and domain knowledge that forms your authority base",
-                examples: "Degrees, certifications, years of practice, specialized training",
-                questions: 3,
-                color: T.coral
-              },
-              {
-                layer: 2, 
-                title: "Applied Frameworks",
-                description: "Systematic approaches, methodologies, and repeatable processes you've developed",
-                examples: "Training curricula, assessment tools, intervention models",
-                questions: 8,
-                color: T.teal
-              },
-              {
-                layer: 3,
-                title: "Relational Wisdom", 
-                description: "Interpersonal intelligence and community-specific cultural competency",
-                examples: "Facilitation skills, conflict resolution approaches, community trust",
-                questions: 6,
-                color: T.amber
-              },
-              {
-                layer: 4,
-                title: "Systems & Processes",
-                description: "Operational knowledge for scaling impact while maintaining quality",
-                examples: "Project management approaches, quality assurance methods",
-                questions: 7,
-                color: T.green
-              },
-              {
-                layer: 5,
-                title: "Cultural Intelligence",
-                description: "Deep understanding of community dynamics, power structures, and context",
-                examples: "Historical knowledge, community relationships, cultural patterns",
-                questions: 9,
-                color: T.salmon
-              },
-              {
-                layer: 6,
-                title: "Innovation Capacity",
-                description: "Ability to adapt frameworks to new contexts and evolving challenges",
-                examples: "Creative problem-solving, adaptation strategies, future-thinking",
-                questions: 5,
-                color: T.textSecondary
-              },
-              {
-                layer: 7,
-                title: "Stewardship Philosophy",
-                description: "Values, ethics, and principles that guide how you share and protect your work",
-                examples: "Ethical frameworks, sharing principles, protection boundaries",
-                questions: 7,
-                color: T.slate
-              }
-            ].map((layer) => (
-              <div key={layer.layer} style={{
-                background: T.bgSecondary,
-                padding: 25,
-                borderRadius: 12,
-                border: `1px solid ${T.lightGray}`,
-                boxShadow: `0 2px 8px ${T.shadow}`
-              }}>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
-                  <div style={{
-                    background: layer.color,
-                    color: 'white',
-                    padding: '8px 12px',
-                    borderRadius: 8,
-                    fontSize: '0.9rem',
-                    fontWeight: 600,
-                    minWidth: 'fit-content'
-                  }}>
-                    Layer {layer.layer}
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <h4 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, marginBottom: 8, fontFamily: 'Georgia, serif' }}>
-                      {layer.title}
-                    </h4>
-                    <p style={{ fontSize: '0.95rem', color: T.textPrimary, marginBottom: 12, lineHeight: 1.5 }}>
-                      {layer.description}
-                    </p>
-                    <div style={{
-                      background: T.bgLight,
-                      padding: 12,
-                      borderRadius: 8,
-                      marginBottom: 12,
-                      border: `1px solid ${T.lightGray}`
-                    }}>
-                      <strong style={{ fontSize: '0.85rem', color: T.slate }}>Examples: </strong>
-                      <span style={{ fontSize: '0.85rem', color: T.textSecondary, fontStyle: 'italic' }}>{layer.examples}</span>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ fontSize: '0.85rem', color: T.textSecondary }}>
-                        {layer.questions} assessment questions
-                      </span>
-                      <span style={{
-                        background: T.teal,
-                        color: 'white',
-                        padding: '4px 8px',
-                        borderRadius: 12,
-                        fontSize: '0.75rem',
-                        fontWeight: 500
-                      }}>
-                        Ready
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Application & Outcome */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-            <div style={{
-              background: T.bgSecondary,
-              padding: 25,
-              borderRadius: 12,
-              border: `1px solid ${T.lightGray}`,
-              boxShadow: `0 2px 8px ${T.shadow}`
-            }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.slate, marginBottom: 12, fontFamily: 'Georgia, serif' }}>
-                Application
-              </h4>
-              <p style={{ fontSize: '0.95rem', color: T.textPrimary, lineHeight: 1.5, fontFamily: 'Georgia, serif' }}>
-                Use as a diagnostic tool, not a checklist. Surface hidden IP assets you may not have recognized as valuable 
-                and establish protection priorities based on stewardship principles.
-              </p>
-            </div>
-            
-            <div style={{
-              background: T.bgSecondary,
-              padding: 25,
-              borderRadius: 12,
-              border: `1px solid ${T.lightGray}`,
-              boxShadow: `0 2px 8px ${T.shadow}`
-            }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.slate, marginBottom: 12, fontFamily: 'Georgia, serif' }}>
-                Expected Outcome
-              </h4>
-              <p style={{ fontSize: '0.95rem', color: T.textPrimary, lineHeight: 1.5, fontFamily: 'Georgia, serif' }}>
-                Complete IP inventory across all layers, identification of protection gaps, and a clear roadmap for 
-                stewardship implementation aligned with your values.
-              </p>
-            </div>
-          </div>
+    case 'kpi_dashboard':
+      return (
+        <div style={{ background: T.bgSecondary, borderRadius: 12, padding: '2rem', maxWidth: 800, margin: '0 auto', border: `1px solid ${T.lightGray}`, boxShadow: `0 2px 16px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04)` }}>
+          <h1 style={{ fontSize: '1.65rem', fontWeight: 700, color: T.slate, margin: '0 0 0.5rem', lineHeight: 1.25, fontFamily: 'system-ui, sans-serif' }}>
+            KPI Dashboard — IP Stewardship Lab
+          </h1>
+          <h2 style={{ fontSize: '1.05rem', fontWeight: 700, color: T.slate, margin: '1.75rem 0 0.5rem', fontFamily: 'system-ui, sans-serif', borderBottom: `2px solid ${T.tableHeader}`, paddingBottom: '0.3rem' }}>
+            Dr. Jamila Dugan — Launch Metrics &amp; Goals
+          </h2>
+          <div style={{ height: '0.4rem' }}></div>
+          <hr style={{ borderTop: `1px solid ${T.lightGray}`, margin: '1.5rem 0' }} />
+          <div style={{ height: '0.4rem' }}></div>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            <strong>Purpose:</strong> Track progress toward course launch and IP stewardship framework goals
+          </p>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            <strong>Reporting Period:</strong> February 2026 - Course Launch
+          </p>
+          <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+            <strong>Update Frequency:</strong> Weekly
+          </p>
+          <div style={{ height: '0.4rem' }}></div>
+          <hr style={{ borderTop: `1px solid ${T.lightGray}`, margin: '1.5rem 0' }} />
+          <div style={{ height: '0.4rem' }}></div>
+          <h2 style={{ fontSize: '1.05rem', fontWeight: 700, color: T.slate, margin: '1.75rem 0 0.5rem', fontFamily: 'system-ui, sans-serif', borderBottom: `2px solid ${T.tableHeader}`, paddingBottom: '0.3rem' }}>
+            Key Performance Indicators
+          </h2>
+          <div style={{ height: '0.4rem' }}></div>
+          <table style={{ width: '100%', borderCollapse: 'collapse', margin: '1rem 0', fontSize: '0.875rem', fontFamily: 'system-ui, sans-serif' }}>
+            <thead>
+              <tr>
+                <th style={{ background: T.bgLight, color: T.textPrimary, fontWeight: 700, padding: '0.5rem 0.75rem', textAlign: 'left', border: `1px solid ${T.lightGray}`, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+                  Metric
+                </th>
+                <th style={{ background: T.bgLight, color: T.textPrimary, fontWeight: 700, padding: '0.5rem 0.75rem', textAlign: 'left', border: `1px solid ${T.lightGray}`, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+                  Target
+                </th>
+                <th style={{ background: T.bgLight, color: T.textPrimary, fontWeight: 700, padding: '0.5rem 0.75rem', textAlign: 'left', border: `1px solid ${T.lightGray}`, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+                  Current
+                </th>
+                <th style={{ background: T.bgLight, color: T.textPrimary, fontWeight: 700, padding: '0.5rem 0.75rem', textAlign: 'left', border: `1px solid ${T.lightGray}`, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+                  Status
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                  <strong>Waitlist Signups</strong>
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                  500 by launch
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                  127
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.green, verticalAlign: 'top', background: T.bgSecondary }}>
+                  On Track
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                  <strong>Content Engagement</strong>
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                  5% weekly growth
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: '#FDFDFD' }}>
+                  7.2% growth
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.green, verticalAlign: 'top', background: '#FDFDFD' }}>
+                  Exceeding
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                  <strong>Framework Development</strong>
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                  7 modules complete
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: 'top', background: T.bgSecondary }}>
+                  5 of 7 complete
+                </td>
+                <td style={{ padding: '0.5rem 0.75rem', border: `1px solid ${T.lightGray}`, color: T.green, verticalAlign: 'top', background: T.bgSecondary }}>
+                  On Schedule
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div style={{ height: '0.4rem' }}></div>
+          <p style={{ fontSize: '0.875rem', color: T.textSecondary, margin: '0.35rem 0', lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif', fontStyle: 'italic' }}>
+            This dashboard provides a comprehensive view of launch readiness across all key metrics. Updated weekly with detailed analysis and recommendations.
+          </p>
         </div>
       );
 
     default:
       return (
-        <div style={{ textAlign: 'center', padding: 60, color: T.textSecondary }}>
-          <FileText size={48} style={{ marginBottom: 16, opacity: 0.5 }} />
-          <h3 style={{ fontSize: '1.2rem', marginBottom: 8 }}>Deliverable Not Found</h3>
-          <p>This deliverable type is not yet configured.</p>
+        <div style={{ textAlign: 'center', color: T.textSecondary, padding: '2rem' }}>
+          Deliverable content not found
         </div>
       );
   }
 };
 
-export default async function DeliverablePage({ params }: Props) {
+const DeliverablePage = async ({ params }: Props) => {
   const { client: clientSlug, slug } = await params;
   const client = getClient(clientSlug);
   
   if (!client) {
-    notFound();
+    return notFound();
   }
-  
+
   const deliverable = client.deliverables.find(d => d.slug === slug);
+  
   if (!deliverable) {
-    notFound();
+    return notFound();
   }
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: T.bgPrimary,
-      fontFamily: 'Georgia, serif'
-    }}>
-      {/* Header */}
-      <div style={{
-        background: T.bgSecondary,
-        borderBottom: `1px solid ${T.lightGray}`,
-        padding: '20px 0'
-      }}>
-        <div style={{
-          maxWidth: 1200,
-          margin: '0 auto',
-          padding: '0 24px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center'
+    <div style={{ minHeight: '100vh', background: T.bgPrimary, padding: '2rem 1rem' }}>
+      <div style={{ maxWidth: 900, margin: '0 auto' }}>
+        <Link href={`/portal/${clientSlug}`} style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.35rem',
+          fontSize: '0.875rem',
+          color: T.textSecondary,
+          textDecoration: 'none',
+          marginBottom: '1.5rem'
         }}>
-          <div>
-            <Link href={`/portal/${clientSlug}`} style={{
-              color: T.textSecondary,
-              textDecoration: 'none',
-              fontSize: '0.9rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 8,
-              marginBottom: 8
-            }}>
-              ← Back to Portal
-            </Link>
-            <h1 style={{
-              fontSize: '2rem',
-              fontWeight: 700,
-              color: T.slate,
-              margin: 0,
-              fontFamily: 'Georgia, serif'
-            }}>
-              {deliverable.title}
-            </h1>
-            <p style={{ color: T.textSecondary, fontSize: '1rem', margin: '4px 0 0' }}>
-              {client.name} • {deliverable.category}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 24px' }}>
+          ← Back to Portal
+        </Link>
+        
+        <h1 style={{ 
+          margin: '0 0 0.5rem', 
+          fontSize: '1.5rem', 
+          fontWeight: 700, 
+          color: T.slate, 
+          lineHeight: 1.25 
+        }}>
+          {deliverable.title}
+        </h1>
+        
         <DeliverableContent type={deliverable.type} slug={slug} />
       </div>
     </div>
   );
-}
+};
+
+export default DeliverablePage;
