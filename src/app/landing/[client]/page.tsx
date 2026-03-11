@@ -3737,7 +3737,7 @@ export default function ISLPitchDeck() {
             letterSpacing: "0.05em",
             fontSize: "1.8rem"
           }}>
-            Start with the Free Audit — and Join the Waitlist
+            Start with the Free Audit and Join the Waitlist
           </h2>
           <p style={{ 
             fontSize: "1.1rem", 
