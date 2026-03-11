@@ -2,7 +2,7 @@
 
 **Email:** venetabg829@gmail.com
 **Source:** Creative Nation SF warm lead (Feb 25, 2026)
-**Status:** Active — proposal sent, call scheduled
+**Status:** 🟢 CLOSED — Active Client (Mar 11, 2026)
 
 ---
 
@@ -50,7 +50,10 @@ A children's coloring book B2B launch — targeting title companies, mortgage br
 
 ## Next Actions
 
-- [ ] Quan to send Zoom link for 9 AM call
+- [x] 9 AM call — CLOSED (Mar 11, 2026)
+- [ ] Confirm tier selected (Essentials $350 / Growth $500 / Done For You $800)
+- [ ] Client portal delivered (in progress)
+- [ ] Send service agreement / onboarding docs
 - [ ] Vanessa to restart Facebook/Instagram + create TikTok
-- [ ] Vanessa to intro Quan to website designer via email
-- [ ] After call: determine which tier she selects, send service agreement
+- [ ] Vanessa to intro Quan to website designer
+- [ ] Monitor referrals from Tony Robbins network + trucking company contact
