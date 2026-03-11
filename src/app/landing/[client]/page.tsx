@@ -42,30 +42,30 @@ import {
 
 // ─── Design Tokens ────────────────────────────────────────────────────────────
 const T = {
-  bgPrimary: "#060611",
-  bgSecondary: "#0a0f1e",
-  bgTertiary: "#0d1225",
-  glass: "rgba(255, 255, 255, 0.03)",
-  glassBorder: "rgba(255, 255, 255, 0.08)",
-  glassHover: "rgba(255, 255, 255, 0.06)",
-  glassBright: "rgba(255, 255, 255, 0.05)",
-  textPrimary: "#f0f0f5",
-  textSecondary: "rgba(255, 255, 255, 0.7)",
-  textTertiary: "rgba(255, 255, 255, 0.55)",
+  bgPrimary: "#FAF8F5",
+  bgSecondary: "#ffffff",
+  bgTertiary: "#f8f6f3",
+  glass: "rgba(255, 255, 255, 0.8)",
+  glassBorder: "rgba(0, 0, 0, 0.08)",
+  glassHover: "rgba(0, 0, 0, 0.03)",
+  glassBright: "rgba(255, 255, 255, 0.9)",
+  textPrimary: "#2D3748",
+  textSecondary: "#4A5568",
+  textTertiary: "#718096",
   pink: "#E8548C",
-  pinkGlow: "rgba(232, 84, 140, 0.15)",
-  pinkBorder: "rgba(232, 84, 140, 0.25)",
-  cyan: "#4ECDC4",
-  cyanGlow: "rgba(78, 205, 196, 0.15)",
-  cyanBorder: "rgba(78, 205, 196, 0.25)",
+  pinkGlow: "rgba(232, 84, 140, 0.08)",
+  pinkBorder: "rgba(232, 84, 140, 0.15)",
+  cyan: "#7ECBC4",
+  cyanGlow: "rgba(126, 203, 196, 0.08)",
+  cyanBorder: "rgba(126, 203, 196, 0.15)",
   gold: "#FFD93D",
-  goldGlow: "rgba(255, 217, 61, 0.12)",
-  goldBorder: "rgba(255, 217, 61, 0.25)",
+  goldGlow: "rgba(255, 217, 61, 0.08)",
+  goldBorder: "rgba(255, 217, 61, 0.15)",
   gradientPink: "linear-gradient(135deg, #E8548C, #c44477)",
-  gradientCyan: "linear-gradient(135deg, #4ECDC4, #3ba89f)",
+  gradientCyan: "linear-gradient(135deg, #7ECBC4, #4ECDC4)",
   gradientGold: "linear-gradient(135deg, #FFD93D, #e6c235)",
-  gradientText: "linear-gradient(135deg, #E8548C 0%, #4ECDC4 50%, #FFD93D 100%)",
-  gradientBg: "linear-gradient(180deg, #060611 0%, #0a0f1e 50%, #060611 100%)",
+  gradientText: "linear-gradient(135deg, #E8548C 0%, #7ECBC4 50%, #FFD93D 100%)",
+  gradientBg: "linear-gradient(180deg, #FAF8F5 0%, #ffffff 50%, #FAF8F5 100%)",
 };
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -88,13 +88,11 @@ function GlassCard({
     <div
       onClick={onClick}
       style={{
-        background: T.glass,
-        backdropFilter: "blur(16px)",
-        WebkitBackdropFilter: "blur(16px)",
+        background: "white",
         border: `1px solid ${borderColor}`,
         borderRadius: 16,
         padding: "24px 28px",
-        boxShadow: `0 0 40px ${glowColor}`,
+        boxShadow: glow ? `0 4px 12px ${glowColor}, 0 2px 4px rgba(0, 0, 0, 0.05)` : "0 2px 4px rgba(0, 0, 0, 0.05)",
         cursor: onClick ? "pointer" : undefined,
         ...style,
       }}
@@ -420,14 +418,12 @@ export default function ISLPitchDeck() {
               <div
                 key={stat.label}
                 style={{
-                  background: T.glass,
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
+                  background: "white",
                   border: `1px solid ${stat.border}`,
                   borderRadius: 16,
                   padding: "20px 28px",
                   minWidth: 140,
-                  boxShadow: `0 0 30px ${stat.glow}`,
+                  boxShadow: `0 4px 12px ${stat.glow}, 0 2px 4px rgba(0, 0, 0, 0.05)`,
                 }}
               >
                 <div
@@ -991,15 +987,15 @@ export default function ISLPitchDeck() {
               <div
                 key={offer.tier}
                 style={{
-                  background: offer.highlight ? T.goldGlow : T.glass,
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
+                  background: offer.highlight ? `linear-gradient(135deg, rgba(255, 217, 61, 0.03), white)` : "white",
                   border: `${offer.highlight ? "2px" : "1px"} solid ${
                     offer.highlight ? T.goldBorder : offer.tier === "Free" ? T.pinkBorder : offer.tier === "Core" ? T.goldBorder : T.cyanBorder
                   }`,
                   borderRadius: 18,
                   overflow: "hidden",
-                  boxShadow: `0 0 40px ${offer.highlight ? T.goldGlow : offer.tier === "Free" ? T.pinkGlow : T.cyanGlow}`,
+                  boxShadow: offer.highlight 
+                    ? `0 8px 20px ${T.goldGlow}, 0 2px 4px rgba(0, 0, 0, 0.05)` 
+                    : `0 4px 12px ${offer.tier === "Free" ? T.pinkGlow : T.cyanGlow}, 0 2px 4px rgba(0, 0, 0, 0.05)`,
                   padding: offer.highlight ? "32px 24px 20px" : "26px 22px 18px",
                 }}
               >
@@ -1012,7 +1008,7 @@ export default function ISLPitchDeck() {
                         left: "50%",
                         transform: "translateX(-50%)",
                         background: T.gold,
-                        color: "#060611",
+                        color: T.textPrimary,
                         fontSize: "0.68rem",
                         fontWeight: 800,
                         letterSpacing: "0.1em",
@@ -1291,13 +1287,11 @@ export default function ISLPitchDeck() {
               <div
                 key={mod.number}
                 style={{
-                  background: T.glass,
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
+                  background: "white",
                   border: `1px solid ${border}`,
                   borderRadius: 16,
                   overflow: "hidden",
-                  boxShadow: `0 0 40px ${glow}`,
+                  boxShadow: `0 4px 12px ${glow}, 0 2px 4px rgba(0, 0, 0, 0.05)`,
                 }}
               >
                 <div
@@ -1508,13 +1502,11 @@ export default function ISLPitchDeck() {
             <div
               key={m.name}
               style={{
-                background: T.glass,
-                backdropFilter: "blur(16px)",
-                WebkitBackdropFilter: "blur(16px)",
+                background: "white",
                 border: `1px solid ${m.status === "in-progress" ? T.cyanBorder : T.glassBorder}`,
                 borderRadius: 16,
                 overflow: "hidden",
-                boxShadow: m.status === "in-progress" ? `0 0 40px ${T.cyanGlow}` : "none",
+                boxShadow: m.status === "in-progress" ? `0 4px 12px ${T.cyanGlow}, 0 2px 4px rgba(0, 0, 0, 0.05)` : "0 2px 4px rgba(0, 0, 0, 0.05)",
                 padding: "22px 28px",
               }}
             >
@@ -1825,7 +1817,7 @@ export default function ISLPitchDeck() {
       ═══════════════════════════════════════════════════════════════════════ */}
       <footer
         style={{
-          background: T.bgSecondary,
+          background: T.bgTertiary,
           borderTop: `1px solid ${T.glassBorder}`,
           padding: "60px 24px 40px",
           textAlign: "center",
