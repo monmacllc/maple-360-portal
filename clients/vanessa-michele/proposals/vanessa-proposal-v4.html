@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanessa Michele x Monmac — Social Media Launch Plan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0f1e;
+    color: #e8e8e8;
+    line-height: 1.75;
+    font-size: 15px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 48px;
+  }
+
+  /* ── Header ── */
+  .header {
+    text-align: center;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+    margin-bottom: 52px;
+  }
+
+  .brand-line {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #d4af37;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .header .subtitle {
+    font-size: 16px;
+    color: #9ca3af;
+    font-weight: 300;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .header .meta {
+    margin-top: 24px;
+    font-size: 12px;
+    color: #4b5563;
+    letter-spacing: 1px;
+  }
+
+  /* ── Section headings ── */
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 18px;
+    margin-top: 48px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #d4af37;
+    margin-bottom: 8px;
+    display: block;
+    margin-top: 48px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-top: 24px;
+  }
+
+  p {
+    color: #c9d1d9;
+    margin-bottom: 14px;
+  }
+
+  strong { color: #ffffff; }
+
+  /* ── Divider ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212,175,55,0.2), transparent);
+    margin: 48px 0;
+  }
+
+  /* ── Callout ── */
+  .callout {
+    background: linear-gradient(135deg, rgba(212,175,55,0.07), rgba(212,175,55,0.03));
+    border: 1px solid rgba(212,175,55,0.25);
+    border-left: 3px solid #d4af37;
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+    page-break-inside: avoid;
+  }
+  .callout p { margin: 0; color: #e8e8e8; }
+  .callout p + p { margin-top: 10px; }
+
+  /* ── What We Heard grid ── */
+  .heard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 20px 0;
+    page-break-inside: avoid;
+  }
+
+  .heard-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 18px 20px;
+    page-break-inside: avoid;
+  }
+
+  .heard-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #d4af37;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .heard-text {
+    font-size: 13px;
+    color: #c9d1d9;
+    line-height: 1.6;
+  }
+
+  /* ── Phase blocks ── */
+  .phase {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin: 16px 0;
+    page-break-inside: avoid;
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .phase-num {
+    font-size: 34px;
+    font-weight: 700;
+    color: rgba(212,175,55,0.2);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title { font-size: 17px; font-weight: 600; color: #ffffff; margin-bottom: 4px; }
+  .phase-sub { font-size: 12px; color: #6b7280; }
+
+  .dl-list { list-style: none; }
+  .dl-list li {
+    font-size: 13.5px;
+    color: #c9d1d9;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .dl-list li:last-child { border-bottom: none; }
+  .dl-check { color: #d4af37; flex-shrink: 0; margin-top: 2px; font-size: 12px; }
+  .dl-sub { font-size: 12px; color: #6b7280; margin-top: 2px; display: block; }
+
+  /* ── Pillars ── */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0;
+    page-break-inside: avoid;
+  }
+
+  .pillar-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  .pillar-icon { font-size: 22px; margin-bottom: 8px; }
+  .pillar-name { font-size: 12px; font-weight: 600; color: #ffffff; margin-bottom: 4px; }
+  .pillar-desc { font-size: 11px; color: #6b7280; line-height: 1.5; }
+
+  /* ── Timeline ── */
+  .tl-row {
+    display: flex;
+    gap: 20px;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-week {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #d4af37;
+    font-weight: 600;
+    min-width: 75px;
+    padding-top: 2px;
+  }
+  .tl-content { font-size: 13px; color: #c9d1d9; line-height: 1.6; }
+  .tl-content strong { color: #ffffff; }
+
+  /* ── Revenue table ── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+    page-break-inside: avoid;
+  }
+  .data-table th {
+    background: rgba(212,175,55,0.07);
+    color: #d4af37;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+  }
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: #c9d1d9;
+    vertical-align: top;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .price-market { color: #6b7280; text-decoration: line-through; font-size: 13px; }
+  .price-yours { color: #4ade80; font-weight: 600; }
+
+  /* ── Pricing Tiers ── */
+  .tier-section {
+    page-break-before: always;
+    page-break-inside: avoid;
+  }
+
+  .tier-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin: 24px 0;
+    page-break-inside: avoid;
+    align-items: stretch;
+  }
+
+  .tier-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 24px 20px 20px;
+    page-break-inside: avoid;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tier-card.featured {
+    background: linear-gradient(160deg, rgba(212,175,55,0.09), rgba(212,175,55,0.03));
+    border-color: rgba(212,175,55,0.35);
+  }
+
+  .tier-badge {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d4af37;
+    color: #0a0f1e;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 3px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .tier-name {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9ca3af;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  /* Fixed-height price block so all three cards align */
+  .tier-price-block {
+    min-height: 80px;
+  }
+
+  .tier-price-wrap { margin-bottom: 4px; }
+  .tier-regular { font-size: 11px; color: #6b7280; text-decoration: line-through; }
+  .tier-price {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.1;
+  }
+  .tier-price-mo { font-size: 13px; color: #6b7280; font-weight: 400; font-family: 'Inter', sans-serif; }
+  .tier-discount-note {
+    font-size: 10px;
+    color: #4ade80;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 0;
+  }
+  .tier-tagline {
+    font-size: 11px;
+    color: #9ca3af;
+    margin: 10px 0 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .tier-items { list-style: none; flex: 1; }
+  .tier-items li {
+    font-size: 12px;
+    color: #c9d1d9;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .tier-items li:last-child { border-bottom: none; }
+  .t-check { color: #d4af37; flex-shrink: 0; margin-top: 2px; font-size: 11px; }
+  .t-dim { color: #4b5563; }
+
+  /* ── Involvement badge — pinned to bottom of each card ── */
+  .involve-tag {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-top: 16px;
+    text-align: center;
+  }
+  .involve-high { background: rgba(239,68,68,0.12); color: #f87171; border: 1px solid rgba(239,68,68,0.2); }
+  .involve-mid { background: rgba(251,191,36,0.1); color: #fbbf24; border: 1px solid rgba(251,191,36,0.2); }
+  .involve-low { background: rgba(74,222,128,0.1); color: #4ade80; border: 1px solid rgba(74,222,128,0.2); }
+
+  /* ── Referral note ── */
+  .referral-note {
+    background: rgba(74,222,128,0.04);
+    border: 1px solid rgba(74,222,128,0.1);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-top: 28px;
+    page-break-inside: avoid;
+  }
+  .referral-note .ref-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4ade80;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .referral-note p { color: #9ca3af; font-size: 13.5px; margin: 0; }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin-top: 52px;
+    page-break-inside: avoid;
+  }
+  .footer-cta { font-size: 20px; color: #d4af37; font-family: 'Playfair Display', serif; margin-bottom: 8px; }
+  .footer p { font-size: 12px; color: #4b5563; }
+  .footer .contact { font-size: 13px; color: #9ca3af; margin-bottom: 4px; }
+
+  /* ── Utilities ── */
+  .gold { color: #d4af37; }
+  ul.ul-arrow { list-style: none; margin: 12px 0; }
+  ul.ul-arrow li {
+    font-size: 14px;
+    color: #c9d1d9;
+    padding: 5px 0 5px 18px;
+    position: relative;
+  }
+  ul.ul-arrow li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand-line">Prepared by Monmac Labs · Confidential</div>
+    <h1>This Isn't About a Book.<br>This Is About Your Story.</h1>
+    <div class="subtitle">Your social media launch plan — ZL Buy a House</div>
+    <div class="meta">Prepared by Quan Zou · Monmac Labs · March 2026</div>
+  </div>
+
+  <!-- WHO YOU ARE -->
+  <p>You are a business owner and mother of two daughters. And where others in your position might feel the weight of it all — the business, the caregiving, the daily demands — you chose to do something different.</p>
+
+  <p>You asked a different question. Not <em>why me</em>, but <strong>what can I create from this?</strong></p>
+
+  <p>The answer is a children's coloring book that teaches kids about buying a home. But more than that, it's a record. A legacy. A way of showing your daughters — and every family watching — that the challenges don't define you. What you build in spite of them does.</p>
+
+  <p>The families who will connect with this story aren't just real estate buyers. They're parents raising kids with their own challenges. Parents who want to raise entrepreneurial children. Anyone who has ever looked at a hard situation and decided to make something beautiful from it instead.</p>
+
+  <p><strong>The book is one manifestation. The story is the real product. And the story is what sells everything.</strong></p>
+
+  <div class="callout">
+    <p><strong>Who you speak to:</strong> Mothers and parents who want to raise entrepreneurial, capable kids. Families navigating challenges of their own. Realtors, title companies, mortgage brokers, home inspectors, and insurance agents — everyone in the real estate ecosystem who wants to build real relationships with real families.</p>
+  </div>
+
+  <!-- WHAT WE HEARD -->
+  <div class="divider"></div>
+  <span class="section-label">What We Heard</span>
+  <h2>Before the plan — here's what we absorbed.</h2>
+
+  <div class="heard-grid">
+    <div class="heard-card">
+      <span class="heard-label">Your ultimate goal</span>
+      <div class="heard-text">Have the vision, create the product — and have someone else handle the rest. More time for your family, your health, your garden. Zou growing up knowing that building things is just normal.</div>
+    </div>
+    <div class="heard-card">
+      <span class="heard-label">Your non-negotiable</span>
+      <div class="heard-text">Authenticity above everything. No AI avatars. No manufactured persona. You are the brand — and your audience will feel the difference between real and performed.</div>
+    </div>
+    <div class="heard-card">
+      <span class="heard-label">What you're really building</span>
+      <div class="heard-text">A platform, not just a product. The book is the beginning. The brand can evolve. You want a foundation that grows with you — not a one-time campaign.</div>
+    </div>
+    <div class="heard-card">
+      <span class="heard-label">Your revenue target</span>
+      <div class="heard-text">$1M annual revenue. Based on the B2B model — title companies, lenders, insurers buying in bulk — it's a realistic goal, not just a dream. The math works.</div>
+    </div>
+    <div class="heard-card">
+      <span class="heard-label">What makes you stop scrolling</span>
+      <div class="heard-text">Wise, calm people. A powerful opening line. Real family moments. Home remedies. Practical ideas you can actually use. A child saying something brilliant.</div>
+    </div>
+    <div class="heard-card">
+      <span class="heard-label">How this needs to feel</span>
+      <div class="heard-text">Not like you're selling. Like you're sharing your life — and the book is part of it. The community builds because people trust you, not because they saw an ad.</div>
+    </div>
+  </div>
+
+  <!-- HERE'S WHAT WE'RE BUILDING -->
+  <div class="divider"></div>
+  <h2>Here's What We're Building Together.</h2>
+
+  <p>Two phases: a one-time setup that gives you everything you need to launch strong, and monthly support that keeps momentum going while you focus on what matters most.</p>
+
+  <!-- Phase 1 -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">01</div>
+      <div>
+        <div class="phase-title">Setup — Everything to Launch</div>
+        <div class="phase-sub">Delivered within 2 weeks of kickoff · Yours to keep, always</div>
+      </div>
+    </div>
+    <ul class="dl-list">
+      <li>
+        <span class="dl-check">✦</span>
+        <div>
+          <strong>Brand Story Framework</strong>
+          <span class="dl-sub">Your North Star statement, content pillars, and voice guide — so every post sounds like you, even when we write it</span>
+        </div>
+      </li>
+      <li>
+        <span class="dl-check">✦</span>
+        <div>
+          <strong>30-Video Content Bank</strong>
+          <span class="dl-sub">30 scripted video concepts with hooks and opening lines — organized by content pillar, ready for you to film</span>
+        </div>
+      </li>
+      <li>
+        <span class="dl-check">✦</span>
+        <div>
+          <strong>12-Week Launch Calendar</strong>
+          <span class="dl-sub">Week-by-week plan: what to post, when, and why. No guessing, no blank page stare.</span>
+        </div>
+      </li>
+      <li>
+        <span class="dl-check">✦</span>
+        <div>
+          <strong>5-Email Welcome Sequence</strong>
+          <span class="dl-sub">Written and built — triggers automatically when someone joins your waitlist. Tells the story. Builds trust. Drives pre-orders.</span>
+        </div>
+      </li>
+      <li>
+        <span class="dl-check">✦</span>
+        <div>
+          <strong>Website SEO &amp; GEO Audit</strong>
+          <span class="dl-sub">Keyword strategy + AI search optimization — handed to your designer so your site ranks from day one</span>
+        </div>
+      </li>
+      <li>
+        <span class="dl-check">✦</span>
+        <div>
+          <strong>B2B Sales One-Pager</strong>
+          <span class="dl-sub">One clean page for title companies, mortgage brokers, and insurers — what the book is, why they should buy it in bulk, how to order</span>
+        </div>
+      </li>
+      <li>
+        <span class="dl-check">✦</span>
+        <div>
+          <strong>Social Platform Setup (3 platforms)</strong>
+          <span class="dl-sub">TikTok, Instagram, Facebook — optimized bios, cross-linked, ready to post</span>
+        </div>
+      </li>
+      <li>
+        <span class="dl-check">✦</span>
+        <div>
+          <strong>Strategy Walkthrough Call (60 min)</strong>
+          <span class="dl-sub">We walk through everything together. You leave knowing exactly what to do and in what order.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Phase 2 intro -->
+  <p style="margin-top:24px;">For ongoing support, choose the tier that fits how involved you want to be. The more you want off your plate, the higher the tier.</p>
+
+  <!-- CONTENT PILLARS -->
+  <div class="divider"></div>
+  <span class="section-label">What You'll Be Known For</span>
+  <h2>Your Content Pillars.</h2>
+
+  <p>Every post, video, and story draws from five pillars — building a complete picture of who you are, not just what you're selling.</p>
+
+  <div class="pillar-grid">
+    <div class="pillar-card">
+      <div class="pillar-icon">🌱</div>
+      <div class="pillar-name">Family &amp; Legacy</div>
+      <div class="pillar-desc">Zou. Liana. Tony. The greenhouse. Building things together. The everyday moments that are actually the whole point.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">💡</div>
+      <div class="pillar-name">Entrepreneurial Mindset</div>
+      <div class="pillar-desc">Teaching kids that creating is normal. Turning challenges into strength. The mindset that made this book possible.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🏠</div>
+      <div class="pillar-name">The Book Journey</div>
+      <div class="pillar-desc">Behind the scenes. How ZL came to be. Page reveals. Printing updates. The road to launch day.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🌿</div>
+      <div class="pillar-name">Health &amp; Home</div>
+      <div class="pillar-desc">Donkey milk. Composted soil. Homemade yogurt. Lemon powder. Things you do that others would love to know about.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">💪</div>
+      <div class="pillar-name">Strength Over Circumstance</div>
+      <div class="pillar-desc">Not inspiration content. Real talk about choosing to create instead of collapse. This is what connects you to every parent who's ever had to fight for something.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🎯</div>
+      <div class="pillar-name">Real Estate &amp; Business</div>
+      <div class="pillar-desc">Why realtors need this. How title companies use it. The B2B opportunity explained — for the professional audience following your brand.</div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="divider"></div>
+  <span class="section-label">When It Happens</span>
+  <h2>The 12-Week Plan.</h2>
+
+  <div class="tl-row">
+    <div class="tl-week">Weeks 1–2</div>
+    <div class="tl-content"><strong>Setup complete.</strong> Brand framework, video bank, calendar, email sequence, SEO audit, and social setup all delivered. Strategy call scheduled.</div>
+  </div>
+  <div class="tl-row">
+    <div class="tl-week">Weeks 1–4</div>
+    <div class="tl-content"><strong>Warm-up phase.</strong> First posts go live. No selling yet — just showing up and building trust. Waitlist landing page live by end of Week 3.</div>
+  </div>
+  <div class="tl-row">
+    <div class="tl-week">Weeks 5–8</div>
+    <div class="tl-content"><strong>Story deepens.</strong> Book reveal. Sweepstakes announced. Pre-order waitlist opens. First B2B outreach to title companies once sample books are in hand.</div>
+  </div>
+  <div class="tl-row">
+    <div class="tl-week">Weeks 9–12</div>
+    <div class="tl-content"><strong>Launch momentum.</strong> First 100 sample books arrive. Unboxing content. Inner circle receives books — community, Tony Robbins network, neighbors. Testimonials begin. B2B pipeline active.</div>
+  </div>
+  <div class="tl-row">
+    <div class="tl-week">Month 3+</div>
+    <div class="tl-content"><strong>Full distribution.</strong> Bulk shipment arrives from China. B2B outreach scales. Sweepstakes fully live. Monthly support keeps everything moving.</div>
+  </div>
+  <div class="tl-row">
+    <div class="tl-week">Dec 12</div>
+    <div class="tl-content"><strong>Sweepstakes draw — Zou's birthday.</strong> Kids draw their dream house → upload to website → enter to win. First prize: $1,000 travel voucher. A community moment and a press opportunity.</div>
+  </div>
+
+  <!-- REVENUE -->
+  <div class="divider"></div>
+  <span class="section-label">The Opportunity</span>
+  <h2>The Path to $1M.</h2>
+
+  <p>The B2B model is the engine. Social media builds the proof — when title companies see that families are engaged with your story, the pitch becomes effortless.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Revenue Stream</th>
+        <th>Unit Price</th>
+        <th>Monthly Volume</th>
+        <th>Monthly Revenue</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>Institutional bulk orders</strong><br>
+          <span style="font-size:12px;color:#6b7280;">Title cos. · Mortgage brokers · Insurers · 1,000/order × 10 accounts</span>
+        </td>
+        <td>$6.50–$10</td>
+        <td>10,000 books</td>
+        <td class="gold" style="font-weight:600;">$65K–$100K</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Direct realtor orders</strong><br>
+          <span style="font-size:12px;color:#6b7280;">100-book minimum · Online + direct outreach</span>
+        </td>
+        <td>$10/book</td>
+        <td>500–1,000</td>
+        <td class="gold" style="font-weight:600;">$5K–$10K</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Online / Amazon (passive)</strong>
+        </td>
+        <td>$14.99–$19.99</td>
+        <td>50–100</td>
+        <td class="gold" style="font-weight:600;">$750–$2K</td>
+      </tr>
+      <tr style="background:rgba(212,175,55,0.05);">
+        <td colspan="3"><strong>Year 1 Target</strong></td>
+        <td style="font-size:18px;font-weight:700;color:#ffffff;font-family:'Playfair Display',serif;">$1,000,000+</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- INVESTMENT -->
+  <div class="divider"></div>
+  <span class="section-label">The Investment</span>
+  <h2>What This Costs.</h2>
+
+  <p>For context — here's what this work typically costs from a boutique agency or specialist team:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Market Rate</th>
+        <th>Your Investment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Brand story + strategy development</strong></td>
+        <td><span class="price-market">$3,000 – $8,000</span></td>
+        <td><span class="price-yours">✓ Included in setup</span></td>
+      </tr>
+      <tr>
+        <td><strong>30-video content bank + launch calendar</strong></td>
+        <td><span class="price-market">$2,500 – $5,000</span></td>
+        <td><span class="price-yours">✓ Included in setup</span></td>
+      </tr>
+      <tr>
+        <td><strong>Email automation (5-email sequence)</strong></td>
+        <td><span class="price-market">$1,500 – $4,000</span></td>
+        <td><span class="price-yours">✓ Included in setup</span></td>
+      </tr>
+      <tr>
+        <td><strong>Website SEO/GEO audit</strong></td>
+        <td><span class="price-market">$1,000 – $3,000</span></td>
+        <td><span class="price-yours">✓ Included in setup</span></td>
+      </tr>
+      <tr>
+        <td><strong>B2B sales pitch one-pager</strong></td>
+        <td><span class="price-market">$1,000 – $2,500</span></td>
+        <td><span class="price-yours">✓ Included in setup</span></td>
+      </tr>
+      <tr>
+        <td><strong>Monthly social management (posts + carousel + video)</strong></td>
+        <td><span class="price-market">$2,000 – $5,000/mo</span></td>
+        <td><span class="price-yours">From $350/mo</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Setup price callout -->
+  <div class="callout">
+    <p><strong>One-Time Setup: $2,500</strong> &nbsp;·&nbsp; Everything above. Delivered in 2 weeks. Yours to keep, with or without ongoing support.</p>
+  </div>
+
+  <!-- THREE TIERS -->
+  <div class="tier-section">
+  <h3 style="margin-top:0;">Choose your monthly support level.</h3>
+  <p style="font-size:13px;color:#9ca3af;margin-bottom:24px;">All packages shown at <strong style="color:#4ade80;">20% partner pricing</strong>. The difference between tiers isn't just what you get — it's how much of your time is required. The more you want off your plate, the higher the tier.</p>
+
+  <div class="tier-grid">
+
+    <!-- Tier 1 -->
+    <div class="tier-card">
+      <div class="tier-name">Essentials</div>
+      <div class="tier-price-block">
+        <div class="tier-price-wrap">
+          <div class="tier-regular">Regular $420/mo</div>
+          <div class="tier-price">$350<span class="tier-price-mo">/mo</span></div>
+        </div>
+        <div class="tier-discount-note">20% off — Partner Price</div>
+      </div>
+      <div class="tier-tagline">You stay hands-on. We give you the tools and strategy — you execute.</div>
+      <ul class="tier-items">
+        <li><span class="t-check">✦</span> Content calendar monthly</li>
+        <li><span class="t-check">✦</span> 3 post copy drafts/week (you post)</li>
+        <li><span class="t-check">✦</span> 1 carousel/month (designed)</li>
+        <li><span class="t-check">✦</span> Video scripts + hooks (you film + post)</li>
+        <li><span class="t-check">✦</span> Email list setup (no ongoing mgmt)</li>
+        <li><span class="t-check">✦</span> 15-min check-in call/month</li>
+        <li><span class="t-dim">✦</span> <span class="t-dim">No video editing</span></li>
+        <li><span class="t-dim">✦</span> <span class="t-dim">No B2B outreach support</span></li>
+      </ul>
+      <span class="involve-tag involve-high">High involvement from you</span>
+    </div>
+
+    <!-- Tier 2 -->
+    <div class="tier-card">
+      <div class="tier-name">Growth</div>
+      <div class="tier-price-block">
+        <div class="tier-price-wrap">
+          <div class="tier-regular">Regular $625/mo</div>
+          <div class="tier-price">$500<span class="tier-price-mo">/mo</span></div>
+        </div>
+        <div class="tier-discount-note">20% off — Partner Price</div>
+      </div>
+      <div class="tier-tagline">We produce most of it. You review, approve, and film 30–60 min/week.</div>
+      <ul class="tier-items">
+        <li><span class="t-check">✦</span> 3 posts/week (written + designed)</li>
+        <li><span class="t-check">✦</span> 1 carousel/week (designed)</li>
+        <li><span class="t-check">✦</span> 1 short video/week (you film, we edit)</li>
+        <li><span class="t-check">✦</span> Email list management + monthly send</li>
+        <li><span class="t-check">✦</span> Monthly performance report</li>
+        <li><span class="t-check">✦</span> 30-min strategy call/month</li>
+        <li><span class="t-dim">✦</span> <span class="t-dim">No B2B outreach support</span></li>
+      </ul>
+      <span class="involve-tag involve-mid">Moderate involvement from you</span>
+    </div>
+
+    <!-- Tier 3: Done For You -->
+    <div class="tier-card featured">
+      <div class="tier-badge">Most Popular</div>
+      <div class="tier-name">Done For You</div>
+      <div class="tier-price-block">
+        <div class="tier-price-wrap">
+          <div class="tier-regular">Regular $1,000/mo</div>
+          <div class="tier-price">$800<span class="tier-price-mo">/mo</span></div>
+        </div>
+        <div class="tier-discount-note">20% off — Partner Price</div>
+      </div>
+      <div class="tier-tagline">"I want to have the vision — and have someone else handle everything else."</div>
+      <ul class="tier-items">
+        <li><span class="t-check">✦</span> 3 posts/week (written + designed)</li>
+        <li><span class="t-check">✦</span> 1 carousel/week (designed)</li>
+        <li><span class="t-check">✦</span> 3 short videos/week (scripted + edited)</li>
+        <li><span class="t-check">✦</span> Full email management + campaigns</li>
+        <li><span class="t-check">✦</span> B2B outreach support (title company pitches)</li>
+        <li><span class="t-check">✦</span> Monthly analytics + revenue report</li>
+        <li><span class="t-check">✦</span> 60-min strategy call/month</li>
+        <li><span class="t-check">✦</span> First priority on new features</li>
+      </ul>
+      <span class="involve-tag involve-low">Minimum involvement from you</span>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- NEXT STEPS -->
+  <div class="divider"></div>
+  <span class="section-label">What Happens Next</span>
+  <h2>Simple from here.</h2>
+
+  <ul class="ul-arrow">
+    <li>You say the word — Monmac begins setup immediately</li>
+    <li>Simple service agreement sent (1 page) — everything we build belongs to you</li>
+    <li>Full setup delivered within 2 weeks</li>
+    <li>60-min strategy walkthrough so you know exactly what you have and how to use it</li>
+    <li>Month 1 content calendar delivered before your first post goes live</li>
+    <li>When your website designer is ready, we connect with her directly and hand her the SEO brief</li>
+  </ul>
+
+  <div class="callout" style="margin-top:28px;">
+    <p><strong>Your homework in the meantime:</strong> Restart Facebook + Instagram, re-add your friends. Create your TikTok account. Make a list of the 50 people in your inner circle you want to tell first. Text Quan your availability for next week.</p>
+  </div>
+
+  <!-- REFERRAL (lightest touch) -->
+  <div class="referral-note">
+    <span class="ref-label">One last thing</span>
+    <p>Once we're working together and you're seeing real results — if it ever feels right to introduce Monmac to someone in your circle, I'd genuinely appreciate it. There's a referral arrangement in place whenever the moment comes naturally. No obligation, no expectation — just something to know is there.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-cta">Ready when you are.</div>
+    <p class="contact">Quan Zou · Monmac Labs · quan@monmaclabs.com · 510-967-9408</p>
+    <p style="margin-top:10px;font-size:11px;color:#374151;">All assets produced remain 100% yours · Cancel anytime · Confidential — prepared for Vanessa Michele · March 2026</p>
+  </div>
+
+</div>
+</body>
+</html>

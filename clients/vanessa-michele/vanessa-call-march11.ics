@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Monmac Labs//EN
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:f8b0b160-309d-46fe-a406-e2ce61a5d132
+DTSTAMP:20260311T074320Z
+DTSTART;TZID=America/Los_Angeles:20260311T090000
+DTEND;TZID=America/Los_Angeles:20260311T100000
+SUMMARY:Vanessa Michele x Monmac — Strategy Call
+DESCRIPTION:Hi Vanessa — looking forward to going over your proposal together and answering any questions you have. Zoom link: https://zoom.us/j/ (Quan will send the Zoom link separately)
+ORGANIZER;CN=Quan Zou:mailto:quan@monmaclabs.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Vanessa Michele:mailto:venetabg829@gmail.com
+LOCATION:Zoom (link to follow)
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR
