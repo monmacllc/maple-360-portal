@@ -35,6 +35,35 @@ export function getAllClientSlugs(): string[] {
 }
 
 const clients: Record<string, ClientConfig> = {
+  'vanessa-michele': {
+    id: 'vanessa-michele',
+    name: 'Vanessa Michele',
+    slug: 'vanessa-michele',
+    tagline: 'ZL Buy a House — Social Media Launch',
+    colors: {
+      primary: '#2ECCC4',
+      secondary: '#4ECDC4',
+      accent: '#FF6B6B',
+      background: '#FAF8F5',
+      text: '#2D3436',
+    },
+    deliverables: [
+      { slug: 'brand_story', title: 'Brand Story Framework', description: 'North Star statement, content pillars, and voice guide', status: 'in-progress', type: 'module' },
+      { slug: 'video_bank', title: '30-Video Content Bank', description: 'Scripted concepts with hooks and opening lines', status: 'pending', type: 'module' },
+      { slug: 'launch_calendar', title: '12-Week Launch Calendar', description: 'Week-by-week plan from setup to full launch', status: 'pending', type: 'module' },
+      { slug: 'email_sequence', title: '5-Email Welcome Sequence', description: 'Written and built — auto-triggers on waitlist join', status: 'pending', type: 'email_sequence' },
+      { slug: 'seo_audit', title: 'Website SEO & AEO/GEO Audit', description: 'Keyword strategy and AI search optimization', status: 'pending', type: 'site_audit' },
+      { slug: 'b2b_one_pager', title: 'B2B Sales One-Pager', description: 'For title companies, mortgage brokers, and insurers', status: 'pending', type: 'module' },
+      { slug: 'social_setup', title: 'Social Platform Setup', description: 'TikTok, Instagram, Facebook — optimized and cross-linked', status: 'pending', type: 'module' },
+      { slug: 'strategy_call', title: 'Strategy Walkthrough Call', description: '60-minute recorded session and summary doc', status: 'pending', type: 'module' },
+    ],
+    milestones: [
+      { id: 'setup', title: 'Setup (Weeks 1–2)', status: 'active', payment: 2500, deliverables: ['brand_story', 'social_setup', 'strategy_call'] },
+      { id: 'warmup', title: 'Warm-Up (Weeks 3–4)', status: 'pending', payment: 0, deliverables: ['video_bank', 'email_sequence'] },
+      { id: 'reveal', title: 'Book Reveal (Weeks 5–8)', status: 'pending', payment: 0, deliverables: ['launch_calendar', 'seo_audit'] },
+      { id: 'launch', title: 'Full Launch (Weeks 9–12)', status: 'pending', payment: 0, deliverables: ['b2b_one_pager'] },
+    ],
+  },
   'jamila-dugan': {
     id: 'jamila-dugan',
     name: 'Dr. Jamila Dugan',

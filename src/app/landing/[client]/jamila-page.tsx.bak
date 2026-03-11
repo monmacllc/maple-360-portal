@@ -1,0 +1,325 @@
+"use client";
+
+export default function ISLPitchDeck() {
+  return (
+    <main>
+      <section aria-label="Course introduction and free download" style={{background:"linear-gradient(160deg, #FFF9F5 0%, #FDEEE6 100%)",padding:"72px 24px 80px",textAlign:"center"}}>
+        <div style={{maxWidth:"760px",margin:"0 auto"}}>
+          <p style={{fontSize:"12px",letterSpacing:"3px",textTransform:"uppercase",color:"#D63580",margin:"0 0 24px",opacity:"0.9"}}>
+            A five-module course for educators and consultants
+          </p>
+          <h1 style={{fontSize:"clamp(28px, 5vw, 48px)",fontWeight:"normal",color:"#2D2D2D",margin:"0 0 24px",lineHeight:"1.25",letterSpacing:"-0.5px"}}>
+            Your intellectual property deserves structure, not just something to be extracted.
+          </h1>
+          <div aria-hidden="true" style={{width:"56px",height:"2px",background:"#FFD93D",margin:"0 auto 28px"}}></div>
+          <p style={{fontSize:"clamp(16px, 2.5vw, 19px)",color:"#5A4A42",margin:"0 auto 32px",maxWidth:"640px",lineHeight:"1.7",fontStyle:"normal"}}>
+            If you're an educator, consultant, or practitioner who is ready to protect, structure, and sustain the work you've built. This course was made for you.
+          </p>
+          <blockquote style={{borderLeft:"4px solid #4ECDC4",paddingLeft:"24px",margin:"0 auto 40px",maxWidth:"620px",textAlign:"left"}}>
+            <p style={{fontSize:"16px",color:"#5A4A42",margin:"0 0 10px",lineHeight:"1.75",fontStyle:"italic"}}>
+              "I've spent fifteen years watching brilliant practitioners build frameworks that change rooms, and then watch those same frameworks get extracted, diluted, or simply lost because the infrastructure around them was never built. This course is the infrastructure."
+            </p>
+            <cite style={{fontSize:"14px",color:"#8B7B72",fontStyle:"normal",letterSpacing:"0.4px"}}>
+              - Dr. Jamila Dugan
+            </cite>
+          </blockquote>
+          <p style={{fontSize:"14px",color:"#8B7B72",margin:"0 0 44px",letterSpacing:"0.5px"}}>
+            By Dr. Jamila Dugan  ·  Berkeley Ed.D.  ·  Co-author, <em>Street Data</em>
+          </p>
+          <div style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"16px",padding:"40px 36px",maxWidth:"560px",margin:"0 auto",boxShadow:"0 4px 24px rgba(232, 84, 140, 0.12)"}}>
+            <p style={{fontSize:"13px",letterSpacing:"2px",textTransform:"uppercase",color:"#D63580",margin:"0 0 16px"}}>
+              Free Download
+            </p>
+            <p style={{fontFamily:"Georgia, serif",fontSize:"20px",color:"#2D2D2D",margin:"0 0 8px",fontWeight:"normal"}}>
+              7-Layer IP Architecture Audit
+            </p>
+            <p style={{fontSize:"14px",color:"#8B7B72",margin:"0 0 28px",lineHeight:"1.6"}}>
+              A nine-page guide to mapping, protecting, and stewarding every layer of your intellectual property, free, delivered to your inbox.
+            </p>
+            <form aria-label="Download the free IP Architecture Audit" style={{maxWidth:"520px",margin:"0 auto"}}>
+              <div style={{display:"flex",flexDirection:"column",gap:"12px"}}>
+                <input 
+                  type="text" 
+                  placeholder="Your first name (optional)" 
+                  aria-label="First name (optional)" 
+                  style={{padding:"14px 18px",borderRadius:"8px",border:"1.5px solid #F0DED0",background:"#FFFFFF",fontSize:"15px",color:"#2D2D2D",outline:"none",fontFamily:"inherit",width:"100%",boxSizing:"border-box"}} 
+                />
+                <input 
+                  type="email" 
+                  placeholder="Your email address *" 
+                  required 
+                  aria-label="Email address (required)" 
+                  aria-required="true" 
+                  style={{padding:"14px 18px",borderRadius:"8px",border:"1.5px solid #F0DED0",background:"#FFFFFF",fontSize:"15px",color:"#2D2D2D",outline:"none",fontFamily:"inherit",width:"100%",boxSizing:"border-box"}} 
+                />
+                <button 
+                  type="submit" 
+                  style={{padding:"16px 24px",borderRadius:"8px",border:"none",background:"#E8548C",color:"#FFFFFF",fontSize:"16px",fontWeight:"700",cursor:"pointer",fontFamily:"Georgia, 'Times New Roman', serif",letterSpacing:"0.3px",transition:"background 0.2s"}}
+                >
+                  Download the Free 7-Layer IP Architecture Audit
+                </button>
+              </div>
+              <p style={{marginTop:"12px",fontSize:"13px",color:"#8B7B72",textAlign:"center",lineHeight:"1.5"}}>
+                Free PDF delivered to your inbox. No spam, ever. Unsubscribe anytime.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="The problem: unnamed, unprotected, undervalued IP" style={{padding:"80px 24px",background:"#FFF9F5"}}>
+        <div style={{maxWidth:"700px",margin:"0 auto"}}>
+          <p style={{fontSize:"12px",letterSpacing:"3px",textTransform:"uppercase",color:"#D63580",margin:"0 0 24px",textAlign:"center"}}>
+            What we're solving
+          </p>
+          <blockquote style={{borderLeft:"4px solid #FFD93D",paddingLeft:"28px",margin:"0 0 36px"}}>
+            <p style={{fontSize:"clamp(19px, 3vw, 24px)",color:"#2D2D2D",margin:"0",lineHeight:"1.5",fontStyle:"italic"}}>
+              You've built something real. A framework. A methodology. A body of work that changes rooms when you walk into them.
+            </p>
+          </blockquote>
+          <p style={{fontSize:"17px",color:"#5A4A42",margin:"0 0 22px",lineHeight:"1.75"}}>
+            But the infrastructure around that work? The documentation, the protection, the structure that would let it move in the world without losing what makes it alive? That part hasn't been built yet.
+          </p>
+          <p style={{fontSize:"17px",color:"#5A4A42",margin:"0 0 40px",lineHeight:"1.75"}}>
+            You're not alone. Most practitioners have 10x more intellectual property than they've named, structured, or protected.
+          </p>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit, minmax(200px, 1fr))",gap:"24px"}}>
+            <div style={{background:"#FDEEE6",borderRadius:"10px",padding:"24px 22px",borderTop:"3px solid #FFD93D"}}>
+              <h3 style={{fontFamily:"Georgia, serif",fontSize:"16px",fontWeight:"bold",color:"#E8548C",margin:"0 0 10px"}}>
+                Unnamed
+              </h3>
+              <p style={{fontSize:"14px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
+                The frameworks and methodologies you use every day but have never formally documented.
+              </p>
+            </div>
+            <div style={{background:"#FDEEE6",borderRadius:"10px",padding:"24px 22px",borderTop:"3px solid #FFD93D"}}>
+              <h3 style={{fontFamily:"Georgia, serif",fontSize:"16px",fontWeight:"bold",color:"#E8548C",margin:"0 0 10px"}}>
+                Unprotected
+              </h3>
+              <p style={{fontSize:"14px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
+                Work that can be replicated, repurposed, or taken, because it was never structured for ownership.
+              </p>
+            </div>
+            <div style={{background:"#FDEEE6",borderRadius:"10px",padding:"24px 22px",borderTop:"3px solid #FFD93D"}}>
+              <h3 style={{fontFamily:"Georgia, serif",fontSize:"16px",fontWeight:"bold",color:"#E8548C",margin:"0 0 10px"}}>
+                Undervalued
+              </h3>
+              <p style={{fontSize:"14px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
+                Assets sitting idle that could be shared, taught, or structured, if they had the right structure around them.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Course curriculum — five modules" style={{padding:"80px 24px",background:"#F5EDE3"}}>
+        <div style={{maxWidth:"760px",margin:"0 auto"}}>
+          <p style={{fontSize:"12px",letterSpacing:"3px",textTransform:"uppercase",color:"#D63580",margin:"0 0 12px",textAlign:"center"}}>
+            The curriculum
+          </p>
+          <h2 style={{fontFamily:"Georgia, serif",fontSize:"clamp(24px, 4vw, 34px)",fontWeight:"normal",color:"#2D2D2D",textAlign:"center",margin:"0 0 12px",lineHeight:"1.3"}}>
+            What You'll Learn
+          </h2>
+          <p style={{fontSize:"16px",color:"#5A4A42",textAlign:"center",margin:"0 auto 48px",maxWidth:"520px",lineHeight:"1.65"}}>
+            Five modules designed to move you from unclear to structured, at your own pace, in your own voice.
+          </p>
+          <div style={{display:"flex",flexDirection:"column",gap:"20px"}}>
+            <div style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"12px",padding:"28px 32px",display:"flex",gap:"20px",alignItems:"flex-start"}}>
+              <div aria-hidden="true" style={{minWidth:"44px",height:"44px",borderRadius:"50%",background:"#E8548C",border:"2px solid #D63580",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#FFFFFF",flexShrink:"0"}}>
+                1
+              </div>
+              <div>
+                <h3 style={{fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#2D2D2D",margin:"0 0 8px",lineHeight:"1.3"}}>
+                  Stewardship Arrival
+                </h3>
+                <p style={{fontSize:"15px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
+                  You'll ground yourself in the three postures practitioners bring to their IP: extraction, hoarding, and stewardship, and locate where you are right now.
+                </p>
+              </div>
+            </div>
+            <div style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"12px",padding:"28px 32px",display:"flex",gap:"20px",alignItems:"flex-start"}}>
+              <div aria-hidden="true" style={{minWidth:"44px",height:"44px",borderRadius:"50%",background:"#E8548C",border:"2px solid #D63580",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#FFFFFF",flexShrink:"0"}}>
+                2
+              </div>
+              <div>
+                <h3 style={{fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#2D2D2D",margin:"0 0 8px",lineHeight:"1.3"}}>
+                  The 7-Layer IP Architecture
+                </h3>
+                <p style={{fontSize:"15px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
+                  You'll map every layer of your intellectual property: frameworks, methodologies, content, relationships, processes, lived expertise, and narrative. Nothing left unnamed.
+                </p>
+              </div>
+            </div>
+            <div style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"12px",padding:"28px 32px",display:"flex",gap:"20px",alignItems:"flex-start"}}>
+              <div aria-hidden="true" style={{minWidth:"44px",height:"44px",borderRadius:"50%",background:"#E8548C",border:"2px solid #D63580",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#FFFFFF",flexShrink:"0"}}>
+                3
+              </div>
+              <div>
+                <h3 style={{fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#2D2D2D",margin:"0 0 8px",lineHeight:"1.3"}}>
+                  Knowledge Lineage
+                </h3>
+                <p style={{fontSize:"15px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
+                  You'll trace the relational roots of your work, who shaped it, what traditions informed it, and how to hold that lineage with integrity as you build.
+                </p>
+              </div>
+            </div>
+            <div style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"12px",padding:"28px 32px",display:"flex",gap:"20px",alignItems:"flex-start"}}>
+              <div aria-hidden="true" style={{minWidth:"44px",height:"44px",borderRadius:"50%",background:"#E8548C",border:"2px solid #D63580",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#FFFFFF",flexShrink:"0"}}>
+                4
+              </div>
+              <div>
+                <h3 style={{fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#2D2D2D",margin:"0 0 8px",lineHeight:"1.3"}}>
+                  Structuring for Movement
+                </h3>
+                <p style={{fontSize:"15px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
+                  You'll build the infrastructure that lets your IP move in the world without losing integrity. Stewardship frameworks, documentation standards, and protection strategies.
+                </p>
+              </div>
+            </div>
+            <div style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"12px",padding:"28px 32px",display:"flex",gap:"20px",alignItems:"flex-start"}}>
+              <div aria-hidden="true" style={{minWidth:"44px",height:"44px",borderRadius:"50%",background:"#E8548C",border:"2px solid #D63580",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#FFFFFF",flexShrink:"0"}}>
+                5
+              </div>
+              <div>
+                <h3 style={{fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#2D2D2D",margin:"0 0 8px",lineHeight:"1.3"}}>
+                  The Stewardship Inventory
+                </h3>
+                <p style={{fontSize:"15px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
+                  You'll classify, protect, and plan your IP strategy with a clear-eyed inventory of what you have, what it's worth, and where it wants to go.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Meet your instructor, Dr. Jamila Dugan" style={{padding:"80px 24px",background:"#FFF9F5"}}>
+        <div style={{maxWidth:"680px",margin:"0 auto",display:"grid",gridTemplateColumns:"auto 1fr",gap:"36px",alignItems:"flex-start"}}>
+          <img 
+            src="/images/jamila-dugan-headshot.jpg" 
+            alt="Dr. Jamila Dugan — leadership coach, Berkeley Ed.D., and co-author of Street Data" 
+            width="96" 
+            height="96" 
+            style={{borderRadius:"50%",objectFit:"cover",border:"3px solid #FFD93D",flexShrink:"0"}} 
+          />
+          <div>
+            <p style={{fontSize:"12px",letterSpacing:"3px",textTransform:"uppercase",color:"#3BA89F",margin:"0 0 10px"}}>
+              Meet Your Instructor
+            </p>
+            <h2 style={{fontFamily:"Georgia, serif",fontSize:"clamp(22px, 3vw, 28px)",fontWeight:"normal",color:"#2D2D2D",margin:"0 0 6px"}}>
+              Dr. Jamila Dugan
+            </h2>
+            <p style={{fontSize:"14px",color:"#D63580",margin:"0 0 20px",letterSpacing:"0.5px"}}>
+              Ed.D., UC Berkeley  ·  Co-author, <em>Street Data</em>
+            </p>
+            <p style={{fontSize:"16px",color:"#5A4A42",margin:"0 0 16px",lineHeight:"1.75"}}>
+              I'm a leadership coach, researcher, and practitioner whose work has shaped schools and districts across the country. I hold an Ed.D. from UC Berkeley and am the co-author of <em>Street Data</em>, a bestselling guide to humanizing the way we use data in education.
+            </p>
+            <p style={{fontSize:"16px",color:"#5A4A42",margin:"0 0 16px",lineHeight:"1.75"}}>
+              I'm also the creator of the Radical Dreaming framework, and I've spent 15+ years working with educators, consultants, and leaders on equity-centered practice, developing an extensive body of intellectual property along the way.
+            </p>
+            <p style={{fontSize:"16px",color:"#5A4A42",margin:"0",lineHeight:"1.75"}}>
+              The IP Stewardship Lab grew from a simple recognition: the people doing the most important equity work are often the least equipped to protect and sustain it. This course is my answer to that gap and my invitation to you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Frequently asked questions" style={{padding:"80px 24px",background:"#FFF9F5"}}>
+        <div style={{maxWidth:"720px",margin:"0 auto"}}>
+          <p style={{fontSize:"12px",letterSpacing:"3px",textTransform:"uppercase",color:"#D63580",margin:"0 0 12px",textAlign:"center"}}>
+            Common questions
+          </p>
+          <h2 style={{fontFamily:"Georgia, serif",fontSize:"clamp(24px, 4vw, 34px)",fontWeight:"normal",color:"#2D2D2D",textAlign:"center",margin:"0 0 48px",lineHeight:"1.3"}}>
+            Frequently Asked Questions
+          </h2>
+          <div>
+            <details style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"10px",marginBottom:"12px",overflow:"hidden"}}>
+              <summary style={{fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#2D2D2D",cursor:"pointer",padding:"20px 24px",listStyle:"none"}}>
+                Who is the IP Stewardship Lab for?
+              </summary>
+              <p style={{fontSize:"15px",color:"#5A4A42",lineHeight:"1.7",padding:"0 24px 20px",margin:"0"}}>
+                The course is designed for educators, consultants, practitioners, and authors who have built frameworks, methodologies, or a body of work and want to protect, structure, and sustain it. If you've created intellectual property that changes rooms when you walk in, but haven't yet built the infrastructure around it, this course is for you.
+              </p>
+            </details>
+            <details style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"10px",marginBottom:"12px",overflow:"hidden"}}>
+              <summary style={{fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#2D2D2D",cursor:"pointer",padding:"20px 24px",listStyle:"none"}}>
+                What will I learn in this course?
+              </summary>
+              <p style={{fontSize:"15px",color:"#5A4A42",lineHeight:"1.7",padding:"0 24px 20px",margin:"0"}}>
+                Across five modules, you'll learn to identify and name all seven layers of your intellectual property, trace the relational roots and knowledge lineage of your work, build documentation and protection strategies, create stewardship frameworks, and develop a complete IP stewardship inventory. By the end, you'll have a clear, actionable plan for your IP.
+              </p>
+            </details>
+            <details style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"10px",marginBottom:"12px",overflow:"hidden"}}>
+              <summary style={{fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#2D2D2D",cursor:"pointer",padding:"20px 24px",listStyle:"none"}}>
+                Who is Dr. Jamila Dugan?
+              </summary>
+              <p style={{fontSize:"15px",color:"#5A4A42",lineHeight:"1.7",padding:"0 24px 20px",margin:"0"}}>
+                Dr. Jamila Dugan holds an Ed.D. from UC Berkeley and is the co-author of Street Data, a bestselling guide to humanizing data use in education. She is a leadership coach, researcher, and the creator of the Radical Dreaming framework, with 15+ years of experience working with educators and leaders across the country.
+              </p>
+            </details>
+            <details style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"10px",marginBottom:"12px",overflow:"hidden"}}>
+              <summary style={{fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#2D2D2D",cursor:"pointer",padding:"20px 24px",listStyle:"none"}}>
+                When does the course start and how much does it cost?
+              </summary>
+              <p style={{fontSize:"15px",color:"#5A4A42",lineHeight:"1.7",padding:"0 24px 20px",margin:"0"}}>
+                The IP Stewardship Lab is currently in development. Sign up with your email to download the free 7-Layer IP Architecture Audit and be the first to know when the course is available.
+              </p>
+            </details>
+            <details style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"10px",marginBottom:"12px",overflow:"hidden"}}>
+              <summary style={{fontFamily:"Georgia, 'Times New Roman', serif",fontSize:"17px",fontWeight:"bold",color:"#2D2D2D",cursor:"pointer",padding:"20px 24px",listStyle:"none"}}>
+                What is the 7-Layer IP Architecture Audit?
+              </summary>
+              <p style={{fontSize:"15px",color:"#5A4A42",lineHeight:"1.7",padding:"0 24px 20px",margin:"0"}}>
+                The 7-Layer IP Architecture Audit is a free nine-page guide that helps you map, protect, and steward every layer of your intellectual property. It covers frameworks, methodologies, content, relationships, processes, lived expertise, and narrative, giving you a clear picture of what you carry and where to start.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Download the free IP Architecture Audit" style={{padding:"80px 24px",background:"linear-gradient(160deg, #FDEEE6 0%, #FFF9F5 100%)",textAlign:"center"}}>
+        <div style={{maxWidth:"640px",margin:"0 auto"}}>
+          <p style={{fontSize:"12px",letterSpacing:"3px",textTransform:"uppercase",color:"#D63580",margin:"0 0 20px",opacity:"0.85"}}>
+            Free Download
+          </p>
+          <h2 style={{fontFamily:"Georgia, serif",fontSize:"clamp(24px, 4vw, 36px)",fontWeight:"normal",color:"#2D2D2D",margin:"0 0 16px",lineHeight:"1.3"}}>
+            7-Layer IP Architecture Audit
+          </h2>
+          <p style={{fontSize:"16px",color:"#5A4A42",margin:"0 auto 36px",maxWidth:"500px",lineHeight:"1.7"}}>
+            A nine-page guide to mapping, protecting, and stewarding every layer of your intellectual property. Free, delivered to your inbox.
+          </p>
+          <div style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"16px",padding:"36px 32px",boxShadow:"0 4px 24px rgba(232, 84, 140, 0.12)"}}>
+            <form aria-label="Download the free IP Architecture Audit" style={{maxWidth:"480px",margin:"0 auto"}}>
+              <div style={{display:"flex",flexDirection:"column",gap:"12px"}}>
+                <input 
+                  type="text" 
+                  placeholder="Your first name (optional)" 
+                  aria-label="First name (optional)" 
+                  style={{padding:"14px 18px",borderRadius:"8px",border:"1.5px solid #F0DED0",background:"#FFFFFF",fontSize:"15px",color:"#2D2D2D",outline:"none",fontFamily:"inherit",width:"100%",boxSizing:"border-box"}} 
+                />
+                <input 
+                  type="email" 
+                  placeholder="Your email address *" 
+                  required 
+                  aria-label="Email address (required)" 
+                  aria-required="true" 
+                  style={{padding:"14px 18px",borderRadius:"8px",border:"1.5px solid #F0DED0",background:"#FFFFFF",fontSize:"15px",color:"#2D2D2D",outline:"none",fontFamily:"inherit",width:"100%",boxSizing:"border-box"}} 
+                />
+                <button 
+                  type="submit" 
+                  style={{padding:"16px 24px",borderRadius:"8px",border:"none",background:"#E8548C",color:"#FFFFFF",fontSize:"16px",fontWeight:"700",cursor:"pointer",fontFamily:"Georgia, 'Times New Roman', serif",letterSpacing:"0.3px",transition:"background 0.2s"}}
+                >
+                  Download the Free 7-Layer IP Architecture Audit
+                </button>
+              </div>
+              <p style={{marginTop:"12px",fontSize:"13px",color:"#8B7B72",textAlign:"center",lineHeight:"1.5"}}>
+                Free PDF delivered to your inbox. No spam, ever. Unsubscribe anytime.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

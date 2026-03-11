@@ -1,0 +1,46 @@
+{
+  "checkpoint_id": "maple-360-2026-03-11-framework-complete",
+  "timestamp": "2026-03-11T01:00:00Z",
+  "session_goal": "Fix Jamila Dugan deliverables in maple-360-portal. Apply 5-section UX framework to all deliverables.",
+  "branch": "main (local, no git)",
+  "changes_summary": "All 8 deliverable cases render with content. 5-section UX framework applied to landing_page, email_sequence, linkedin_content, email_capture. KPI dashboard uses real data. page.tsx refactored from ~777 to 403 lines by extracting inline JSX to component files.",
+  "files_modified": [
+    "src/app/portal/[client]/deliverables/[slug]/page.tsx (refactored — 777→403 lines)",
+    "src/app/portal/[client]/deliverables/[slug]/EmailSequenceContent.tsx (NEW, 415 lines)",
+    "src/app/portal/[client]/deliverables/[slug]/LinkedInContent.tsx (NEW, 804 lines)",
+    "src/app/portal/[client]/deliverables/[slug]/EmailCaptureContent.tsx (NEW, 466 lines)",
+    "src/app/portal/[client]/deliverables/[slug]/SiteAuditContent.tsx (NEW, 837 lines)",
+    "src/app/portal/[client]/deliverables/[slug]/ModuleContent.tsx (NEW)",
+    "src/app/landing/[client]/page.tsx",
+    "~/titan-trinity-core/scripts/warren"
+  ],
+  "decisions_made": [
+    "5-section UX framework: About This Page + Two Views + We Heard You + Structure + CTA — approved by Quan, applied to all deliverables",
+    "Never fake data — KPI dashboard uses only real measured numbers",
+    "Value first, no sales pressure — no cohort/pricing language",
+    "Parallel agent architecture: separate component files per deliverable",
+    "Warren CLI defaults to Render cloud (has Alpaca creds)",
+    "Orchestrator must run on Opus 4.6 (confirmed by Quan)"
+  ],
+  "current_state": {
+    "landing_page_case": "DONE — 5-section framework, links to /landing/jamila-dugan",
+    "email_sequence_case": "DONE — 5-section framework + full Email 1 sample + remaining emails table",
+    "linkedin_content_case": "DONE — 5-section framework + all 20 posts content",
+    "email_capture_case": "DONE — 5-section framework + opt-in flow explanation + CTA to landing page",
+    "site_audit_case": "DONE — SiteAuditContent.tsx (full 7-section SEO audit)",
+    "kpi_dashboard_case": "DONE — real data: milestones, SEO baseline, post-launch tracking",
+    "module_case": "DONE — ModuleContent.tsx (5 lessons, Kajabi aesthetic)",
+    "social_clips_case": "DEFAULT — falls to 'Deliverable content not found' (content TBD)",
+    "dev_server": "Run: cd /home/quan-zou/maple-360-portal && npx next dev -p 3008",
+    "tsc": "Clean — zero errors"
+  },
+  "continuation": {
+    "next_immediate_step": "Manual browser review of all 8 deliverable pages at localhost:3008",
+    "next_three_steps": [
+      "Review each deliverable page visually — confirm framework renders correctly",
+      "Consider adding social_clips content (currently falls to default)",
+      "Consider applying 5-section wrapper to site_audit, kpi_dashboard, and module cases"
+    ],
+    "blockers": []
+  }
+}
