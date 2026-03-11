@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: maple-360-portal
+    runtime: node
+    branch: main
+    rootDir: .
+    buildCommand: npm install && npm run build
+    startCommand: node .next/standalone/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_APP_URL
+        value: https://maple-360-portal.onrender.com
+    plan: free
+    healthCheckPath: /portal/jamila-dugan
