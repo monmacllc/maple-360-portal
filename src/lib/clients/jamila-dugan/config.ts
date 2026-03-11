@@ -335,7 +335,7 @@ export const ISL_CONFIG: ISLConfig = {
       },
       {
         label: "Email List",
-        detail: "No capture system, no nurture sequence, no funnel",
+        detail: "No capture system, no nurture sequence, no journey",
         icon: "MailX",
       },
       {
@@ -362,7 +362,7 @@ export const ISL_CONFIG: ISLConfig = {
       },
       {
         label: "Email List",
-        detail: "12-email funnel converting strangers into students automatically",
+        detail: "12-email sequence converting strangers into students automatically",
         icon: "Mail",
       },
       {
@@ -466,7 +466,7 @@ export const ISL_CONFIG: ISLConfig = {
   clientProfile: {
     name: "Dr. Jamila Dugan, Ed.D.",
     credentials: "Ed.D. UC Berkeley",
-    bio: "Founder and Leadership Coach. Author, Researcher with 15+ years coaching school leaders in justice work. Author of 'Equity Traps and Tropes' and co-author of 'Street Data' (Corwin Press). Ed.D. UC Berkeley, national speaker.",
+    bio: "Founder and Leadership Coach with 15+ years coaching school leaders in justice work. Author of 'Equity Traps and Tropes' and co-author of 'Street Data' (Corwin Press). Ed.D. UC Berkeley, national speaker.",
     existingAssets: [
       "Bestselling book with national reach and established media attention",
       "3 named IP frameworks: tested, refined, and ready to teach",

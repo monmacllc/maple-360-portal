@@ -3111,7 +3111,7 @@ export default function ISLPitchDeck() {
         <SectionHeading
           accent="pink"
           label="Marketing Engine"
-          sub="12-email full funnel. LinkedIn growth strategy. All copy drafted in your voice. Nothing publishes without your approval."
+          sub="12-email full sequence. LinkedIn growth strategy. All copy drafted in your voice. Nothing publishes without your approval."
         >
           Marketing Engine
         </SectionHeading>
@@ -3121,11 +3121,11 @@ export default function ISLPitchDeck() {
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
             <Mail size={18} color={T.pink} />
             <h3 style={{ fontSize: "1.15rem", fontWeight: 700, color: T.textPrimary, margin: 0 }}>
-              Email Funnel Strategy: 12 Emails, 3 Sequences
+              Email Sequence Strategy: 12 Emails, 3 Sequences
             </h3>
           </div>
 
-          {/* Visual funnel */}
+          {/* Visual sequence */}
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 24, flexWrap: "wrap" }}>
             {[
               { label: "Lead Magnet Download", color: T.textTertiary, border: T.glassBorder, bg: T.glass },
@@ -3229,7 +3229,7 @@ export default function ISLPitchDeck() {
                               {email.trigger}
                             </span>
                           </div>
-                          {/* Purpose field - what this email does for the funnel */}
+                          {/* Purpose field - what this email does for the sequence */}
                           <div style={{ fontSize: "0.8rem", fontWeight: 600, color: seqColor, marginBottom: 6, lineHeight: 1.45 }}>
                             {email.purpose}
                           </div>

@@ -403,7 +403,7 @@ const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
               7-Layer IP Architecture Audit
             </h3>
             <p style={{ fontSize: '1.1rem', color: T.textPrimary, lineHeight: 1.6 }}>
-              9-page PDF guide designed and ready to distribute. Professional landing page with optimized conversion funnel, automated delivery system, and welcome sequence.
+              9-page PDF guide designed and ready to distribute. Professional landing page with optimized conversion design, automated delivery system, and welcome sequence.
             </p>
           </div>
 
