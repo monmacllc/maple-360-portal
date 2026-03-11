@@ -12,7 +12,7 @@ const T = {
   lightGray: "#E8E4DE",
   tableHeader: "#F0EDE8",
   green: "#48BB78",
-  amber: "#FFD93D",
+  amber: "#B7791F",
   shadow: "rgba(0, 0, 0, 0.08)",
 };
 
@@ -33,7 +33,7 @@ export default function EmailSequenceContent() {
             About This Page
           </p>
           <p style={{ fontSize: "0.95rem", color: T.textPrimary, margin: 0, lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
-            This is your deliverable review page — it is only visible to you. Below you will find the structure of your 5-email welcome and nurture sequence, a sample of Email 1 for tone review, and the subjects for the remaining four. When you approve the tone and direction, we finalize the full sequence.
+            This is your deliverable review page. It is only visible to you. Below you will find the structure of your 5-email welcome and nurture sequence, a sample of Email 1 for tone review, and the subjects for the remaining four. When you approve the tone and direction, we finalize the full sequence.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export default function EmailSequenceContent() {
                   "Receives emails automatically after downloading the free audit",
                   "5 emails over 7 days",
                   "Each email builds on stewardship themes",
-                  "No sales pressure — value and thinking only",
+                  "No sales pressure. Value and thinking only.",
                 ].map((item) => (
                   <li key={item} style={{ fontSize: "0.9rem", color: T.textPrimary, lineHeight: 1.6 }}>
                     {item}
@@ -98,16 +98,17 @@ export default function EmailSequenceContent() {
 
         {/* Section 3 — We Heard You */}
         <div style={{
-          background: T.bgSecondary,
+          background: "#F0FAF9",
           borderRadius: 12,
-          padding: "1.5rem 2rem",
-          border: `1px solid ${T.lightGray}`,
-          boxShadow: `0 2px 12px ${T.shadow}`,
+          padding: "2rem 2rem",
+          border: `1px solid ${T.teal}`,
+          borderLeft: `4px solid ${T.teal}`,
+          boxShadow: "0 2px 16px rgba(126, 203, 196, 0.18)",
         }}>
-          <p style={{ fontSize: "0.78rem", fontWeight: 700, color: T.textSecondary, textTransform: "uppercase", letterSpacing: "0.08em", margin: "0 0 1rem" }}>
+          <p style={{ fontSize: "1.2rem", fontWeight: 700, color: T.slate, margin: "0 0 1.25rem", letterSpacing: "0.01em" }}>
             We Heard You
           </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
             {[
               {
                 heard: "The tone should feel like a letter from a colleague, not a marketing funnel.",
@@ -119,30 +120,30 @@ export default function EmailSequenceContent() {
               },
               {
                 heard: "I do not want this to feel like a drip campaign or sales sequence.",
-                addressed: "Sequence framed as \u2018thinking emails\u2019 \u2014 each one explores an idea, not a pitch. The word \u2018buy\u2019 does not appear anywhere.",
+                addressed: "Sequence framed as thinking emails. Each one explores an idea, not a pitch. The word buy does not appear anywhere.",
               },
             ].map((row, i) => (
               <div key={i} style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
                 gap: "0",
-                border: `1px solid ${T.lightGray}`,
+                border: `1px solid ${T.teal}`,
                 borderRadius: 8,
                 overflow: "hidden",
               }}>
-                <div style={{ padding: "0.9rem 1.1rem", background: T.bgLight, borderRight: `1px solid ${T.lightGray}` }}>
-                  <p style={{ fontSize: "0.7rem", fontWeight: 700, color: T.textSecondary, textTransform: "uppercase", letterSpacing: "0.06em", margin: "0 0 0.35rem" }}>
-                    You Said
+                <div style={{ padding: "1.25rem 1.4rem", background: "#E6F6F5", borderRight: `1px solid ${T.teal}` }}>
+                  <p style={{ fontSize: "0.72rem", fontWeight: 700, color: T.textSecondary, textTransform: "uppercase", letterSpacing: "0.06em", margin: "0 0 0.45rem" }}>
+                    What You Said
                   </p>
-                  <p style={{ fontSize: "0.88rem", color: T.textPrimary, margin: 0, lineHeight: 1.65, fontFamily: 'Georgia, "Times New Roman", serif', fontStyle: "italic" }}>
+                  <p style={{ fontSize: "0.95rem", color: T.textPrimary, margin: 0, lineHeight: 1.7, fontFamily: 'Georgia, "Times New Roman", serif', fontStyle: "italic" }}>
                     &ldquo;{row.heard}&rdquo;
                   </p>
                 </div>
-                <div style={{ padding: "0.9rem 1.1rem", background: T.bgSecondary }}>
-                  <p style={{ fontSize: "0.7rem", fontWeight: 700, color: T.teal, textTransform: "uppercase", letterSpacing: "0.06em", margin: "0 0 0.35rem" }}>
+                <div style={{ padding: "1.25rem 1.4rem", background: "#F0FAF9" }}>
+                  <p style={{ fontSize: "0.72rem", fontWeight: 700, color: T.teal, textTransform: "uppercase", letterSpacing: "0.06em", margin: "0 0 0.45rem" }}>
                     How We Addressed It
                   </p>
-                  <p style={{ fontSize: "0.88rem", color: T.textPrimary, margin: 0, lineHeight: 1.65, fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                  <p style={{ fontSize: "0.95rem", color: T.textPrimary, margin: 0, lineHeight: 1.7, fontFamily: 'Georgia, "Times New Roman", serif' }}>
                     {row.addressed}
                   </p>
                 </div>
@@ -160,17 +161,17 @@ export default function EmailSequenceContent() {
           boxShadow: `0 2px 12px ${T.shadow}`,
         }}>
           <p style={{ fontSize: "0.78rem", fontWeight: 700, color: T.textSecondary, textTransform: "uppercase", letterSpacing: "0.08em", margin: "0 0 1.25rem" }}>
-            Structure — Full Deliverable
+            Structure. Full Deliverable
           </p>
 
           {/* === Existing email_sequence content begins === */}
           <div style={{ background: T.bgSecondary, borderRadius: 12, padding: "2rem", maxWidth: 800, margin: "0 auto", border: `1px solid ${T.lightGray}`, boxShadow: `0 2px 16px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04)` }}>
             <h1 style={{ fontSize: "1.65rem", fontWeight: 700, color: T.slate, margin: "0 0 0.5rem", lineHeight: 1.25, fontFamily: "system-ui, sans-serif" }}>
-              Welcome Email Sequence — Sample for Review
+              Welcome Email Sequence. Sample for Review
             </h1>
 
             <h2 style={{ fontSize: "1.05rem", fontWeight: 700, color: T.slate, margin: "1.75rem 0 0.5rem", fontFamily: "system-ui, sans-serif", borderBottom: `2px solid ${T.tableHeader}`, paddingBottom: "0.3rem" }}>
-              IP Stewardship Lab — Dr. Jamila Dugan
+              IP Stewardship Lab. Dr. Jamila Dugan
             </h2>
 
             <div style={{ height: "0.4rem" }}></div>
@@ -186,7 +187,7 @@ export default function EmailSequenceContent() {
             <div style={{ height: "0.4rem" }}></div>
 
             <h2 style={{ fontSize: "1.05rem", fontWeight: 700, color: T.slate, margin: "1.75rem 0 0.5rem", fontFamily: "system-ui, sans-serif", borderBottom: `2px solid ${T.tableHeader}`, paddingBottom: "0.3rem" }}>
-              Email 1 of 5 — Welcome + Audit Delivery
+              Email 1 of 5. Welcome + Audit Delivery
             </h2>
 
             <div style={{ height: "0.4rem" }}></div>
@@ -220,13 +221,13 @@ export default function EmailSequenceContent() {
             <div style={{ height: "0.4rem" }}></div>
 
             <p style={{ fontSize: "0.95rem", color: T.textPrimary, margin: "0.35rem 0", lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
-              This is not a checklist. It is a diagnostic — designed to help you see the full scope of what you carry as a practitioner, and to identify the layers of your intellectual property that may be unprotected, unstructured, or unnamed.
+              This is not a checklist. It is a diagnostic, designed to help you see the full scope of what you carry as a practitioner, and to identify the layers of your intellectual property that may be unprotected, unstructured, or unnamed.
             </p>
 
             <div style={{ height: "0.4rem" }}></div>
 
             <p style={{ fontSize: "0.95rem", color: T.textPrimary, margin: "0.35rem 0", lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
-              Most people who take this audit discover that they have significantly more intellectual property than they realized. The frameworks they have built, the facilitation moves they have refined, the relational knowledge they carry into every room — all of it is IP. And most of it has no infrastructure around it.
+              Most people who take this audit discover that they have significantly more intellectual property than they realized. The frameworks they have built, the facilitation moves they have refined, the relational knowledge they carry into every room. All of it is IP. And most of it has no infrastructure around it.
             </p>
 
             <div style={{ height: "0.4rem" }}></div>
@@ -244,19 +245,19 @@ export default function EmailSequenceContent() {
             <div style={{ height: "0.4rem" }}></div>
 
             <p style={{ fontSize: "0.95rem", color: T.textPrimary, margin: "0.35rem 0", lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
-              Take your time with it. There are seven layers, and each one asks a different question about how your work lives in the world. When you are finished, you will have a clearer picture of what you have built — and where the gaps are.
+              Take your time with it. There are seven layers, and each one asks a different question about how your work lives in the world. When you are finished, you will have a clearer picture of what you have built, and where the gaps are.
             </p>
 
             <div style={{ height: "0.4rem" }}></div>
 
             <p style={{ fontSize: "0.95rem", color: T.textPrimary, margin: "0.35rem 0", lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
-              Over the next week, I am going to send you a few short emails that go deeper into the ideas behind this audit. Not sales emails — thinking emails. The kind of thing I would send to a colleague I respected.
+              Over the next week, I am going to send you a few short emails that go deeper into the ideas behind this audit. Not sales emails. Thinking emails. The kind of thing I would send to a colleague I respected.
             </p>
 
             <div style={{ height: "0.4rem" }}></div>
 
             <p style={{ fontSize: "0.95rem", color: T.textPrimary, margin: "0.35rem 0", lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
-              The first one will arrive in a couple of days. It is about the difference between stewarding your IP and extracting from it — and why that distinction matters more than most people realize.
+              The first one will arrive in a couple of days. It is about the difference between stewarding your IP and extracting from it, and why that distinction matters more than most people realize.
             </p>
 
             <div style={{ height: "0.4rem" }}></div>
@@ -278,7 +279,7 @@ export default function EmailSequenceContent() {
             <div style={{ height: "0.4rem" }}></div>
 
             <p style={{ fontSize: "0.95rem", color: T.textPrimary, margin: "0.35rem 0", lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif' }}>
-              P.S. — If you score below 15 on the audit, at least one layer of your IP is significantly unprotected. That is worth knowing.
+              P.S. If you score below 15 on the audit, at least one layer of your IP is significantly unprotected. That is worth knowing.
             </p>
 
             <div style={{ height: "0.4rem" }}></div>

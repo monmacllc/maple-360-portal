@@ -12,7 +12,7 @@ const T = {
   lightGray: "#E8E4DE",
   tableHeader: "#F0EDE8",
   green: "#48BB78",
-  amber: "#FFD93D",
+  amber: "#B7791F",
   shadow: "rgba(0, 0, 0, 0.08)",
 };
 
@@ -32,7 +32,7 @@ const feedbackRows: FeedbackRow[] = [
     heard:
       "I do not want people to feel like they are entering a sales funnel.",
     addressed:
-      "After opting in, the confirmation message and emails are framed as \u2018thinking emails from a colleague\u2019 \u2014 not a drip campaign. Unsubscribe is always one click.",
+      "After opting in, the confirmation message and emails are framed as \u2018thinking emails from a colleague.\u2019 This is not a drip campaign. Unsubscribe is always one click.",
   },
   {
     heard:
@@ -65,7 +65,7 @@ const structureSteps: StructureStep[] = [
     number: "03",
     title: "Email Delivery",
     description:
-      "Resend handles transactional email delivery. The audit PDF is attached or linked in the first email. Delivery is immediate \u2014 no delays.",
+      "Resend handles transactional email delivery. The audit PDF is attached or linked in the first email. Delivery is immediate, with no delays.",
   },
   {
     number: "04",
@@ -94,7 +94,7 @@ export default function EmailCaptureContent() {
     >
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
 
-        {/* Section 1 — About This Page */}
+        {/* Section 1, About This Page */}
         <section style={{ marginBottom: 48 }}>
           <div
             style={{
@@ -113,7 +113,7 @@ export default function EmailCaptureContent() {
                 color: T.textPrimary,
               }}
             >
-              This is your deliverable review page \u2014 it is only visible to you.
+              This is your deliverable review page, visible only to you.
               Below you will find how your email capture system works, what your
               audience experiences, and how it connects to the rest of your
               funnel. The opt-in form is live on your landing page.
@@ -121,7 +121,7 @@ export default function EmailCaptureContent() {
           </div>
         </section>
 
-        {/* Section 2 — Two Views */}
+        {/* Section 2, Two Views */}
         <section style={{ marginBottom: 48 }}>
           <h2
             style={{
@@ -162,7 +162,7 @@ export default function EmailCaptureContent() {
                   fontFamily: "system-ui, sans-serif",
                 }}
               >
-                Your View \u2014 Dr. Dugan
+                Your View, Dr. Dugan
               </p>
               <ul
                 style={{
@@ -220,13 +220,13 @@ export default function EmailCaptureContent() {
                   immediately
                 </li>
                 <li>Enters the 5-email welcome sequence automatically</li>
-                <li>No friction \u2014 no credit card, no account creation</li>
+                <li>No friction. No credit card, no account creation</li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* Section 3 — We Heard You */}
+        {/* Section 3, We Heard You */}
         <section style={{ marginBottom: 48 }}>
           <h2
             style={{
@@ -323,7 +323,7 @@ export default function EmailCaptureContent() {
           </div>
         </section>
 
-        {/* Section 4 — Structure */}
+        {/* Section 4, Structure */}
         <section style={{ marginBottom: 48 }}>
           <h2
             style={{
@@ -390,7 +390,7 @@ export default function EmailCaptureContent() {
           </div>
         </section>
 
-        {/* Section 5 — CTA */}
+        {/* Section 5, CTA */}
         <section>
           <div
             style={{

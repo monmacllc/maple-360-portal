@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getClient, getAllClientSlugs } from '@/lib/clients';
+import VanessaPortalPage from './VanessaPortalPage';
 import type { Metadata } from 'next';
 
 type Props = { params: Promise<{ client: string }> };
@@ -20,6 +21,11 @@ export default async function PortalPage({ params }: Props) {
   const { client: slug } = await params;
   const client = getClient(slug);
   if (!client) notFound();
+
+  // Vanessa gets her dedicated onboarding portal
+  if (slug === 'vanessa-michele') {
+    return <VanessaPortalPage />;
+  }
 
   const completedCount = client.deliverables.filter(d => d.status === 'completed').length;
   const totalCount = client.deliverables.length;

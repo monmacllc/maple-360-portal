@@ -18,7 +18,7 @@ const T = {
   lightGray: "#E8E4DE",
   tableHeader: "#F0EDE8",
   green: "#48BB78",
-  amber: "#FFD93D",
+  amber: "#B7791F",
   shadow: "rgba(0, 0, 0, 0.08)",
 };
 
@@ -129,7 +129,7 @@ function AboutSection() {
           fontFamily: 'Georgia, "Times New Roman", serif',
         }}
       >
-        This is your deliverable review page — it is only visible to you. Below you will find
+        This is your deliverable review page. It is only visible to you. Below you will find
         your 20 LinkedIn posts organized by category, with posting notes for each. These are
         ready for your review. Once approved, they can be scheduled or posted directly from
         your LinkedIn account.
@@ -182,7 +182,7 @@ function TwoViewsSection() {
       <div style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap" as const }}>
         <div style={cardStyle}>
           <p style={labelStyle}>What you see</p>
-          <h3 style={headingStyle}>Dr. Dugan — Client View</h3>
+          <h3 style={headingStyle}>Dr. Dugan. Client View</h3>
           <ul style={listStyle}>
             <li>All 20 posts with full copy</li>
             <li>Posting notes and timing recommendations</li>
@@ -198,7 +198,7 @@ function TwoViewsSection() {
           <ul style={listStyle}>
             <li>Sees individual posts in their LinkedIn feed</li>
             <li>Each post stands alone as a complete thought</li>
-            <li>No &ldquo;funnel&rdquo; language — pure thought leadership</li>
+            <li>No &ldquo;funnel&rdquo; language. Pure thought leadership.</li>
             <li>Engagement prompts invite genuine dialogue</li>
           </ul>
         </div>
@@ -219,7 +219,7 @@ interface FeedbackRow {
 const feedbackRows: FeedbackRow[] = [
   {
     heard:
-      "The writing should sound like me — not like AI-generated LinkedIn content.",
+      "The writing should sound like me, not like AI-generated LinkedIn content.",
     addressed:
       "All 20 posts written to match your published voice: long-form, reflective, no listicles or hack-style formatting. Reviewed against your actual LinkedIn posts and writing samples.",
   },
@@ -238,8 +238,38 @@ const feedbackRows: FeedbackRow[] = [
 
 function WeHeardYouSection() {
   return (
-    <SectionCard>
-      <SectionLabel number="3" title="We Heard You" />
+    <SectionCard
+      style={{
+        borderLeft: `4px solid ${T.teal}`,
+        background: "#F0FAF9",
+      }}
+    >
+      <div style={{ marginBottom: "1.25rem" }}>
+        <SectionLabel number="3" title="We Heard You" />
+        <h2
+          style={{
+            fontSize: "1.25rem",
+            fontWeight: 700,
+            color: T.slate,
+            margin: "0.25rem 0 0.25rem",
+            fontFamily: "system-ui, sans-serif",
+            lineHeight: 1.3,
+          }}
+        >
+          Your feedback, addressed directly.
+        </h2>
+        <p
+          style={{
+            fontSize: "0.9rem",
+            color: T.textSecondary,
+            margin: 0,
+            fontFamily: 'Georgia, "Times New Roman", serif',
+            fontStyle: "italic",
+          }}
+        >
+          Every concern you raised shaped the final posts.
+        </p>
+      </div>
       <div style={{ display: "flex", flexDirection: "column" as const }}>
         {feedbackRows.map((row, i) => (
           <div key={i}>
@@ -247,27 +277,27 @@ function WeHeardYouSection() {
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
-                gap: "1.25rem",
-                padding: "1rem 0",
+                gap: "1.5rem",
+                padding: "1.25rem 0",
               }}
             >
-              <div>
+              <div style={{ padding: "0 0 0 0.5rem" }}>
                 <p
                   style={{
-                    fontSize: "0.68rem",
+                    fontSize: "0.72rem",
                     fontWeight: 700,
                     letterSpacing: "0.09em",
                     textTransform: "uppercase" as const,
                     color: T.salmon,
                     fontFamily: "system-ui, sans-serif",
-                    margin: "0 0 0.35rem",
+                    margin: "0 0 0.5rem",
                   }}
                 >
-                  You said
+                  What you said
                 </p>
                 <p
                   style={{
-                    fontSize: "0.9rem",
+                    fontSize: "0.95rem",
                     color: T.textPrimary,
                     lineHeight: 1.75,
                     margin: 0,
@@ -278,23 +308,23 @@ function WeHeardYouSection() {
                   &ldquo;{row.heard}&rdquo;
                 </p>
               </div>
-              <div>
+              <div style={{ padding: "0 0 0 0.5rem" }}>
                 <p
                   style={{
-                    fontSize: "0.68rem",
+                    fontSize: "0.72rem",
                     fontWeight: 700,
                     letterSpacing: "0.09em",
                     textTransform: "uppercase" as const,
                     color: T.green,
                     fontFamily: "system-ui, sans-serif",
-                    margin: "0 0 0.35rem",
+                    margin: "0 0 0.5rem",
                   }}
                 >
                   How we addressed it
                 </p>
                 <p
                   style={{
-                    fontSize: "0.9rem",
+                    fontSize: "0.95rem",
                     color: T.textPrimary,
                     lineHeight: 1.75,
                     margin: 0,
@@ -467,7 +497,7 @@ function StructureSection() {
             fontFamily: "system-ui, sans-serif",
           }}
         >
-          LinkedIn Post Templates &mdash; Dr. Jamila Dugan / IP Stewardship Lab
+          LinkedIn Post Templates. Dr. Jamila Dugan / IP Stewardship Lab
         </h1>
         <p
           style={{
@@ -490,7 +520,7 @@ function StructureSection() {
             fontFamily: 'Georgia, "Times New Roman", serif',
           }}
         >
-          <strong>Tone reference:</strong> Writing Style Guide &mdash; Dr. Jamila Dugan
+          <strong>Tone reference:</strong> Writing Style Guide, Dr. Jamila Dugan
         </p>
         <p
           style={{
@@ -565,7 +595,7 @@ function StructureSection() {
           <PostBody>Not because income doesn&rsquo;t matter. It does.</PostBody>
           <Gap />
           <PostBody>
-            But because the word &ldquo;extraction&rdquo; carries a logic inside it &mdash; a
+            But because the word &ldquo;extraction&rdquo; carries a logic inside it. A
             logic that says your knowledge is a raw material waiting to be processed into product.
             That the move from practitioner to course creator is primarily a transaction. That what
             you know is most valuable as a revenue stream.
@@ -582,8 +612,8 @@ function StructureSection() {
           <Gap />
           <PostBody>
             Stewardship is a different posture. It asks: what conditions would allow your IP to
-            move in the world without losing what makes it alive? What infrastructure does it need
-            &mdash; not just to generate revenue, but to remain faithful to the communities it was
+            move in the world without losing what makes it alive? What infrastructure does it need,
+            not just to generate revenue, but to remain faithful to the communities it was
             built with?
           </PostBody>
           <Gap />
@@ -598,7 +628,7 @@ function StructureSection() {
           </PostBody>
           <Gap />
           <PostBody>
-            What word do you use &mdash; or wish you could use &mdash; instead of
+            What word do you use, or wish you could use, instead of
             &ldquo;extract&rdquo;?
           </PostBody>
           <Gap />

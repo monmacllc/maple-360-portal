@@ -27,7 +27,7 @@ const T = {
   lightGray: "#E8E4DE", // borders
   tableHeader: "#F0EDE8", // table headers
   green: "#48BB78", // success/completed states
-  amber: "#FFD93D", // warning states
+  amber: "#B7791F", // warning states
   shadow: "rgba(0, 0, 0, 0.08)", // enhanced shadows
 };
 
@@ -340,14 +340,14 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
               About This Page
             </p>
             <p style={{ fontSize: '1rem', color: T.slate, margin: 0, lineHeight: 1.7 }}>
-              This is your <strong>deliverable review page</strong> — it is only visible to you. It explains how your landing page is structured, what your audience will see, and what feedback we addressed. When you are ready to preview the actual page your audience will visit, use the button at the bottom.
+              This is your <strong>deliverable review page</strong>, visible only to you. It explains how your landing page is structured, what your audience will see, and what feedback we addressed. When you are ready to preview the actual page your audience will visit, use the button at the bottom.
             </p>
           </div>
 
           {/* ── SECTION 2: Two Audiences ── */}
           <div style={{ background: T.bgSecondary, borderRadius: 12, border: `1px solid ${T.lightGray}`, boxShadow: `0 2px 8px ${T.shadow}`, padding: '24px' }}>
             <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: T.textSecondary, margin: '0 0 16px' }}>
-              Two Views — Who Sees What
+              Two Views: Who Sees What
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
               {/* Client view */}
@@ -372,7 +372,7 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
                 <ul style={{ margin: 0, paddingLeft: 16, color: T.textPrimary, fontSize: '0.9rem', lineHeight: 2 }}>
                   <li>The 7-Layer IP Architecture Audit opt-in only</li>
                   <li>Free download in exchange for email</li>
-                  <li>No portal, no deliverables — just the offer</li>
+                  <li>No portal, no deliverables. Just the offer.</li>
                   <li>Leads into your welcome email sequence</li>
                 </ul>
               </div>
@@ -380,21 +380,21 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
           </div>
 
           {/* ── SECTION 3: We Heard You ── */}
-          <div style={{ background: T.bgSecondary, borderRadius: 12, border: `1px solid ${T.lightGray}`, boxShadow: `0 2px 8px ${T.shadow}`, padding: '24px' }}>
-            <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: T.textSecondary, margin: '0 0 6px' }}>
+          <div style={{ background: T.bgSecondary, borderRadius: 12, border: `1px solid ${T.lightGray}`, borderLeft: `4px solid ${T.teal}`, boxShadow: `0 2px 8px ${T.shadow}`, padding: '24px' }}>
+            <p style={{ fontSize: '1.2rem', fontWeight: 700, color: T.slate, margin: '0 0 6px' }}>
               We Heard You
             </p>
-            <p style={{ fontSize: '0.875rem', color: T.textSecondary, margin: '0 0 18px', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '0.95rem', color: T.textSecondary, margin: '0 0 18px', lineHeight: 1.6 }}>
               Here is what you shared with us and exactly what we addressed.
             </p>
             <div style={{ display: 'grid', gap: 10 }}>
               {[
                 {
-                  heard: 'The framing needs to be clearer — this is not about hoarding knowledge, it is about stewardship paired with generosity and clarity.',
+                  heard: 'The framing needs to be clearer. This is not about hoarding knowledge. It is about stewardship paired with generosity and clarity.',
                   addressed: 'Hero copy reframed. The page now leads with stewardship as expansion, not protection. The word “extracted” is used deliberately to contrast with your philosophy.',
                 },
                 {
-                  heard: 'The language should feel authentic to how I actually write and speak — not corporate.',
+                  heard: 'The language should feel authentic to how I actually write and speak. Not corporate.',
                   addressed: 'All copy reviewed against your writing samples and LinkedIn voice. Sentence rhythm and word choice match your style throughout.',
                 },
                 {
@@ -411,13 +411,13 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
                 },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, borderRadius: 8, overflow: 'hidden', border: `1px solid ${T.lightGray}` }}>
-                  <div style={{ padding: '14px 16px', background: '#FFFBF8', borderRight: `1px solid ${T.lightGray}` }}>
-                    <div style={{ fontSize: '0.7rem', fontWeight: 700, color: T.textSecondary, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>What you said</div>
-                    <p style={{ margin: 0, fontSize: '0.875rem', color: T.textPrimary, lineHeight: 1.6, fontStyle: 'italic' }}>&ldquo;{item.heard}&rdquo;</p>
+                  <div style={{ padding: '20px', background: '#FFFBF8', borderRight: `1px solid ${T.lightGray}` }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: T.textSecondary, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 8 }}>What you said</div>
+                    <p style={{ margin: 0, fontSize: '0.95rem', color: T.textPrimary, lineHeight: 1.6, fontStyle: 'italic' }}>&ldquo;{item.heard}&rdquo;</p>
                   </div>
-                  <div style={{ padding: '14px 16px', background: '#F0F9F8' }}>
-                    <div style={{ fontSize: '0.7rem', fontWeight: 700, color: T.teal, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>✓ What we did</div>
-                    <p style={{ margin: 0, fontSize: '0.875rem', color: T.textPrimary, lineHeight: 1.6 }}>{item.addressed}</p>
+                  <div style={{ padding: '20px', background: '#F0F9F8' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: T.teal, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 8 }}>&#10003; What we did</div>
+                    <p style={{ margin: 0, fontSize: '0.95rem', color: T.textPrimary, lineHeight: 1.6 }}>{item.addressed}</p>
                   </div>
                 </div>
               ))}
@@ -457,7 +457,7 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
               Ready to Preview?
             </p>
             <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0 0 20px', lineHeight: 1.7, maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>
-              The button below opens the actual page your audience will see — the public-facing landing page with the free audit opt-in.
+              The button below opens the actual page your audience will see: the public-facing landing page with the free audit opt-in.
             </p>
             <a
               href="/landing/jamila-dugan"
@@ -632,7 +632,50 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
       );
 
     case 'module':
-      return <ModuleContent />;
+      return (
+        <div style={{ display: 'grid', gap: 20 }}>
+          <div style={{ background: '#FFF9F5', border: `2px solid ${T.amber}`, borderRadius: 12, padding: '16px 24px', display: 'flex', alignItems: 'center', gap: 12 }}>
+            <Clock size={18} color={T.amber} style={{ flexShrink: 0 }} />
+            <div>
+              <p style={{ fontSize: '0.85rem', fontWeight: 700, color: T.slate, margin: '0 0 4px' }}>
+                In Progress
+              </p>
+              <p style={{ fontSize: '0.9rem', color: T.textPrimary, margin: 0, lineHeight: 1.6 }}>
+                Module 1 is currently being revised. We will have an updated version for your review by Friday.
+              </p>
+            </div>
+          </div>
+          <ModuleContent />
+        </div>
+      );
+
+    case 'social_clips':
+      return (
+        <div style={{ display: 'grid', gap: 20 }}>
+          <div style={{ background: '#FFF9F5', border: `2px solid ${T.teal}`, borderRadius: 12, padding: '20px 24px' }}>
+            <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: T.teal, margin: '0 0 8px' }}>
+              About This Deliverable
+            </p>
+            <p style={{ fontSize: '1rem', color: T.slate, margin: 0, lineHeight: 1.7 }}>
+              This is your social media clips deliverable. Short-form video clips will be created for distribution across your social channels.
+            </p>
+          </div>
+          <div style={{ background: T.bgSecondary, borderRadius: 12, border: `1px solid ${T.lightGray}`, boxShadow: `0 2px 8px ${T.shadow}`, padding: '32px 24px', textAlign: 'center' }}>
+            <div style={{ width: 56, height: 56, borderRadius: '50%', background: T.bgLight, border: `2px solid ${T.teal}`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', fontSize: '1.5rem' }}>
+              <Clock size={24} color={T.teal} />
+            </div>
+            <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: T.slate, margin: '0 0 12px', fontFamily: 'Georgia, serif' }}>
+              Awaiting Your Direction
+            </h3>
+            <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0 0 8px', lineHeight: 1.7, maxWidth: 520, marginLeft: 'auto', marginRight: 'auto' }}>
+              We are ready to begin creating your social media clips as soon as we have your direction on content preferences, style, and any specific clips you would like produced.
+            </p>
+            <p style={{ fontSize: '0.875rem', color: T.textSecondary, margin: '16px 0 0', lineHeight: 1.6 }}>
+              Share your preferences with your Maple 360 contact and we will get started right away.
+            </p>
+          </div>
+        </div>
+      );
 
     default:
       return (
