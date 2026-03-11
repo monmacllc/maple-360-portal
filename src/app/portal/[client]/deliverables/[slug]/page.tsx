@@ -118,7 +118,7 @@ const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
                   <li>Innovation Capacity</li>
                   <li>Stewardship Philosophy</li>
                 </ul>
-                <p>Take your time with this. The goal is not completion but recognition—seeing the full architecture of what you've built.</p>
+                <p>Take your time with this. The goal is not completion but recognition, seeing the full architecture of what you've built.</p>
                 <br />
                 <p>What questions come up as you work through it? I read every response.</p>
                 <br />

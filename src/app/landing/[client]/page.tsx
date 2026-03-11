@@ -9,18 +9,18 @@ export default function ISLPitchDeck() {
             A five-module course for educators and consultants
           </p>
           <h1 style={{fontSize:"clamp(28px, 5vw, 48px)",fontWeight:"normal",color:"#2D2D2D",margin:"0 0 24px",lineHeight:"1.25",letterSpacing:"-0.5px"}}>
-            Your intellectual property deserves structure <span style={{color:"#E8548C"}}>—</span> not just something to be extracted.
+            Your intellectual property deserves structure, not just something to be extracted.
           </h1>
           <div aria-hidden="true" style={{width:"56px",height:"2px",background:"#FFD93D",margin:"0 auto 28px"}}></div>
           <p style={{fontSize:"clamp(16px, 2.5vw, 19px)",color:"#5A4A42",margin:"0 auto 32px",maxWidth:"640px",lineHeight:"1.7",fontStyle:"normal"}}>
-            If you're an educator, consultant, or practitioner who is ready to protect, structure, and sustain the work you've built — this course was made for you.
+            If you're an educator, consultant, or practitioner who is ready to protect, structure, and sustain the work you've built. This course was made for you.
           </p>
           <blockquote style={{borderLeft:"4px solid #4ECDC4",paddingLeft:"24px",margin:"0 auto 40px",maxWidth:"620px",textAlign:"left"}}>
             <p style={{fontSize:"16px",color:"#5A4A42",margin:"0 0 10px",lineHeight:"1.75",fontStyle:"italic"}}>
-              "I've spent fifteen years watching brilliant practitioners build frameworks that change rooms — and then watch those same frameworks get extracted, diluted, or simply lost because the infrastructure around them was never built. This course is the infrastructure."
+              "I've spent fifteen years watching brilliant practitioners build frameworks that change rooms, and then watch those same frameworks get extracted, diluted, or simply lost because the infrastructure around them was never built. This course is the infrastructure."
             </p>
             <cite style={{fontSize:"14px",color:"#8B7B72",fontStyle:"normal",letterSpacing:"0.4px"}}>
-              — Dr. Jamila Dugan
+              - Dr. Jamila Dugan
             </cite>
           </blockquote>
           <p style={{fontSize:"14px",color:"#8B7B72",margin:"0 0 44px",letterSpacing:"0.5px"}}>
@@ -34,7 +34,7 @@ export default function ISLPitchDeck() {
               7-Layer IP Architecture Audit
             </p>
             <p style={{fontSize:"14px",color:"#8B7B72",margin:"0 0 28px",lineHeight:"1.6"}}>
-              A nine-page guide to mapping, protecting, and stewarding every layer of your intellectual property — free, delivered to your inbox.
+              A nine-page guide to mapping, protecting, and stewarding every layer of your intellectual property, free, delivered to your inbox.
             </p>
             <form aria-label="Download the free IP Architecture Audit" style={{maxWidth:"520px",margin:"0 auto"}}>
               <div style={{display:"flex",flexDirection:"column",gap:"12px"}}>
@@ -97,7 +97,7 @@ export default function ISLPitchDeck() {
                 Unprotected
               </h3>
               <p style={{fontSize:"14px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
-                Work that can be replicated, repurposed, or taken — because it was never structured for ownership.
+                Work that can be replicated, repurposed, or taken, because it was never structured for ownership.
               </p>
             </div>
             <div style={{background:"#FDEEE6",borderRadius:"10px",padding:"24px 22px",borderTop:"3px solid #FFD93D"}}>
@@ -105,7 +105,7 @@ export default function ISLPitchDeck() {
                 Undervalued
               </h3>
               <p style={{fontSize:"14px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
-                Assets sitting idle that could be shared, taught, or structured — if they had the right structure around them.
+                Assets sitting idle that could be shared, taught, or structured, if they had the right structure around them.
               </p>
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function ISLPitchDeck() {
             What You'll Learn
           </h2>
           <p style={{fontSize:"16px",color:"#5A4A42",textAlign:"center",margin:"0 auto 48px",maxWidth:"520px",lineHeight:"1.65"}}>
-            Five modules designed to move you from unclear to structured — at your own pace, in your own voice.
+            Five modules designed to move you from unclear to structured, at your own pace, in your own voice.
           </p>
           <div style={{display:"flex",flexDirection:"column",gap:"20px"}}>
             <div style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"12px",padding:"28px 32px",display:"flex",gap:"20px",alignItems:"flex-start"}}>
@@ -133,7 +133,7 @@ export default function ISLPitchDeck() {
                   Stewardship Arrival
                 </h3>
                 <p style={{fontSize:"15px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
-                  You'll ground yourself in the three postures practitioners bring to their IP — extraction, hoarding, and stewardship — and locate where you are right now.
+                  You'll ground yourself in the three postures practitioners bring to their IP: extraction, hoarding, and stewardship, and locate where you are right now.
                 </p>
               </div>
             </div>
@@ -159,7 +159,7 @@ export default function ISLPitchDeck() {
                   Knowledge Lineage
                 </h3>
                 <p style={{fontSize:"15px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
-                  You'll trace the relational roots of your work — who shaped it, what traditions informed it, and how to hold that lineage with integrity as you build.
+                  You'll trace the relational roots of your work, who shaped it, what traditions informed it, and how to hold that lineage with integrity as you build.
                 </p>
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function ISLPitchDeck() {
                   Structuring for Movement
                 </h3>
                 <p style={{fontSize:"15px",color:"#5A4A42",margin:"0",lineHeight:"1.65"}}>
-                  You'll build the infrastructure that lets your IP move in the world without losing integrity — stewardship frameworks, documentation standards, and protection strategies.
+                  You'll build the infrastructure that lets your IP move in the world without losing integrity. Stewardship frameworks, documentation standards, and protection strategies.
                 </p>
               </div>
             </div>
@@ -213,10 +213,10 @@ export default function ISLPitchDeck() {
               Ed.D., UC Berkeley  ·  Co-author, <em>Street Data</em>
             </p>
             <p style={{fontSize:"16px",color:"#5A4A42",margin:"0 0 16px",lineHeight:"1.75"}}>
-              I'm a leadership coach, researcher, and practitioner whose work has shaped schools and districts across the country. I hold an Ed.D. from UC Berkeley and am the co-author of <em>Street Data</em> — a bestselling guide to humanizing the way we use data in education.
+              I'm a leadership coach, researcher, and practitioner whose work has shaped schools and districts across the country. I hold an Ed.D. from UC Berkeley and am the co-author of <em>Street Data</em>, a bestselling guide to humanizing the way we use data in education.
             </p>
             <p style={{fontSize:"16px",color:"#5A4A42",margin:"0 0 16px",lineHeight:"1.75"}}>
-              I'm also the creator of the Radical Dreaming framework, and I've spent 15+ years working with educators, consultants, and leaders on equity-centered practice — developing an extensive body of intellectual property along the way.
+              I'm also the creator of the Radical Dreaming framework, and I've spent 15+ years working with educators, consultants, and leaders on equity-centered practice, developing an extensive body of intellectual property along the way.
             </p>
             <p style={{fontSize:"16px",color:"#5A4A42",margin:"0",lineHeight:"1.75"}}>
               The IP Stewardship Lab grew from a simple recognition: the people doing the most important equity work are often the least equipped to protect and sustain it. This course is my answer to that gap and my invitation to you.
@@ -239,7 +239,7 @@ export default function ISLPitchDeck() {
                 Who is the IP Stewardship Lab for?
               </summary>
               <p style={{fontSize:"15px",color:"#5A4A42",lineHeight:"1.7",padding:"0 24px 20px",margin:"0"}}>
-                The course is designed for educators, consultants, practitioners, and authors who have built frameworks, methodologies, or a body of work — and want to protect, structure, and sustain it. If you've created intellectual property that changes rooms when you walk in, but haven't yet built the infrastructure around it, this course is for you.
+                The course is designed for educators, consultants, practitioners, and authors who have built frameworks, methodologies, or a body of work and want to protect, structure, and sustain it. If you've created intellectual property that changes rooms when you walk in, but haven't yet built the infrastructure around it, this course is for you.
               </p>
             </details>
             <details style={{background:"#FFFFFF",border:"1px solid #F0DED0",borderRadius:"10px",marginBottom:"12px",overflow:"hidden"}}>
@@ -271,7 +271,7 @@ export default function ISLPitchDeck() {
                 What is the 7-Layer IP Architecture Audit?
               </summary>
               <p style={{fontSize:"15px",color:"#5A4A42",lineHeight:"1.7",padding:"0 24px 20px",margin:"0"}}>
-                The 7-Layer IP Architecture Audit is a free nine-page guide that helps you map, protect, and steward every layer of your intellectual property. It covers frameworks, methodologies, content, relationships, processes, lived expertise, and narrative — giving you a clear picture of what you carry and where to start.
+                The 7-Layer IP Architecture Audit is a free nine-page guide that helps you map, protect, and steward every layer of your intellectual property. It covers frameworks, methodologies, content, relationships, processes, lived expertise, and narrative, giving you a clear picture of what you carry and where to start.
               </p>
             </details>
           </div>
@@ -284,7 +284,7 @@ export default function ISLPitchDeck() {
             Ready to begin?
           </p>
           <h2 style={{fontFamily:"Georgia, serif",fontSize:"clamp(24px, 4vw, 36px)",fontWeight:"normal",color:"#2D2D2D",margin:"0 0 16px",lineHeight:"1.3"}}>
-            Start with the Free Audit — and Join the Waitlist
+            Start with the Free Audit and Join the Waitlist
           </h2>
           <p style={{fontSize:"16px",color:"#5A4A42",margin:"0 auto 16px",maxWidth:"500px",lineHeight:"1.7"}}>
             Download the free nine-page audit and start mapping what you carry.
@@ -313,7 +313,7 @@ export default function ISLPitchDeck() {
                   type="submit" 
                   style={{padding:"16px 24px",borderRadius:"8px",border:"none",background:"#E8548C",color:"#FFFFFF",fontSize:"16px",fontWeight:"700",cursor:"pointer",fontFamily:"Georgia, 'Times New Roman', serif",letterSpacing:"0.3px",transition:"background 0.2s"}}
                 >
-                  Start with the Free Audit — and Join the Waitlist
+                  Start with the Free Audit and Join the Waitlist
                 </button>
               </div>
               <p style={{marginTop:"12px",fontSize:"13px",color:"#8B7B72",textAlign:"center",lineHeight:"1.5"}}>
