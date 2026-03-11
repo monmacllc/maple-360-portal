@@ -551,7 +551,7 @@ const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'center', marginBottom: 30 }}>
             <Globe size={24} style={{ color: T.teal }} />
             <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: T.textSecondary, margin: 0 }}>
-              Landing Page
+              IP Stewardship Lab Website
             </h2>
           </div>
 
@@ -563,7 +563,7 @@ const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
             marginBottom: 30
           }}>
             <p style={{ fontSize: '1.1rem', color: T.textPrimary, lineHeight: 1.6, marginBottom: 30 }}>
-              Professional course landing page with optimized conversion design, email capture sections, and pastel color palette matching your brand aesthetic.
+              A professional website for the IP Stewardship Lab featuring clean design, educational content sections, and email capture for the free 7-Layer Architecture Audit download.
             </p>
 
             <Link href={`/landing/jamila-dugan`} style={{
@@ -577,7 +577,7 @@ const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
               fontSize: '1rem',
               transition: 'all 0.2s ease'
             }}>
-              Open Landing Page
+              Visit Website
             </Link>
           </div>
 
@@ -590,12 +590,32 @@ const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
               textAlign: 'left'
             }}>
               <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
+                Website Sections
+              </h4>
+              <ul style={{ margin: 0, paddingLeft: 20, color: T.textPrimary, fontSize: '0.9rem' }}>
+                <li>About the IP Stewardship Lab</li>
+                <li>Dr. Jamila Dugan bio section</li>
+                <li>Equity Traps & Tropes Framework</li>
+                <li>Core Stewardship Training overview</li>
+                <li>Free resource download section</li>
+              </ul>
+            </div>
+            
+            <div style={{
+              background: T.bgSecondary,
+              padding: 25,
+              borderRadius: 12,
+              border: `1px solid ${T.tealLight}`,
+              textAlign: 'left'
+            }}>
+              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
                 Design Features
               </h4>
               <ul style={{ margin: 0, paddingLeft: 20, color: T.textPrimary, fontSize: '0.9rem' }}>
-                <li>Soft pastel color palette</li>
-                <li>Spa/wellness aesthetic</li>
-                <li>Professional typography</li>
+                <li>Warm cream background (#FAF8F5)</li>
+                <li>Soft teal accent color (#7ECBC4)</li>
+                <li>Clean, institutional aesthetic</li>
+                <li>Professional university-style layout</li>
                 <li>Mobile-responsive design</li>
               </ul>
             </div>
@@ -608,31 +628,13 @@ const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
               textAlign: 'left'
             }}>
               <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
-                Email Captures
+                Key Messages
               </h4>
               <ul style={{ margin: 0, paddingLeft: 20, color: T.textPrimary, fontSize: '0.9rem' }}>
-                <li>Free audit download (top)</li>
-                <li>Course waitlist (bottom)</li>
-                <li>Automated delivery system</li>
-                <li>Nurture sequence integration</li>
-              </ul>
-            </div>
-            
-            <div style={{
-              background: T.bgSecondary,
-              padding: 25,
-              borderRadius: 12,
-              border: `1px solid ${T.tealLight}`,
-              textAlign: 'left'
-            }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
-                Content Sections
-              </h4>
-              <ul style={{ margin: 0, paddingLeft: 20, color: T.textPrimary, fontSize: '0.9rem' }}>
-                <li>Course modules overview</li>
-                <li>Four patterns framework</li>
-                <li>Dr. Dugan bio section</li>
-                <li>Call-to-action sections</li>
+                <li>Knowledge held with sacred care</li>
+                <li>Justice-oriented stewardship practices</li>
+                <li>Protection with integrity and discernment</li>
+                <li>Educational focus, not sales-driven</li>
               </ul>
             </div>
           </div>
