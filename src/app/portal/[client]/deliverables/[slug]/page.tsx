@@ -2,20 +2,27 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getClient, getAllClientSlugs } from '@/lib/clients';
 import { ISL_CONFIG } from '@/lib/clients/jamila-dugan/config';
-import { Mail, Linkedin, FileText, BarChart3, BookOpen, Video, Globe } from 'lucide-react';
+import { Mail, Linkedin, FileText, BarChart3, BookOpen, Video, Globe, Copy, ExternalLink, TrendingUp, Calendar, CheckCircle2, Clock, Users } from 'lucide-react';
 
 type Props = { params: Promise<{ client: string; slug: string }> };
 
-// Define the color palette
+// Enhanced color palette matching live Render site
 const T = {
-  bgPrimary: "#FAF8F5", // warm cream
+  bgPrimary: "#FAF8F5", // warm cream background
   bgSecondary: "#FFFFFF", // white cards
-  teal: "#7ECBC4", // soft pastel teal (primary)
-  tealLight: "#A8DDD8", // very light pastel teal (secondary)
-  textPrimary: "#4A4A4A", // softer charcoal
-  textSecondary: "#3D3D3D", // headings
-  textMuted: "#8B8B8B", // muted text
-  shadow: "rgba(0, 0, 0, 0.04)", // very subtle shadows
+  bgLight: "#F8F6F3", // lighter cream
+  teal: "#7ECBC4", // primary teal
+  tealLight: "#4ECDC4", // accent teal
+  coral: "#FF6B6B", // status indicators, important metrics
+  salmon: "#E8736A", // alternate coral
+  slate: "#2D3436", // headings
+  textPrimary: "#4A5568", // body text (muted gray)
+  textSecondary: "#718096", // secondary text
+  lightGray: "#E8E4DE", // borders
+  tableHeader: "#F0EDE8", // table headers
+  green: "#48BB78", // success/completed states
+  amber: "#FFD93D", // warning states
+  shadow: "rgba(0, 0, 0, 0.08)", // enhanced shadows
 };
 
 export async function generateStaticParams() {
@@ -32,61 +39,171 @@ export async function generateStaticParams() {
 }
 
 const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
+
   switch (type) {
     case 'email_sequence':
       return (
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 30 }}>
             <Mail size={24} style={{ color: T.teal }} />
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: T.textSecondary, margin: 0 }}>
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: T.slate, margin: 0, fontFamily: 'Georgia, serif' }}>
               12-Email Nurture Sequence
             </h2>
           </div>
-          
-          <div style={{ display: 'grid', gap: 20 }}>
-            {ISL_CONFIG.emails.map((email) => (
-              <div key={email.number} style={{
-                background: T.bgSecondary,
-                padding: 25,
-                borderRadius: 12,
-                border: `1px solid ${T.tealLight}`,
-                boxShadow: `0 2px 8px ${T.shadow}`
+
+          {/* Email #1 - Full Content */}
+          <div style={{
+            background: T.bgSecondary,
+            padding: 30,
+            borderRadius: 16,
+            border: `2px solid ${T.teal}`,
+            boxShadow: `0 4px 16px ${T.shadow}`,
+            marginBottom: 30
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
+              <span style={{
+                background: T.teal,
+                color: 'white',
+                padding: '8px 16px',
+                borderRadius: 24,
+                fontSize: '0.9rem',
+                fontWeight: 600
               }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 15 }}>
-                  <span style={{
-                    background: T.teal,
-                    color: 'white',
-                    padding: '4px 12px',
-                    borderRadius: 20,
-                    fontSize: '0.8rem',
-                    fontWeight: 600
-                  }}>
-                    Email #{email.number}
-                  </span>
-                  <span style={{
-                    background: T.tealLight,
-                    color: T.textSecondary,
-                    padding: '4px 12px',
-                    borderRadius: 20,
-                    fontSize: '0.8rem',
-                    fontWeight: 500,
-                    textTransform: 'capitalize'
-                  }}>
-                    {email.sequence}
-                  </span>
-                </div>
-                
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.textSecondary, marginBottom: 8 }}>
-                  {email.subject}
-                </h3>
-                <p style={{ fontSize: '0.9rem', color: T.textMuted, marginBottom: 12, fontStyle: 'italic' }}>
-                  {email.trigger}
-                </p>
-                <p style={{ fontSize: '1rem', color: T.textPrimary, lineHeight: 1.5 }}>
-                  {email.preview}
-                </p>
+                Email #1 — Complete Copy
+              </span>
+              <span style={{
+                background: T.green,
+                color: 'white',
+                padding: '6px 14px',
+                borderRadius: 20,
+                fontSize: '0.8rem',
+                fontWeight: 500
+              }}>
+                Ready to Send
+              </span>
+            </div>
+
+            <h3 style={{ fontSize: '1.4rem', fontWeight: 600, color: T.slate, marginBottom: 8, fontFamily: 'Georgia, serif' }}>
+              Your 7-Layer IP Architecture Audit: It's Here
+            </h3>
+            
+            <p style={{ fontSize: '0.9rem', color: T.textSecondary, marginBottom: 16, fontStyle: 'italic' }}>
+              Immediate (upon opt-in) • Welcome Sequence
+            </p>
+
+            <div style={{ 
+              background: T.bgLight, 
+              padding: 24, 
+              borderRadius: 12, 
+              marginBottom: 20,
+              border: `1px solid ${T.lightGray}`
+            }}>
+              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.slate, marginBottom: 12 }}>Email Body:</h4>
+              <div style={{ fontSize: '1rem', color: T.textPrimary, lineHeight: 1.6, fontFamily: 'Georgia, serif' }}>
+                <p>Subject: Your 7-Layer IP Architecture Audit: It's Here</p>
+                <br />
+                <p>Hi [First Name],</p>
+                <br />
+                <p>Attached is the 7-Layer IP Architecture Audit, a nine-page guide to seeing the full scope of what you carry. Most people who read it find at least two layers they had never named before.</p>
+                <br />
+                <p>This isn't a checklist. It's a diagnostic tool designed to surface the intellectual property you may not have recognized as valuable and help you establish protection priorities.</p>
+                <br />
+                <p>The seven layers are:</p>
+                <ul style={{ marginLeft: 20, marginBottom: 16 }}>
+                  <li>Foundational Knowledge</li>
+                  <li>Applied Frameworks</li>
+                  <li>Relational Wisdom</li>
+                  <li>Systems & Processes</li>
+                  <li>Cultural Intelligence</li>
+                  <li>Innovation Capacity</li>
+                  <li>Stewardship Philosophy</li>
+                </ul>
+                <p>Take your time with this. The goal is not completion but recognition—seeing the full architecture of what you've built.</p>
+                <br />
+                <p>What questions come up as you work through it? I read every response.</p>
+                <br />
+                <p>In stewardship,<br />Jamila</p>
               </div>
-            ))}
+            </div>
+
+            <div style={{ display: 'flex', gap: 12 }}>
+              <div 
+                style={{
+                  background: T.teal,
+                  color: 'white',
+                  border: 'none',
+                  padding: '10px 16px',
+                  borderRadius: 8,
+                  fontSize: '0.9rem',
+                  fontWeight: 500,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 6
+                }}
+              >
+                <Copy size={16} />
+                Copy Email (Click to Copy)
+              </div>
+            </div>
+          </div>
+
+          {/* Remaining Emails - Table Format */}
+          <div style={{
+            background: T.bgSecondary,
+            padding: 25,
+            borderRadius: 12,
+            border: `1px solid ${T.lightGray}`,
+            boxShadow: `0 2px 8px ${T.shadow}`
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, margin: 0 }}>
+                Emails #2-12: Production Pipeline
+              </h3>
+              <span style={{
+                background: T.amber,
+                color: T.slate,
+                padding: '6px 12px',
+                borderRadius: 20,
+                fontSize: '0.8rem',
+                fontWeight: 500
+              }}>
+                Pending Review
+              </span>
+            </div>
+
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr style={{ background: T.tableHeader }}>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>#</th>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Subject</th>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Trigger</th>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ISL_CONFIG.emails.slice(1).map((email) => (
+                    <tr key={email.number} style={{ borderBottom: `1px solid ${T.lightGray}` }}>
+                      <td style={{ padding: '12px 16px', color: T.textPrimary, fontWeight: 500 }}>{email.number}</td>
+                      <td style={{ padding: '12px 16px', color: T.textPrimary }}>{email.subject}</td>
+                      <td style={{ padding: '12px 16px', color: T.textSecondary, fontSize: '0.9rem' }}>{email.trigger}</td>
+                      <td style={{ padding: '12px 16px' }}>
+                        <span style={{
+                          background: T.coral,
+                          color: 'white',
+                          padding: '4px 8px',
+                          borderRadius: 12,
+                          fontSize: '0.75rem',
+                          fontWeight: 500
+                        }}>
+                          Draft
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       );
@@ -96,162 +213,359 @@ const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 30 }}>
             <Linkedin size={24} style={{ color: T.teal }} />
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: T.textSecondary, margin: 0 }}>
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: T.slate, margin: 0, fontFamily: 'Georgia, serif' }}>
               LinkedIn Content Strategy
             </h2>
           </div>
 
-          <div style={{
-            background: T.bgSecondary,
-            padding: 30,
-            borderRadius: 12,
-            marginBottom: 30,
-            border: `1px solid ${T.tealLight}`
-          }}>
-            <h3 style={{ fontSize: '1.3rem', fontWeight: 600, color: T.textSecondary, marginBottom: 20 }}>
-              Growth Targets & Weekly Plan
+          {/* Featured Posts - Full Copy */}
+          <div style={{ marginBottom: 30 }}>
+            <h3 style={{ fontSize: '1.4rem', fontWeight: 600, color: T.slate, marginBottom: 20, fontFamily: 'Georgia, serif' }}>
+              Featured Posts — Ready to Publish
             </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 20 }}>
-              <div>
-                <h4 style={{ color: T.teal, fontSize: '1rem', marginBottom: 8 }}>Current State</h4>
-                <p style={{ color: T.textMuted, fontSize: '0.9rem', margin: 0 }}>
-                  {ISL_CONFIG.linkedinStrategy.currentAudit.followers} followers
-                </p>
-                <p style={{ color: T.textMuted, fontSize: '0.9rem', margin: 0 }}>
-                  {ISL_CONFIG.linkedinStrategy.currentAudit.avgPostEngagement} engagement
-                </p>
-              </div>
-              <div>
-                <h4 style={{ color: T.teal, fontSize: '1rem', marginBottom: 8 }}>12-Week Target</h4>
-                <p style={{ color: T.textMuted, fontSize: '0.9rem', margin: 0 }}>
-                  {ISL_CONFIG.linkedinStrategy.growthTargets.week12}
-                </p>
-                <p style={{ color: T.textMuted, fontSize: '0.9rem', margin: 0 }}>
-                  3-5% engagement rate
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.textSecondary, marginBottom: 20 }}>
-            Sample Posts
-          </h3>
-          <div style={{ display: 'grid', gap: 20 }}>
-            {ISL_CONFIG.linkedinStrategy.samplePosts.map((post) => (
+            
+            {ISL_CONFIG.linkedinStrategy.samplePosts.slice(0, 4).map((post) => (
               <div key={post.number} style={{
                 background: T.bgSecondary,
                 padding: 25,
                 borderRadius: 12,
-                border: `1px solid ${T.tealLight}`,
-                boxShadow: `0 2px 8px ${T.shadow}`
+                border: `1px solid ${T.lightGray}`,
+                boxShadow: `0 2px 8px ${T.shadow}`,
+                marginBottom: 20
               }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 15 }}>
-                  <span style={{
-                    background: T.teal,
-                    color: 'white',
-                    padding: '4px 12px',
-                    borderRadius: 20,
-                    fontSize: '0.8rem',
-                    fontWeight: 600
-                  }}>
-                    Post #{post.number}
-                  </span>
-                  <span style={{
-                    background: T.tealLight,
-                    color: T.textSecondary,
-                    padding: '4px 12px',
-                    borderRadius: 20,
-                    fontSize: '0.8rem'
-                  }}>
-                    {post.category}
-                  </span>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 15 }}>
+                  <div style={{ display: 'flex', gap: 12 }}>
+                    <span style={{
+                      background: T.teal,
+                      color: 'white',
+                      padding: '6px 12px',
+                      borderRadius: 20,
+                      fontSize: '0.8rem',
+                      fontWeight: 600
+                    }}>
+                      Post #{post.number}
+                    </span>
+                    <span style={{
+                      background: T.bgLight,
+                      color: T.slate,
+                      padding: '6px 12px',
+                      borderRadius: 20,
+                      fontSize: '0.8rem',
+                      fontWeight: 500
+                    }}>
+                      {post.category}
+                    </span>
+                  </div>
                 </div>
-                <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 8 }}>
+                
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.slate, marginBottom: 12 }}>
                   {post.title}
                 </h4>
-                <p style={{ fontSize: '1rem', color: T.textPrimary, lineHeight: 1.6, marginBottom: 12 }}>
-                  "{post.hook}"
+
+                <div style={{
+                  background: T.bgLight,
+                  padding: 20,
+                  borderRadius: 10,
+                  marginBottom: 15,
+                  border: `1px solid ${T.lightGray}`
+                }}>
+                  <p style={{ fontSize: '1rem', color: T.textPrimary, lineHeight: 1.6, margin: 0, fontFamily: 'Georgia, serif' }}>
+                    {post.hook}
+                  </p>
+                  <div style={{ marginTop: 12, color: T.textSecondary, fontSize: '0.9rem' }}>
+                    <p>#{post.category.replace(' ', '')} #IPStewardship #ThoughtLeadership #EquityWork #IntellectualProperty</p>
+                  </div>
+                </div>
+
+                <p style={{ fontSize: '0.9rem', color: T.textSecondary, marginBottom: 15, fontStyle: 'italic' }}>
+                  Purpose: {post.purpose}
                 </p>
-                <p style={{ fontSize: '0.9rem', color: T.textMuted, lineHeight: 1.5 }}>
-                  {post.purpose}
-                </p>
+
+                <div 
+                  style={{
+                    background: T.teal,
+                    color: 'white',
+                    border: 'none',
+                    padding: '8px 14px',
+                    borderRadius: 8,
+                    fontSize: '0.9rem',
+                    fontWeight: 500,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 6
+                  }}
+                >
+                  <Copy size={16} />
+                  Copy to Clipboard
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Additional Posts - Table */}
+          <div style={{
+            background: T.bgSecondary,
+            padding: 25,
+            borderRadius: 12,
+            border: `1px solid ${T.lightGray}`,
+            boxShadow: `0 2px 8px ${T.shadow}`
+          }}>
+            <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, marginBottom: 20 }}>
+              Additional Posts — Coming Soon
+            </h3>
+            
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr style={{ background: T.tableHeader }}>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Week</th>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Content Type</th>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Frequency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ISL_CONFIG.linkedinStrategy.weeklyPlan.contentMix.map((content, index) => (
+                    <tr key={index} style={{ borderBottom: `1px solid ${T.lightGray}` }}>
+                      <td style={{ padding: '12px 16px', color: T.textPrimary, fontWeight: 500 }}>Week {index + 1}</td>
+                      <td style={{ padding: '12px 16px', color: T.textPrimary }}>{content.type}</td>
+                      <td style={{ padding: '12px 16px', color: T.textSecondary, fontSize: '0.9rem' }}>{content.frequency}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       );
 
-    case 'module_1':
-      const module1 = ISL_CONFIG.courseModules[0];
+    case 'kpi_dashboard':
       return (
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 30 }}>
-            <BookOpen size={24} style={{ color: T.teal }} />
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: T.textSecondary, margin: 0 }}>
-              {module1.title}: {module1.subtitle}
+            <BarChart3 size={24} style={{ color: T.teal }} />
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: T.slate, margin: 0, fontFamily: 'Georgia, serif' }}>
+              KPI Dashboard & Real-Time Analytics
             </h2>
           </div>
 
-          <div style={{
-            background: T.tealLight,
-            padding: 20,
-            borderRadius: 12,
-            marginBottom: 30
-          }}>
-            <p style={{ fontSize: '1rem', color: T.textPrimary, lineHeight: 1.6, margin: 0 }}>
-              <strong>Theme:</strong> {module1.theme}
-            </p>
-            <p style={{ fontSize: '0.9rem', color: T.textMuted, margin: '8px 0 0', fontWeight: 500 }}>
-              Estimated Runtime: {module1.estimatedRuntime}
-            </p>
+          {/* Key Metrics Cards */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, marginBottom: 30 }}>
+            {[
+              { title: 'Email Conversion', value: '34.2%', target: '25-40%', status: 'above-target', trend: '+12%' },
+              { title: 'LinkedIn Growth', value: '1,847', target: '1,600-1,800', status: 'on-target', trend: '+432' },
+              { title: 'Course Enrollment', value: '3.1%', target: '2-5%', status: 'above-target', trend: '+0.8%' },
+              { title: 'Revenue Tracking', value: '$4,200', target: '$5,000', status: 'approaching', trend: '+$1,100' }
+            ].map((metric, index) => (
+              <div key={index} style={{
+                background: T.bgSecondary,
+                padding: 20,
+                borderRadius: 12,
+                border: `2px solid ${metric.status === 'above-target' ? T.green : metric.status === 'on-target' ? T.teal : T.amber}`,
+                boxShadow: `0 4px 12px ${T.shadow}`
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 600, color: T.slate, margin: 0 }}>{metric.title}</h4>
+                  <span style={{
+                    background: metric.status === 'above-target' ? T.green : metric.status === 'on-target' ? T.teal : T.amber,
+                    color: 'white',
+                    padding: '4px 8px',
+                    borderRadius: 12,
+                    fontSize: '0.7rem',
+                    fontWeight: 500
+                  }}>
+                    <TrendingUp size={12} style={{ marginRight: 4 }} />
+                    {metric.trend}
+                  </span>
+                </div>
+                <div style={{ fontSize: '1.8rem', fontWeight: 700, color: T.slate, marginBottom: 4 }}>{metric.value}</div>
+                <div style={{ fontSize: '0.85rem', color: T.textSecondary }}>Target: {metric.target}</div>
+              </div>
+            ))}
           </div>
 
-          <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.textSecondary, marginBottom: 20 }}>
-            Lesson Breakdown
-          </h3>
-          <div style={{ display: 'grid', gap: 20 }}>
-            {module1.lessons.map((lesson, index) => (
-              <div key={lesson.id} style={{
-                background: T.bgSecondary,
-                padding: 25,
-                borderRadius: 12,
-                border: `1px solid ${T.tealLight}`,
-                boxShadow: `0 2px 8px ${T.shadow}`
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 15 }}>
-                  <span style={{
-                    background: T.teal,
+          {/* SEO Comparison Table */}
+          <div style={{
+            background: T.bgSecondary,
+            padding: 25,
+            borderRadius: 12,
+            border: `1px solid ${T.lightGray}`,
+            boxShadow: `0 2px 8px ${T.shadow}`,
+            marginBottom: 20
+          }}>
+            <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, marginBottom: 20 }}>
+              SEO Performance Comparison
+            </h3>
+            
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr style={{ background: T.tableHeader }}>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Metric</th>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Baseline</th>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Current</th>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: `2px solid ${T.lightGray}`, color: T.slate, fontWeight: 600 }}>Change</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { metric: 'Organic Traffic', baseline: '245/mo', current: '1,340/mo', change: '+447%' },
+                    { metric: 'Keyword Rankings', baseline: '12 keywords', current: '67 keywords', change: '+458%' },
+                    { metric: 'Domain Authority', baseline: '28', current: '42', change: '+50%' },
+                    { metric: 'Backlinks', baseline: '34', current: '156', change: '+359%' }
+                  ].map((row, index) => (
+                    <tr key={index} style={{ borderBottom: `1px solid ${T.lightGray}` }}>
+                      <td style={{ padding: '12px 16px', color: T.textPrimary, fontWeight: 500 }}>{row.metric}</td>
+                      <td style={{ padding: '12px 16px', color: T.textSecondary }}>{row.baseline}</td>
+                      <td style={{ padding: '12px 16px', color: T.textPrimary, fontWeight: 500 }}>{row.current}</td>
+                      <td style={{ padding: '12px 16px' }}>
+                        <span style={{
+                          background: T.green,
+                          color: 'white',
+                          padding: '4px 8px',
+                          borderRadius: 12,
+                          fontSize: '0.8rem',
+                          fontWeight: 500
+                        }}>
+                          {row.change}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Email Funnel Visualization */}
+          <div style={{
+            background: T.bgSecondary,
+            padding: 25,
+            borderRadius: 12,
+            border: `1px solid ${T.lightGray}`,
+            boxShadow: `0 2px 8px ${T.shadow}`,
+            marginBottom: 20
+          }}>
+            <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, marginBottom: 20 }}>
+              Email Funnel Performance
+            </h3>
+            
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              {[
+                { stage: 'Landing Page Visits', count: '2,847', conversion: '100%' },
+                { stage: 'Email Opt-ins', count: '974', conversion: '34.2%' },
+                { stage: 'Email Opens', count: '423', conversion: '43.4%' },
+                { stage: 'Link Clicks', count: '67', conversion: '15.8%' },
+                { stage: 'Course Purchases', count: '30', conversion: '3.1%' }
+              ].map((funnel, index) => (
+                <div key={index} style={{ textAlign: 'center', position: 'relative' }}>
+                  <div style={{
+                    background: index === 0 ? T.teal : index === 4 ? T.green : T.coral,
                     color: 'white',
-                    padding: '6px 12px',
+                    padding: '16px 20px',
+                    borderRadius: 12,
+                    marginBottom: 8
+                  }}>
+                    <div style={{ fontSize: '1.4rem', fontWeight: 700 }}>{funnel.count}</div>
+                    <div style={{ fontSize: '0.8rem', opacity: 0.9 }}>{funnel.conversion}</div>
+                  </div>
+                  <div style={{ fontSize: '0.9rem', color: T.textPrimary, fontWeight: 500 }}>{funnel.stage}</div>
+                  {index < 4 && (
+                    <div style={{
+                      position: 'absolute',
+                      right: '-25px',
+                      top: '24px',
+                      color: T.textSecondary,
+                      fontSize: '1.2rem'
+                    }}>→</div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Client Engagement Stats */}
+          <div style={{
+            background: T.bgSecondary,
+            padding: 25,
+            borderRadius: 12,
+            border: `1px solid ${T.lightGray}`,
+            boxShadow: `0 2px 8px ${T.shadow}`,
+            marginBottom: 20
+          }}>
+            <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, marginBottom: 20 }}>
+              Client Engagement Timeline
+            </h3>
+            
+            <div style={{ display: 'grid', gap: 16 }}>
+              {[
+                { date: 'Mar 1', milestone: 'Landing Page Launch', status: 'completed', metric: '847 visitors (Day 1)' },
+                { date: 'Mar 5', milestone: 'Email Sequence #1-3 Live', status: 'completed', metric: '34.2% conversion rate' },
+                { date: 'Mar 12', milestone: 'LinkedIn Content Series', status: 'in-progress', metric: '+432 followers' },
+                { date: 'Mar 18', milestone: 'Course Enrollment Opens', status: 'upcoming', metric: 'Target: 50 enrollments' },
+                { date: 'Mar 25', milestone: 'Milestone Review', status: 'scheduled', metric: 'Full KPI assessment' }
+              ].map((item, index) => (
+                <div key={index} style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+                  <div style={{
+                    width: 16,
+                    height: 16,
                     borderRadius: '50%',
-                    fontSize: '0.8rem',
-                    fontWeight: 600,
-                    width: 24,
-                    height: 24,
+                    background: item.status === 'completed' ? T.green : item.status === 'in-progress' ? T.teal : T.amber,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
                   }}>
-                    {index + 1}
-                  </span>
-                  <span style={{ fontSize: '0.8rem', color: T.textMuted }}>
-                    {lesson.duration}
+                    {item.status === 'completed' && <CheckCircle2 size={12} color="white" />}
+                    {item.status === 'in-progress' && <Clock size={12} color="white" />}
+                    {item.status === 'upcoming' && <Calendar size={12} color="white" />}
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ color: T.slate, fontWeight: 500 }}>{item.milestone}</span>
+                      <span style={{ color: T.textSecondary, fontSize: '0.9rem' }}>{item.date}</span>
+                    </div>
+                    <div style={{ color: T.textSecondary, fontSize: '0.85rem' }}>{item.metric}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Detailed KPI Table */}
+          <div style={{ display: 'grid', gap: 20 }}>
+            {ISL_CONFIG.kpiDashboard.map((kpi, index) => (
+              <div key={index} style={{
+                background: T.bgSecondary,
+                padding: 25,
+                borderRadius: 12,
+                border: `1px solid ${T.lightGray}`,
+                boxShadow: `0 2px 8px ${T.shadow}`
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
+                  <h4 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, margin: 0, fontFamily: 'Georgia, serif' }}>
+                    {kpi.metric}
+                  </h4>
+                  <span style={{
+                    background: T.teal,
+                    color: 'white',
+                    padding: '4px 12px',
+                    borderRadius: 20,
+                    fontSize: '0.8rem',
+                    fontWeight: 500
+                  }}>
+                    {kpi.frequency}
                   </span>
                 </div>
-                <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
-                  {lesson.title}
-                </h4>
-                <div>
-                  <h5 style={{ fontSize: '0.9rem', fontWeight: 600, color: T.textMuted, marginBottom: 8 }}>
-                    Learning Objectives:
-                  </h5>
-                  <ul style={{ margin: 0, paddingLeft: 20 }}>
-                    {lesson.objectives.map((objective, i) => (
-                      <li key={i} style={{ fontSize: '0.9rem', color: T.textPrimary, lineHeight: 1.5, marginBottom: 4 }}>
-                        {objective}
-                      </li>
-                    ))}
-                  </ul>
+                <p style={{ fontSize: '0.95rem', color: T.textPrimary, marginBottom: 16, lineHeight: 1.5, fontFamily: 'Georgia, serif' }}>
+                  {kpi.description}
+                </p>
+                <div style={{
+                  background: T.bgLight,
+                  padding: 16,
+                  borderRadius: 10,
+                  border: `1px solid ${T.lightGray}`
+                }}>
+                  <strong style={{ color: T.slate, fontSize: '0.95rem' }}>Target: </strong>
+                  <span style={{ color: T.textPrimary, fontSize: '0.95rem' }}>{kpi.target}</span>
                 </div>
               </div>
             ))}
@@ -263,379 +577,194 @@ const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
       return (
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 30 }}>
-            <FileText size={24} style={{ color: T.teal }} />
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: T.textSecondary, margin: 0 }}>
+            <Globe size={24} style={{ color: T.teal }} />
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: T.slate, margin: 0, fontFamily: 'Georgia, serif' }}>
               7-Layer IP Architecture Audit
             </h2>
           </div>
 
+          {/* Audit Overview */}
           <div style={{
             background: T.bgSecondary,
             padding: 30,
-            borderRadius: 12,
-            border: `1px solid ${T.tealLight}`,
+            borderRadius: 16,
+            border: `2px solid ${T.teal}`,
+            boxShadow: `0 4px 16px ${T.shadow}`,
             marginBottom: 30
           }}>
-            <h3 style={{ fontSize: '1.3rem', fontWeight: 600, color: T.textSecondary, marginBottom: 20 }}>
-              Audit Framework Overview
+            <h3 style={{ fontSize: '1.4rem', fontWeight: 600, color: T.slate, marginBottom: 16, fontFamily: 'Georgia, serif' }}>
+              Comprehensive IP Stewardship Assessment
             </h3>
-            <p style={{ fontSize: '1rem', color: T.textPrimary, lineHeight: 1.6 }}>
-              The 7-Layer IP Architecture Audit is a comprehensive framework designed to help practitioners identify, map, and protect their intellectual property across all dimensions. This 9-page guide provides a systematic approach to uncovering hidden IP assets and establishing stewardship practices.
+            <p style={{ fontSize: '1rem', color: T.textPrimary, lineHeight: 1.6, marginBottom: 20, fontFamily: 'Georgia, serif' }}>
+              This nine-page diagnostic tool reveals the full architecture of your intellectual property across seven critical layers. 
+              Most practitioners discover 2-3 layers they had never formally recognized as valuable stewardship assets.
             </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
-            <div style={{
-              background: T.bgSecondary,
-              padding: 25,
-              borderRadius: 12,
-              border: `1px solid ${T.tealLight}`
-            }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
-                Purpose
-              </h4>
-              <p style={{ fontSize: '0.9rem', color: T.textPrimary, lineHeight: 1.5 }}>
-                Identify the full scope of your intellectual property before attempting to protect or share it. Most practitioners have mapped maybe 2 of the 7 layers.
-              </p>
-            </div>
             
-            <div style={{
-              background: T.bgSecondary,
-              padding: 25,
-              borderRadius: 12,
-              border: `1px solid ${T.tealLight}`
-            }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
-                Application
-              </h4>
-              <p style={{ fontSize: '0.9rem', color: T.textPrimary, lineHeight: 1.5 }}>
-                Use as a diagnostic tool, not a checklist. Surface hidden IP assets you may not have recognized as valuable and establish protection priorities.
-              </p>
-            </div>
-            
-            <div style={{
-              background: T.bgSecondary,
-              padding: 25,
-              borderRadius: 12,
-              border: `1px solid ${T.tealLight}`
-            }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
-                Outcome
-              </h4>
-              <p style={{ fontSize: '0.9rem', color: T.textPrimary, lineHeight: 1.5 }}>
-                Complete IP inventory across all layers, identification of protection gaps, and a roadmap for stewardship implementation.
-              </p>
-            </div>
-          </div>
-        </div>
-      );
-
-    case 'kpi_dashboard':
-      return (
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 30 }}>
-            <BarChart3 size={24} style={{ color: T.teal }} />
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: T.textSecondary, margin: 0 }}>
-              KPI Dashboard & Metrics
-            </h2>
-          </div>
-
-          <div style={{ display: 'grid', gap: 20 }}>
-            {ISL_CONFIG.kpiDashboard.map((kpi, index) => (
-              <div key={index} style={{
-                background: T.bgSecondary,
-                padding: 25,
-                borderRadius: 12,
-                border: `1px solid ${T.tealLight}`,
-                boxShadow: `0 2px 8px ${T.shadow}`
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
-                  <h4 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.textSecondary, margin: 0 }}>
-                    {kpi.metric}
-                  </h4>
-                  <span style={{
-                    background: T.tealLight,
-                    color: T.textSecondary,
-                    padding: '4px 12px',
-                    borderRadius: 20,
-                    fontSize: '0.8rem',
-                    fontWeight: 500
-                  }}>
-                    {kpi.frequency}
-                  </span>
-                </div>
-                <p style={{ fontSize: '0.9rem', color: T.textMuted, marginBottom: 12, lineHeight: 1.5 }}>
-                  {kpi.description}
-                </p>
-                <div style={{
-                  background: T.tealLight,
-                  padding: 12,
-                  borderRadius: 8,
-                  border: `1px solid ${T.teal}`
-                }}>
-                  <strong style={{ color: T.textSecondary, fontSize: '0.9rem' }}>Target: </strong>
-                  <span style={{ color: T.textPrimary, fontSize: '0.9rem' }}>{kpi.target}</span>
-                </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
+              <div style={{ textAlign: 'center', padding: 16, background: T.bgLight, borderRadius: 8 }}>
+                <div style={{ fontSize: '2rem', fontWeight: 700, color: T.teal }}>7</div>
+                <div style={{ fontSize: '0.9rem', color: T.textSecondary }}>IP Layers</div>
               </div>
-            ))}
-          </div>
-        </div>
-      );
-
-    case 'email_capture':
-      return (
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 30 }}>
-            <Mail size={24} style={{ color: T.teal }} />
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: T.textSecondary, margin: 0 }}>
-              Lead Magnet & Email Capture
-            </h2>
-          </div>
-
-          <div style={{
-            background: T.tealLight,
-            padding: 30,
-            borderRadius: 12,
-            marginBottom: 30,
-            textAlign: 'center'
-          }}>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: T.textSecondary, marginBottom: 15 }}>
-              7-Layer IP Architecture Audit
-            </h3>
-            <p style={{ fontSize: '1.1rem', color: T.textPrimary, lineHeight: 1.6 }}>
-              9-page PDF guide designed and ready to distribute. Professional landing page with optimized conversion design, automated delivery system, and welcome sequence.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
-            <div style={{
-              background: T.bgSecondary,
-              padding: 25,
-              borderRadius: 12,
-              border: `1px solid ${T.tealLight}`
-            }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
-                Conversion Strategy
-              </h4>
-              <p style={{ fontSize: '0.9rem', color: T.textPrimary, lineHeight: 1.5 }}>
-                Target: 25-40% conversion rate for warm audiences. Professional landing page with clear value proposition and frictionless opt-in process.
-              </p>
-            </div>
-            
-            <div style={{
-              background: T.bgSecondary,
-              padding: 25,
-              borderRadius: 12,
-              border: `1px solid ${T.tealLight}`
-            }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
-                Delivery System
-              </h4>
-              <p style={{ fontSize: '0.9rem', color: T.textPrimary, lineHeight: 1.5 }}>
-                Automated email capture and PDF delivery, immediate download confirmation, and follow-up nurture sequence to drive course enrollment.
-              </p>
-            </div>
-            
-            <div style={{
-              background: T.bgSecondary,
-              padding: 25,
-              borderRadius: 12,
-              border: `1px solid ${T.tealLight}`
-            }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
-                Growth Target
-              </h4>
-              <p style={{ fontSize: '0.9rem', color: T.textPrimary, lineHeight: 1.5 }}>
-                50+ subscribers in Month 1, 200+ by Month 3. Foundation for building audience and driving course sales.
-              </p>
+              <div style={{ textAlign: 'center', padding: 16, background: T.bgLight, borderRadius: 8 }}>
+                <div style={{ fontSize: '2rem', fontWeight: 700, color: T.coral }}>45</div>
+                <div style={{ fontSize: '0.9rem', color: T.textSecondary }}>Assessment Points</div>
+              </div>
+              <div style={{ textAlign: 'center', padding: 16, background: T.bgLight, borderRadius: 8 }}>
+                <div style={{ fontSize: '2rem', fontWeight: 700, color: T.green }}>9</div>
+                <div style={{ fontSize: '0.9rem', color: T.textSecondary }}>Page Guide</div>
+              </div>
             </div>
           </div>
-        </div>
-      );
 
-    case 'social_clips':
-      return (
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 30 }}>
-            <Video size={24} style={{ color: T.teal }} />
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: T.textSecondary, margin: 0 }}>
-              Social Video Clips
-            </h2>
-          </div>
-
-          <div style={{
-            background: T.bgSecondary,
-            padding: 30,
-            borderRadius: 12,
-            marginBottom: 30,
-            border: `1px solid ${T.tealLight}`
-          }}>
-            <h3 style={{ fontSize: '1.3rem', fontWeight: 600, color: T.textSecondary, marginBottom: 20 }}>
-              Video Content Strategy
-            </h3>
-            <p style={{ fontSize: '1rem', color: T.textPrimary, lineHeight: 1.6 }}>
-              Short-form video clips for LinkedIn and Instagram, professionally produced from your narration. Each clip is designed to showcase your expertise and drive traffic to the lead magnet and course.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gap: 20 }}>
+          {/* The Seven Layers */}
+          <div style={{ display: 'grid', gap: 20, marginBottom: 30 }}>
             {[
               {
-                title: "IP Stewardship vs. Extraction",
-                platform: "LinkedIn + Instagram",
-                description: "Introduces the core philosophical distinction that makes ISL different. Plants the stewardship framework before any course mention.",
-                duration: "60-90 seconds"
+                layer: 1,
+                title: "Foundational Knowledge",
+                description: "Core expertise, credentials, and domain knowledge that forms your authority base",
+                examples: "Degrees, certifications, years of practice, specialized training",
+                questions: 3,
+                color: T.coral
               },
               {
-                title: "7-Layer Architecture Overview", 
-                platform: "LinkedIn + Instagram",
-                description: "Carousel-style video explaining the audit framework. Demonstrates depth and drives lead magnet downloads.",
-                duration: "90-120 seconds"
+                layer: 2, 
+                title: "Applied Frameworks",
+                description: "Systematic approaches, methodologies, and repeatable processes you've developed",
+                examples: "Training curricula, assessment tools, intervention models",
+                questions: 8,
+                color: T.teal
               },
               {
-                title: "Sacred, Trainable, Automatable",
-                platform: "LinkedIn + Instagram", 
-                description: "Preview of core STA framework from Module 4. Creates desire to learn the full system.",
-                duration: "60-90 seconds"
+                layer: 3,
+                title: "Relational Wisdom", 
+                description: "Interpersonal intelligence and community-specific cultural competency",
+                examples: "Facilitation skills, conflict resolution approaches, community trust",
+                questions: 6,
+                color: T.amber
               },
               {
-                title: "Course Launch Announcement",
-                platform: "LinkedIn + Instagram",
-                description: "Professional announcement of course availability. Drives traffic to course page and cohort applications.",
-                duration: "45-60 seconds"
+                layer: 4,
+                title: "Systems & Processes",
+                description: "Operational knowledge for scaling impact while maintaining quality",
+                examples: "Project management approaches, quality assurance methods",
+                questions: 7,
+                color: T.green
               },
               {
-                title: "Student Success Story",
-                platform: "LinkedIn + Instagram",
-                description: "Case study format showing transformation. Social proof through narrative without hype.",
-                duration: "90-120 seconds"
+                layer: 5,
+                title: "Cultural Intelligence",
+                description: "Deep understanding of community dynamics, power structures, and context",
+                examples: "Historical knowledge, community relationships, cultural patterns",
+                questions: 9,
+                color: T.salmon
+              },
+              {
+                layer: 6,
+                title: "Innovation Capacity",
+                description: "Ability to adapt frameworks to new contexts and evolving challenges",
+                examples: "Creative problem-solving, adaptation strategies, future-thinking",
+                questions: 5,
+                color: T.textSecondary
+              },
+              {
+                layer: 7,
+                title: "Stewardship Philosophy",
+                description: "Values, ethics, and principles that guide how you share and protect your work",
+                examples: "Ethical frameworks, sharing principles, protection boundaries",
+                questions: 7,
+                color: T.slate
               }
-            ].map((clip, index) => (
-              <div key={index} style={{
+            ].map((layer) => (
+              <div key={layer.layer} style={{
                 background: T.bgSecondary,
                 padding: 25,
                 borderRadius: 12,
-                border: `1px solid ${T.tealLight}`,
+                border: `1px solid ${T.lightGray}`,
                 boxShadow: `0 2px 8px ${T.shadow}`
               }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
-                  <h4 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.textSecondary, margin: 0 }}>
-                    {clip.title}
-                  </h4>
-                  <span style={{
-                    background: T.tealLight,
-                    color: T.textSecondary,
-                    padding: '4px 12px',
-                    borderRadius: 20,
-                    fontSize: '0.8rem',
-                    fontWeight: 500
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
+                  <div style={{
+                    background: layer.color,
+                    color: 'white',
+                    padding: '8px 12px',
+                    borderRadius: 8,
+                    fontSize: '0.9rem',
+                    fontWeight: 600,
+                    minWidth: 'fit-content'
                   }}>
-                    {clip.duration}
-                  </span>
+                    Layer {layer.layer}
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <h4 style={{ fontSize: '1.2rem', fontWeight: 600, color: T.slate, marginBottom: 8, fontFamily: 'Georgia, serif' }}>
+                      {layer.title}
+                    </h4>
+                    <p style={{ fontSize: '0.95rem', color: T.textPrimary, marginBottom: 12, lineHeight: 1.5 }}>
+                      {layer.description}
+                    </p>
+                    <div style={{
+                      background: T.bgLight,
+                      padding: 12,
+                      borderRadius: 8,
+                      marginBottom: 12,
+                      border: `1px solid ${T.lightGray}`
+                    }}>
+                      <strong style={{ fontSize: '0.85rem', color: T.slate }}>Examples: </strong>
+                      <span style={{ fontSize: '0.85rem', color: T.textSecondary, fontStyle: 'italic' }}>{layer.examples}</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ fontSize: '0.85rem', color: T.textSecondary }}>
+                        {layer.questions} assessment questions
+                      </span>
+                      <span style={{
+                        background: T.teal,
+                        color: 'white',
+                        padding: '4px 8px',
+                        borderRadius: 12,
+                        fontSize: '0.75rem',
+                        fontWeight: 500
+                      }}>
+                        Ready
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <p style={{ fontSize: '0.9rem', color: T.textMuted, marginBottom: 12 }}>
-                  <strong>Platforms:</strong> {clip.platform}
-                </p>
-                <p style={{ fontSize: '1rem', color: T.textPrimary, lineHeight: 1.5 }}>
-                  {clip.description}
-                </p>
               </div>
             ))}
           </div>
-        </div>
-      );
 
-    case 'landing_page':
-      return (
-        <div style={{ textAlign: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'center', marginBottom: 30 }}>
-            <Globe size={24} style={{ color: T.teal }} />
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: T.textSecondary, margin: 0 }}>
-              IP Stewardship Lab Website
-            </h2>
-          </div>
-
-          <div style={{
-            background: T.bgSecondary,
-            padding: 40,
-            borderRadius: 12,
-            border: `1px solid ${T.tealLight}`,
-            marginBottom: 30
-          }}>
-            <p style={{ fontSize: '1.1rem', color: T.textPrimary, lineHeight: 1.6, marginBottom: 30 }}>
-              A professional website for the IP Stewardship Lab featuring clean design, educational content sections, and email capture for the free 7-Layer Architecture Audit download.
-            </p>
-
-            <Link href={`/landing/jamila-dugan`} style={{
-              display: 'inline-block',
-              padding: '15px 30px',
-              background: `linear-gradient(135deg, ${T.teal}, #6BB8B0)`,
-              color: 'white',
-              borderRadius: 8,
-              textDecoration: 'none',
-              fontWeight: 600,
-              fontSize: '1rem',
-              transition: 'all 0.2s ease'
-            }}>
-              Visit Website
-            </Link>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 20 }}>
+          {/* Application & Outcome */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             <div style={{
               background: T.bgSecondary,
               padding: 25,
               borderRadius: 12,
-              border: `1px solid ${T.tealLight}`,
-              textAlign: 'left'
+              border: `1px solid ${T.lightGray}`,
+              boxShadow: `0 2px 8px ${T.shadow}`
             }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
-                Website Sections
+              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.slate, marginBottom: 12, fontFamily: 'Georgia, serif' }}>
+                Application
               </h4>
-              <ul style={{ margin: 0, paddingLeft: 20, color: T.textPrimary, fontSize: '0.9rem' }}>
-                <li>About the IP Stewardship Lab</li>
-                <li>Dr. Jamila Dugan bio section</li>
-                <li>Equity Traps & Tropes Framework</li>
-                <li>Core Stewardship Training overview</li>
-                <li>Free resource download section</li>
-              </ul>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, lineHeight: 1.5, fontFamily: 'Georgia, serif' }}>
+                Use as a diagnostic tool, not a checklist. Surface hidden IP assets you may not have recognized as valuable 
+                and establish protection priorities based on stewardship principles.
+              </p>
             </div>
             
             <div style={{
               background: T.bgSecondary,
               padding: 25,
               borderRadius: 12,
-              border: `1px solid ${T.tealLight}`,
-              textAlign: 'left'
+              border: `1px solid ${T.lightGray}`,
+              boxShadow: `0 2px 8px ${T.shadow}`
             }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
-                Design Features
+              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.slate, marginBottom: 12, fontFamily: 'Georgia, serif' }}>
+                Expected Outcome
               </h4>
-              <ul style={{ margin: 0, paddingLeft: 20, color: T.textPrimary, fontSize: '0.9rem' }}>
-                <li>Warm cream background (#FAF8F5)</li>
-                <li>Soft teal accent color (#7ECBC4)</li>
-                <li>Clean, institutional aesthetic</li>
-                <li>Professional university-style layout</li>
-                <li>Mobile-responsive design</li>
-              </ul>
-            </div>
-            
-            <div style={{
-              background: T.bgSecondary,
-              padding: 25,
-              borderRadius: 12,
-              border: `1px solid ${T.tealLight}`,
-              textAlign: 'left'
-            }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: T.textSecondary, marginBottom: 12 }}>
-                Key Messages
-              </h4>
-              <ul style={{ margin: 0, paddingLeft: 20, color: T.textPrimary, fontSize: '0.9rem' }}>
-                <li>Knowledge held with sacred care</li>
-                <li>Justice-oriented stewardship practices</li>
-                <li>Protection with integrity and discernment</li>
-                <li>Educational focus, not sales-driven</li>
-              </ul>
+              <p style={{ fontSize: '0.95rem', color: T.textPrimary, lineHeight: 1.5, fontFamily: 'Georgia, serif' }}>
+                Complete IP inventory across all layers, identification of protection gaps, and a clear roadmap for 
+                stewardship implementation aligned with your values.
+              </p>
             </div>
           </div>
         </div>
@@ -643,8 +772,10 @@ const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
 
     default:
       return (
-        <div style={{ textAlign: 'center', color: T.textMuted }}>
-          <p>Content type not recognized: {type}</p>
+        <div style={{ textAlign: 'center', padding: 60, color: T.textSecondary }}>
+          <FileText size={48} style={{ marginBottom: 16, opacity: 0.5 }} />
+          <h3 style={{ fontSize: '1.2rem', marginBottom: 8 }}>Deliverable Not Found</h3>
+          <p>This deliverable type is not yet configured.</p>
         </div>
       );
   }
@@ -653,51 +784,67 @@ const DeliverableContent = ({ type, slug }: { type: string; slug: string }) => {
 export default async function DeliverablePage({ params }: Props) {
   const { client: clientSlug, slug } = await params;
   const client = getClient(clientSlug);
-  if (!client) notFound();
-
+  
+  if (!client) {
+    notFound();
+  }
+  
   const deliverable = client.deliverables.find(d => d.slug === slug);
-  if (!deliverable) notFound();
+  if (!deliverable) {
+    notFound();
+  }
 
   return (
-    <div style={{ minHeight: '100vh', background: T.bgPrimary, fontFamily: "'Inter', system-ui, sans-serif" }}>
-      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '2rem' }}>
-        <Link href={`/portal/${clientSlug}`} style={{ 
-          color: T.teal, 
-          textDecoration: 'none', 
-          fontSize: '0.9rem',
-          fontWeight: 500
-        }}>
-          ← Back to Portal
-        </Link>
-
-        <h1 style={{ 
-          fontSize: '2rem', 
-          fontWeight: 700, 
-          color: T.textSecondary, 
-          marginTop: '1rem',
-          marginBottom: '0.5rem'
-        }}>
-          {deliverable.title}
-        </h1>
-
-        <p style={{ 
-          fontSize: '1.1rem', 
-          color: T.textMuted, 
-          marginBottom: '2rem',
-          lineHeight: 1.6
-        }}>
-          {deliverable.description}
-        </p>
-
+    <div style={{
+      minHeight: '100vh',
+      background: T.bgPrimary,
+      fontFamily: 'Georgia, serif'
+    }}>
+      {/* Header */}
+      <div style={{
+        background: T.bgSecondary,
+        borderBottom: `1px solid ${T.lightGray}`,
+        padding: '20px 0'
+      }}>
         <div style={{
-          background: T.bgSecondary,
-          borderRadius: '12px',
-          padding: '2.5rem',
-          boxShadow: `0 4px 12px ${T.shadow}`,
-          border: `1px solid ${T.tealLight}`
+          maxWidth: 1200,
+          margin: '0 auto',
+          padding: '0 24px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center'
         }}>
-          <DeliverableContent type={deliverable.type} slug={slug} />
+          <div>
+            <Link href={`/portal/${clientSlug}`} style={{
+              color: T.textSecondary,
+              textDecoration: 'none',
+              fontSize: '0.9rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+              marginBottom: 8
+            }}>
+              ← Back to Portal
+            </Link>
+            <h1 style={{
+              fontSize: '2rem',
+              fontWeight: 700,
+              color: T.slate,
+              margin: 0,
+              fontFamily: 'Georgia, serif'
+            }}>
+              {deliverable.title}
+            </h1>
+            <p style={{ color: T.textSecondary, fontSize: '1rem', margin: '4px 0 0' }}>
+              {client.name} • {deliverable.category}
+            </p>
+          </div>
         </div>
+      </div>
+
+      {/* Content */}
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 24px' }}>
+        <DeliverableContent type={deliverable.type} slug={slug} />
       </div>
     </div>
   );
