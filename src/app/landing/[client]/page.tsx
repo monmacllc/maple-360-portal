@@ -1,10 +1,9 @@
-import { notFound } from 'next/navigation';
-import { getAllClientSlugs } from '@/lib/clients';
-import VanessaLanding from './VanessaLanding';
-import JamilaLanding from './JamilaLanding';
-
+// Simplified test version to debug Render static generation issue
 export async function generateStaticParams() {
-  return getAllClientSlugs().map((client) => ({ client }));
+  return [
+    { client: 'jamila-dugan' },
+    { client: 'vanessa-michele' }
+  ];
 }
 
 interface LandingPageProps {
@@ -14,21 +13,11 @@ interface LandingPageProps {
 export default async function LandingPage({ params }: LandingPageProps) {
   const { client } = await params;
 
-  // Verify the client exists in our registry
-  const validClients = getAllClientSlugs();
-  if (!validClients.includes(client)) {
-    notFound();
-  }
-
-  if (client === 'vanessa-michele') {
-    return <VanessaLanding />;
-  }
-
-  // Default: Jamila's landing page
-  if (client === 'jamila-dugan') {
-    return <JamilaLanding />;
-  }
-
-  // Fallback for other valid clients
-  return <JamilaLanding />;
+  return (
+    <div style={{ padding: '2rem', textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>
+      <h1>TEST: Landing Page for {client}</h1>
+      <p>If you see this, the route is working!</p>
+      <p>This is a simplified version to debug the Render static generation issue.</p>
+    </div>
+  );
 }
