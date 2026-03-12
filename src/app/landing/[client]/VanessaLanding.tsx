@@ -1,5 +1,3 @@
-"use client";
-
 import { VANESSA_CONFIG as V } from '@/lib/clients/vanessa-michele/config';
 
 export default function VanessaLanding() {
