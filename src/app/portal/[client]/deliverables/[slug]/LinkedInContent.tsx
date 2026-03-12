@@ -1,6 +1,6 @@
 // LinkedInContent.tsx
 // 5-section UX framework wrapper for the LinkedIn deliverable review page.
-// Inline styles only — no Tailwind, no CSS modules.
+// Inline styles only -- no Tailwind, no CSS modules.
 
 import React from "react";
 
@@ -113,7 +113,7 @@ function Gap() {
 }
 
 // ---------------------------------------------------------------------------
-// Section 1 — About This Page
+// Section 1 -- About This Page
 // ---------------------------------------------------------------------------
 
 function AboutSection() {
@@ -139,7 +139,7 @@ function AboutSection() {
 }
 
 // ---------------------------------------------------------------------------
-// Section 2 — Two Views
+// Section 2 -- Two Views
 // ---------------------------------------------------------------------------
 
 function TwoViewsSection() {
@@ -198,7 +198,7 @@ function TwoViewsSection() {
           <ul style={listStyle}>
             <li>Sees individual posts in their LinkedIn feed</li>
             <li>Each post stands alone as a complete thought</li>
-            <li>No &ldquo;funnel&rdquo; language. Pure thought leadership.</li>
+            <li>No "funnel" language. Pure thought leadership.</li>
             <li>Engagement prompts invite genuine dialogue</li>
           </ul>
         </div>
@@ -208,7 +208,7 @@ function TwoViewsSection() {
 }
 
 // ---------------------------------------------------------------------------
-// Section 3 — We Heard You
+// Section 3 -- We Heard You
 // ---------------------------------------------------------------------------
 
 interface FeedbackRow {
@@ -225,9 +225,9 @@ const feedbackRows: FeedbackRow[] = [
   },
   {
     heard:
-      "I want to challenge the \u2018monetize your expertise\u2019 narrative, not participate in it.",
+      "I want to challenge the 'monetize your expertise' narrative, not participate in it.",
     addressed:
-      "Every post centers stewardship over extraction. The word \u2018monetize\u2019 does not appear. Posts challenge industry norms rather than reinforcing them.",
+      "Every post centers stewardship over extraction. The word 'monetize' does not appear. Posts challenge industry norms rather than reinforcing them.",
   },
   {
     heard: "Hashtags should be minimal and intentional.",
@@ -305,7 +305,7 @@ function WeHeardYouSection() {
                     fontStyle: "italic",
                   }}
                 >
-                  &ldquo;{row.heard}&rdquo;
+                  "{row.heard}"
                 </p>
               </div>
               <div style={{ padding: "0 0 0 0.5rem" }}>
@@ -346,32 +346,32 @@ function WeHeardYouSection() {
 }
 
 // ---------------------------------------------------------------------------
-// Section 4 — Structure + existing post content
+// Section 4 -- Structure + existing post content
 // ---------------------------------------------------------------------------
 
 const structureItems = [
   {
     num: "01",
     label: "Thought Leadership",
-    range: "Posts 1\u20136",
+    range: "Posts 1-6",
     desc: "Core philosophy posts. The stewardship vs. extraction reframe. These establish intellectual positioning.",
   },
   {
     num: "02",
     label: "Framework Posts",
-    range: "Posts 7\u201312",
+    range: "Posts 7-12",
     desc: "The 7-Layer IP Architecture explained. Each post unpacks one layer or concept from the audit.",
   },
   {
     num: "03",
     label: "Personal Narrative",
-    range: "Posts 13\u201316",
+    range: "Posts 13-16",
     desc: "Your story, your journey, your why. These build trust through vulnerability and lived experience.",
   },
   {
     num: "04",
     label: "Engagement Posts",
-    range: "Posts 17\u201320",
+    range: "Posts 17-20",
     desc: "Questions, invitations, community dialogue. These are designed to spark conversation, not broadcast.",
   },
 ];
@@ -380,33 +380,33 @@ function StructureSection() {
   const tableRows = [
     {
       cat: "Thought Leadership",
-      posts: "Posts 4\u20136",
+      posts: "Posts 4-6",
       topics: "Naming your IP, the infrastructure argument, an open letter to practitioners",
       alt: false,
     },
     {
       cat: "Framework Teasers",
-      posts: "Posts 7\u201310",
+      posts: "Posts 7-10",
       topics:
         "Street Data connection, 7-Layer audit preview, extraction vs stewardship, knowledge lineage",
       alt: true,
     },
     {
       cat: "Community & Story",
-      posts: "Posts 11\u201314",
+      posts: "Posts 11-14",
       topics:
         "Client transformations, audience questions, practitioner spotlight, behind the scenes",
       alt: false,
     },
     {
       cat: "Course Promotion",
-      posts: "Posts 15\u201318",
+      posts: "Posts 15-18",
       topics: "Waitlist opening, what the course covers, founding cohort benefits, countdown",
       alt: true,
     },
     {
       cat: "Engagement Drivers",
-      posts: "Posts 19\u201320",
+      posts: "Posts 19-20",
       topics: "Polls, conversation starters",
       alt: false,
     },
@@ -548,7 +548,7 @@ function StructureSection() {
             paddingBottom: "0.3rem",
           }}
         >
-          Thought Leadership (Posts 1&ndash;6)
+          Thought Leadership (Posts 1-6)
         </h2>
         <Gap />
         <Divider />
@@ -578,37 +578,37 @@ function StructureSection() {
             Post 1: The Reframe
           </h3>
           <PostBody>
-            <strong>Theme:</strong> Rejecting &ldquo;extraction&rdquo; as the frame for sharing
+            <strong>Theme:</strong> Rejecting "extraction" as the frame for sharing
             expertise
           </PostBody>
           <PostBody>
-            <strong>Best time to post:</strong> Tuesday or Wednesday, 8&ndash;10am
+            <strong>Best time to post:</strong> Tuesday or Wednesday, 8-10am
           </PostBody>
           <Gap />
           <Divider />
           <Gap />
           <PostBody>
             I refuse to accept the framing that our intellectual property needs to be
-            &ldquo;extracted from.&rdquo;
+            "extracted from."
           </PostBody>
           <Gap />
-          <PostBody>Not because income doesn&rsquo;t matter. It does.</PostBody>
+          <PostBody>Not because income doesn't matter. It does.</PostBody>
           <Gap />
           <PostBody>
-            But because the word &ldquo;extraction&rdquo; carries a logic inside it. A
+            But because the word "extraction" carries a logic inside it. A
             logic that says your knowledge is a raw material waiting to be processed into product.
             That the move from practitioner to course creator is primarily a transaction. That what
             you know is most valuable as a revenue stream.
           </PostBody>
           <Gap />
           <PostBody>
-            I&rsquo;ve spent fifteen years watching what happens to practitioners who accept that
+            I've spent fifteen years watching what happens to practitioners who accept that
             framing. Their frameworks get simplified to fit a template. Their relational knowledge
             gets flattened into bullets. The context that makes their methods work in rooms gets
             stripped out to improve completion rates.
           </PostBody>
           <Gap />
-          <PostBody>What&rsquo;s left may still sell. But it is not what they built.</PostBody>
+          <PostBody>What's left may still sell. But it is not what they built.</PostBody>
           <Gap />
           <PostBody>
             Stewardship is a different posture. It asks: what conditions would allow your IP to
@@ -624,12 +624,12 @@ function StructureSection() {
           <PostBody>
             I am not anti-income. I am anti-extraction. There is a way to build a sustainable,
             values-aligned knowledge practice that generates real revenue while protecting what
-            matters. That is what I&rsquo;m building infrastructure for.
+            matters. That is what I'm building infrastructure for.
           </PostBody>
           <Gap />
           <PostBody>
             What word do you use, or wish you could use, instead of
-            &ldquo;extract&rdquo;?
+            "extract"?
           </PostBody>
           <Gap />
           <PostBody>
@@ -739,7 +739,7 @@ function StructureSection() {
 }
 
 // ---------------------------------------------------------------------------
-// Section 5 — CTA
+// Section 5 -- CTA
 // ---------------------------------------------------------------------------
 
 function CTASection() {
@@ -776,21 +776,18 @@ function CTASection() {
         Read through the posts below. If the voice, framing, and content feel right, let us know
         and we will finalize the content calendar with specific posting dates and times.
       </p>
-      <div
+      <p
         style={{
-          display: "inline-block",
-          padding: "0.6rem 1.4rem",
-          borderRadius: 8,
-          background: T.teal,
-          color: "#fff",
-          fontWeight: 700,
-          fontSize: "0.9rem",
-          fontFamily: "system-ui, sans-serif",
-          marginBottom: "1rem",
+          fontSize: "1rem",
+          color: T.textPrimary,
+          lineHeight: 1.8,
+          margin: "0 auto 1rem",
+          maxWidth: 640,
+          fontFamily: 'Georgia, "Times New Roman", serif',
         }}
       >
-        Reply to your Maple 360 contact or leave feedback directly in the portal.
-      </div>
+        Use the feedback section below to share your thoughts, request changes, or approve.
+      </p>
       <p
         style={{
           fontSize: "0.85rem",
@@ -801,7 +798,7 @@ function CTASection() {
           fontStyle: "italic",
         }}
       >
-        Once approved, we will prepare a posting schedule optimized for your audience&rsquo;s
+        Once approved, we will prepare a posting schedule optimized for your audience's
         engagement patterns.
       </p>
     </SectionCard>

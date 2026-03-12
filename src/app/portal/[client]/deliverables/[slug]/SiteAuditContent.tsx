@@ -105,7 +105,7 @@ function Section1() {
       <h2 style={sectionHeaderStyle}>1. What We Looked At</h2>
       <p style={{ color: T.textPrimary, lineHeight: 1.7, marginBottom: 18 }}>
         Two sites were audited:{" "}
-        <strong>jamiladugan.com</strong> (Dr. Dugan&apos;s primary professional presence &mdash; bio,
+        <strong>jamiladugan.com</strong> (Dr. Dugan&apos;s primary professional presence -- bio,
         speaking, consulting, and the IP Stewardship Lab hub) and{" "}
         <strong>joysource.org</strong> (the JoySource organization site, focused on equity and
         joy-centered leadership practices).
@@ -225,7 +225,7 @@ function Section2() {
           technical={61}
           contentSeo={48}
           aiVisibility="Low"
-          priority="High — Act Now"
+          priority="High -- Act Now"
           priorityColor={T.coral}
         />
         <ScoreCard
@@ -234,7 +234,7 @@ function Section2() {
           technical={52}
           contentSeo={41}
           aiVisibility="Very Low"
-          priority="High — Act Now"
+          priority="High -- Act Now"
           priorityColor={T.salmon}
         />
       </div>
@@ -253,7 +253,7 @@ function Section2() {
         foundation but is not ranking for any of the high-intent terms her audience searches.
         joysource.org has structural issues that limit crawlability and content depth that limits
         authority. Neither site appears in AI assistant responses when users ask about IP
-        stewardship, knowledge stewardship for practitioners, or equity-centered course design &mdash;
+        stewardship, knowledge stewardship for practitioners, or equity-centered course design --
         the three highest-opportunity queries for Dr. Dugan&apos;s work. The content foundation
         exists. The architecture needs to be built around it.
       </div>
@@ -414,7 +414,7 @@ function FindingRow({
       <div>
         <p style={{ margin: 0, marginBottom: 4 }}>
           <strong style={{ color: T.slate }}>{title}</strong>{" "}
-          <span style={{ color: T.textSecondary, fontSize: "0.82rem" }}>&mdash; {severity}</span>
+          <span style={{ color: T.textSecondary, fontSize: "0.82rem" }}>-- {severity}</span>
         </p>
         <p style={{ margin: 0, color: T.textPrimary, fontSize: "0.9rem", lineHeight: 1.6 }}>
           {detail}
@@ -624,14 +624,14 @@ function Section6() {
         </p>
         <ul style={{ margin: 0, paddingLeft: 20 }}>
           <li style={{ marginBottom: 6 }}>
-            Publish the IP Stewardship article to jamiladugan.com (already written &mdash; we handle the
+            Publish the IP Stewardship article to jamiladugan.com (already written -- we handle the
             SEO formatting)
           </li>
           <li style={{ marginBottom: 6 }}>
             Create a Wikipedia stub for IP Stewardship Lab and cross-link to jamiladugan.com
           </li>
           <li>
-            Syndicate the article to 2&ndash;3 education/equity publications (we handle outreach)
+            Syndicate the article to 2-3 education/equity publications (we handle outreach)
           </li>
         </ul>
       </div>
@@ -650,77 +650,77 @@ function Section7() {
     who: string;
   }[] = [
     {
-      priority: "P0 \u2014 This Week",
+      priority: "P0 -- This Week",
       priorityColor: T.coral,
       action: "Submit joysource.org sitemap to Google Search Console",
       timeline: "Day 1",
       who: "Monmac",
     },
     {
-      priority: "P0 \u2014 This Week",
+      priority: "P0 -- This Week",
       priorityColor: T.coral,
       action: "Fix HTTPS mixed content on joysource.org",
-      timeline: "Day 1\u20132",
+      timeline: "Day 1-2",
       who: "Monmac",
     },
     {
-      priority: "P0 \u2014 This Week",
+      priority: "P0 -- This Week",
       priorityColor: T.coral,
       action: "Add Person + Course schema to jamiladugan.com",
-      timeline: "Day 2\u20133",
+      timeline: "Day 2-3",
       who: "Monmac",
     },
     {
-      priority: "P1 \u2014 Week 1",
+      priority: "P1 -- Week 1",
       priorityColor: T.salmon,
       action: "Optimize all title tags and meta descriptions",
-      timeline: "Day 3\u20135",
+      timeline: "Day 3-5",
       who: "Monmac",
     },
     {
-      priority: "P1 \u2014 Week 1",
+      priority: "P1 -- Week 1",
       priorityColor: T.salmon,
       action: "Compress and convert all images to WebP",
-      timeline: "Day 3\u20135",
+      timeline: "Day 3-5",
       who: "Monmac",
     },
     {
-      priority: "P1 \u2014 Week 1",
+      priority: "P1 -- Week 1",
       priorityColor: T.salmon,
       action: "Publish IP Stewardship article to jamiladugan.com",
-      timeline: "Day 4\u20137",
+      timeline: "Day 4-7",
       who: "Monmac + Jamila review",
     },
     {
-      priority: "P2 \u2014 Week 2",
+      priority: "P2 -- Week 2",
       priorityColor: T.textSecondary,
       action: "Build internal linking architecture",
       timeline: "Week 2",
       who: "Monmac",
     },
     {
-      priority: "P2 \u2014 Week 2",
+      priority: "P2 -- Week 2",
       priorityColor: T.textSecondary,
       action: "Submit Wikipedia stub for IP Stewardship Lab",
       timeline: "Week 2",
       who: "Monmac",
     },
     {
-      priority: "P2 \u2014 Week 2",
+      priority: "P2 -- Week 2",
       priorityColor: T.textSecondary,
       action: "Fix joysource.org de-indexation issues",
       timeline: "Week 2",
       who: "Monmac",
     },
     {
-      priority: "P3 \u2014 Month 1",
+      priority: "P3 -- Month 1",
       priorityColor: T.textSecondary,
       action: "Begin authority link building campaign",
       timeline: "Month 1",
       who: "Monmac",
     },
     {
-      priority: "P3 \u2014 Month 1",
+      priority: "P3 -- Month 1",
       priorityColor: T.textSecondary,
       action: "Set up Google Business Profile",
       timeline: "Month 1",
@@ -820,7 +820,7 @@ export default function SiteAuditContent() {
             Website SEO Audit
           </h1>
           <p style={{ margin: 0, color: T.textSecondary, fontSize: "0.9rem" }}>
-            Dr. Jamila Dugan &mdash; jamiladugan.com &amp; joysource.org
+            Dr. Jamila Dugan -- jamiladugan.com &amp; joysource.org
           </p>
         </div>
       </div>

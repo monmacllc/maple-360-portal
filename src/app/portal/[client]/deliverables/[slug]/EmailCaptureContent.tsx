@@ -26,13 +26,13 @@ const feedbackRows: FeedbackRow[] = [
     heard:
       "The opt-in should feel generous, not transactional. Value first.",
     addressed:
-      "Form copy leads with the value of the audit itself. No urgency tactics, countdown timers, or \u2018limited spots\u2019 language. The exchange is straightforward: your email for a genuinely useful diagnostic.",
+      "Form copy leads with the value of the audit itself. No urgency tactics, countdown timers, or 'limited spots' language. The exchange is straightforward: your email for a genuinely useful diagnostic.",
   },
   {
     heard:
       "I do not want people to feel like they are entering a sales funnel.",
     addressed:
-      "After opting in, the confirmation message and emails are framed as \u2018thinking emails from a colleague.\u2019 This is not a drip campaign. Unsubscribe is always one click.",
+      "After opting in, the confirmation message and emails are framed as 'thinking emails from a colleague.' This is not a drip campaign. Unsubscribe is always one click.",
   },
   {
     heard:
@@ -53,7 +53,7 @@ const structureSteps: StructureStep[] = [
     number: "01",
     title: "Opt-in Form",
     description:
-      "Two fields (name, email) + one button (\u201cDownload the Free 7-Layer IP Architecture Audit\u201d). Placed at top and bottom of landing page. Clean, minimal design.",
+      "Two fields (name, email) + one button (\"Download the Free 7-Layer IP Architecture Audit\"). Placed at top and bottom of landing page. Clean, minimal design.",
   },
   {
     number: "02",
@@ -71,7 +71,7 @@ const structureSteps: StructureStep[] = [
     number: "04",
     title: "Sequence Trigger",
     description:
-      "Opt-in automatically enrolls the subscriber into the 5-email welcome nurture sequence. First \u2018thinking email\u2019 arrives on Day 2.",
+      "Opt-in automatically enrolls the subscriber into the 5-email welcome nurture sequence. First 'thinking email' arrives on Day 2.",
   },
   {
     number: "05",
@@ -306,7 +306,7 @@ export default function EmailCaptureContent() {
                     fontStyle: "italic",
                   }}
                 >
-                  &ldquo;{row.heard}&rdquo;
+                  "{row.heard}"
                 </div>
                 <div
                   style={{
@@ -445,7 +445,7 @@ export default function EmailCaptureContent() {
                 boxShadow: `0 4px 12px rgba(126, 203, 196, 0.35)`,
               }}
             >
-              View Your Landing Page \u2192
+              View Your Landing Page 
             </a>
             <p
               style={{
@@ -455,7 +455,7 @@ export default function EmailCaptureContent() {
                 fontFamily: "system-ui, sans-serif",
               }}
             >
-              Opens in a new tab \u00b7 This is what your audience sees
+              Opens in a new tab · This is what your audience sees
             </p>
           </div>
         </section>

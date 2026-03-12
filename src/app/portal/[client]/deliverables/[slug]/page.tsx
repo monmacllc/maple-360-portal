@@ -9,6 +9,7 @@ import ModuleContent from './ModuleContent';
 import EmailSequenceContent from './EmailSequenceContent';
 import LinkedInContent from './LinkedInContent';
 import EmailCaptureContent from './EmailCaptureContent';
+import FeedbackSection from '@/components/FeedbackSection';
 
 type Props = { params: Promise<{ client: string; slug: string }> };
 
@@ -230,7 +231,7 @@ const VanessaDeliverableContent = ({ slug }: { slug: string }) => {
           <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.2rem', color: '#2D3436', marginBottom: 16 }}>🎯 Primary Keyword Targets</h3>
           {dd.keyTargets.map((target, i) => (
             <div key={i} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: '1px solid #F0EDE8', alignItems: 'center' }}>
-              <span style={{ color: V.colors.primary, fontWeight: 700 }}>→</span>
+              <span style={{ color: V.colors.primary, fontWeight: 700 }}>&gt;</span>
               <p style={{ color: '#4A5568', margin: 0, fontSize: '0.9rem' }}>{target}</p>
             </div>
           ))}
@@ -391,7 +392,7 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
               {[
                 {
                   heard: 'The framing needs to be clearer. This is not about hoarding knowledge. It is about stewardship paired with generosity and clarity.',
-                  addressed: 'Hero copy reframed. The page now leads with stewardship as expansion, not protection. The word “extracted” is used deliberately to contrast with your philosophy.',
+                  addressed: 'Hero copy reframed. The page now leads with stewardship as expansion, not protection. The word "extracted" is used deliberately to contrast with your philosophy.',
                 },
                 {
                   heard: 'The language should feel authentic to how I actually write and speak. Not corporate.',
@@ -402,7 +403,7 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
                   addressed: 'Em dashes removed from all content across the landing page and deliverables.',
                 },
                 {
-                  heard: 'I want this course to feel different from “build a business” or “monetize your expertise” programs.',
+                  heard: 'I want this course to feel different from "build a business" or "monetize your expertise" programs.',
                   addressed: 'Course positioning language avoids monetization framing entirely. The page speaks to practitioners who care about integrity, not income optimization.',
                 },
                 {
@@ -413,7 +414,7 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
                 <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, borderRadius: 8, overflow: 'hidden', border: `1px solid ${T.lightGray}` }}>
                   <div style={{ padding: '20px', background: '#FFFBF8', borderRight: `1px solid ${T.lightGray}` }}>
                     <div style={{ fontSize: '0.75rem', fontWeight: 700, color: T.textSecondary, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 8 }}>What you said</div>
-                    <p style={{ margin: 0, fontSize: '0.95rem', color: T.textPrimary, lineHeight: 1.6, fontStyle: 'italic' }}>&ldquo;{item.heard}&rdquo;</p>
+                    <p style={{ margin: 0, fontSize: '0.95rem', color: T.textPrimary, lineHeight: 1.6, fontStyle: 'italic' }}>"{item.heard}"</p>
                   </div>
                   <div style={{ padding: '20px', background: '#F0F9F8' }}>
                     <div style={{ fontSize: '0.75rem', fontWeight: 700, color: T.teal, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 8 }}>&#10003; What we did</div>
@@ -457,7 +458,7 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
               Ready to Preview?
             </p>
             <p style={{ fontSize: '0.95rem', color: T.textPrimary, margin: '0 0 20px', lineHeight: 1.7, maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>
-              The button below opens the actual page your audience will see: the public-facing landing page with the free audit opt-in.
+              The button below opens the actual page your audience will see: the public-facing landing page with the free audit opt-in. Use the feedback section below to share your thoughts directly.
             </p>
             <a
               href="/landing/jamila-dugan"
@@ -465,7 +466,7 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
               rel="noopener noreferrer"
               style={{ display: 'inline-block', background: T.teal, color: 'white', padding: '14px 32px', borderRadius: 8, fontSize: '1rem', fontWeight: 700, textDecoration: 'none', letterSpacing: '0.02em' }}
             >
-              View Your Landing Page →
+              View Your Landing Page
             </a>
             <p style={{ fontSize: '0.8rem', color: T.textSecondary, margin: '12px 0 0' }}>
               Opens in a new tab · This is what your audience sees
@@ -477,6 +478,77 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
 
     case 'email_capture':
       return <EmailCaptureContent />;
+
+    case 'landing_page':
+      return (
+        <div>
+          {/* Preview card */}
+          <div style={{ background: T.bgSecondary, borderRadius: 16, border: `2px solid ${T.teal}`, boxShadow: `0 4px 16px ${T.shadow}`, overflow: 'hidden', marginBottom: 24 }}>
+            {/* Header banner */}
+            <div style={{ background: 'linear-gradient(160deg, #FFF9F5 0%, #FDEEE6 100%)', padding: '40px 36px', borderBottom: `1px solid ${T.lightGray}` }}>
+              <p style={{ fontSize: '0.7rem', letterSpacing: '3px', textTransform: 'uppercase', color: '#D63580', margin: '0 0 16px' }}>
+                A five-module course for educators and consultants
+              </p>
+              <h2 style={{ fontSize: 'clamp(22px, 4vw, 38px)', fontWeight: 'normal', color: T.slate, margin: '0 0 20px', lineHeight: 1.25, letterSpacing: '-0.5px', fontFamily: 'Georgia, serif' }}>
+                Your intellectual property deserves structure, not just something to be extracted.
+              </h2>
+              <div style={{ width: 56, height: 2, background: T.amber, marginBottom: 20 }} />
+              <p style={{ fontSize: '1rem', color: '#5A4A42', margin: '0 0 20px', maxWidth: 560, lineHeight: 1.7 }}>
+                For educators, consultants, and practitioners ready to protect, structure, and sustain the work they&apos;ve built.
+              </p>
+              <p style={{ fontSize: '0.875rem', color: T.textSecondary, margin: 0 }}>
+                By Dr. Jamila Dugan · Berkeley Ed.D. · Co-author, <em>Street Data</em>
+              </p>
+            </div>
+
+            {/* Details row */}
+            <div style={{ padding: '24px 36px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 20 }}>
+              {[
+                { label: 'Format', value: '5-module course' },
+                { label: 'Lead Magnet', value: '7-Layer IP Architecture Audit (free)' },
+                { label: 'CTA', value: 'Email opt-in → waitlist' },
+                { label: 'Status', value: 'Live' },
+              ].map((item, i) => (
+                <div key={i}>
+                  <div style={{ fontSize: '0.7rem', color: T.textSecondary, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 4 }}>{item.label}</div>
+                  <div style={{ fontSize: '0.95rem', color: T.slate, fontWeight: 500 }}>{item.value}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div style={{ padding: '0 36px 32px' }}>
+              <a
+                href="/landing/jamila-dugan"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'inline-block', background: T.teal, color: 'white', padding: '12px 28px', borderRadius: 8, fontSize: '0.95rem', fontWeight: 600, textDecoration: 'none' }}
+              >
+                View Landing Page →
+              </a>
+            </div>
+          </div>
+
+          {/* Page notes */}
+          <div style={{ background: T.bgSecondary, padding: 24, borderRadius: 12, border: `1px solid ${T.lightGray}`, boxShadow: `0 2px 8px ${T.shadow}` }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: T.slate, marginBottom: 16, fontFamily: 'Georgia, serif' }}>Page Notes</h3>
+            <div style={{ display: 'grid', gap: 12 }}>
+              {[
+                { label: 'Hero quote', note: 'Dr. Dugan\'s voice, positioned around stewardship vs. extraction framing' },
+                { label: 'Free audit opt-in', note: '7-Layer IP Architecture Audit — 9-page diagnostic, delivered by email' },
+                { label: 'Course overview', note: '5 modules, self-guided, lifetime access on Kajabi' },
+                { label: 'Social proof', note: 'Testimonials section below the fold' },
+                { label: 'Waitlist CTA', note: 'Primary conversion goal — founding cohort enrollment' },
+              ].map((item, i) => (
+                <div key={i} style={{ display: 'flex', gap: 12, fontSize: '0.875rem' }}>
+                  <span style={{ color: T.teal, fontWeight: 700, minWidth: 140, flexShrink: 0 }}>{item.label}</span>
+                  <span style={{ color: T.textPrimary, lineHeight: 1.6 }}>{item.note}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
 
     case 'site_audit':
       return <SiteAuditContent />;
@@ -491,7 +563,7 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
             </h2>
           </div>
           <p style={{ fontSize: '0.9rem', color: T.textSecondary, margin: '0 0 28px', lineHeight: 1.6 }}>
-            This dashboard will track live performance once the campaign launches. Right now it reflects project completion status and baseline measurements. No placeholder numbers — only what has actually been measured.
+            This dashboard will track live performance once the campaign launches. Right now it reflects project completion status and baseline measurements. No placeholder numbers -- only what has actually been measured.
           </p>
 
           {/* Project Completion */}
@@ -567,9 +639,9 @@ const DeliverableContent = ({ type, slug, clientSlug }: { type: string; slug: st
             </div>
           </div>
 
-          {/* SEO Baseline — real audit numbers */}
+          {/* SEO Baseline -- real audit numbers */}
           <div style={{ background: T.bgSecondary, padding: 24, borderRadius: 12, border: `1px solid ${T.lightGray}`, boxShadow: `0 2px 8px ${T.shadow}`, marginBottom: 20 }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: T.slate, marginBottom: 6, fontFamily: 'Georgia, serif' }}>SEO Baseline — Audit Date: Feb 24, 2026</h3>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: T.slate, marginBottom: 6, fontFamily: 'Georgia, serif' }}>SEO Baseline -- Audit Date: Feb 24, 2026</h3>
             <p style={{ fontSize: '0.85rem', color: T.textSecondary, margin: '0 0 16px' }}>These are measured starting-point values from the site audit. Improvement tracking begins once SEO work is complete.</p>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.875rem' }}>
               <thead>
@@ -717,6 +789,7 @@ const DeliverablePage = async ({ params }: Props) => {
       </div>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 24px' }}>
         <DeliverableContent type={deliverable.type} slug={slug} clientSlug={clientSlug} />
+        <FeedbackSection clientSlug={clientSlug} deliverableSlug={slug} />
       </div>
     </div>
   );

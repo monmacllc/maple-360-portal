@@ -21,7 +21,7 @@ export default function EmailSequenceContent() {
     <div style={{ background: T.bgPrimary, minHeight: "100vh", padding: "2rem 1rem", fontFamily: "system-ui, sans-serif" }}>
       <div style={{ maxWidth: 860, margin: "0 auto", display: "flex", flexDirection: "column", gap: "2rem" }}>
 
-        {/* Section 1 — About This Page */}
+        {/* Section 1 -- About This Page */}
         <div style={{
           background: T.bgSecondary,
           border: `1.5px solid ${T.teal}`,
@@ -37,7 +37,7 @@ export default function EmailSequenceContent() {
           </p>
         </div>
 
-        {/* Section 2 — Two Views */}
+        {/* Section 2 -- Two Views */}
         <div style={{
           background: T.bgSecondary,
           borderRadius: 12,
@@ -96,7 +96,7 @@ export default function EmailSequenceContent() {
           </div>
         </div>
 
-        {/* Section 3 — We Heard You */}
+        {/* Section 3 -- We Heard You */}
         <div style={{
           background: "#F0FAF9",
           borderRadius: 12,
@@ -136,7 +136,7 @@ export default function EmailSequenceContent() {
                     What You Said
                   </p>
                   <p style={{ fontSize: "0.95rem", color: T.textPrimary, margin: 0, lineHeight: 1.7, fontFamily: 'Georgia, "Times New Roman", serif', fontStyle: "italic" }}>
-                    &ldquo;{row.heard}&rdquo;
+                    "{row.heard}"
                   </p>
                 </div>
                 <div style={{ padding: "1.25rem 1.4rem", background: "#F0FAF9" }}>
@@ -152,7 +152,7 @@ export default function EmailSequenceContent() {
           </div>
         </div>
 
-        {/* Section 4 — Deliverable Content */}
+        {/* Section 4 -- Deliverable Content */}
         <div style={{
           background: T.bgSecondary,
           borderRadius: 12,
@@ -318,7 +318,7 @@ export default function EmailSequenceContent() {
                     <strong>Email 2</strong>
                   </td>
                   <td style={{ padding: "0.5rem 0.75rem", border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: "top", background: T.bgSecondary }}>
-                    &ldquo;Stewarding and extracting are not the same thing&rdquo;
+                    "Stewarding and extracting are not the same thing"
                   </td>
                   <td style={{ padding: "0.5rem 0.75rem", border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: "top", background: T.bgSecondary }}>
                     Day 2
@@ -329,7 +329,7 @@ export default function EmailSequenceContent() {
                     <strong>Email 3</strong>
                   </td>
                   <td style={{ padding: "0.5rem 0.75rem", border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: "top", background: "#FDFDFD" }}>
-                    &ldquo;One question I want you to sit with this week&rdquo;
+                    "One question I want you to sit with this week"
                   </td>
                   <td style={{ padding: "0.5rem 0.75rem", border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: "top", background: "#FDFDFD" }}>
                     Day 3
@@ -340,7 +340,7 @@ export default function EmailSequenceContent() {
                     <strong>Email 4</strong>
                   </td>
                   <td style={{ padding: "0.5rem 0.75rem", border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: "top", background: T.bgSecondary }}>
-                    &ldquo;3 signs your framework is ready to steward&rdquo;
+                    "3 signs your framework is ready to steward"
                   </td>
                   <td style={{ padding: "0.5rem 0.75rem", border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: "top", background: T.bgSecondary }}>
                     Day 5
@@ -351,7 +351,7 @@ export default function EmailSequenceContent() {
                     <strong>Email 5</strong>
                   </td>
                   <td style={{ padding: "0.5rem 0.75rem", border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: "top", background: "#FDFDFD" }}>
-                    &ldquo;Your next step (if you scored below 15)&rdquo;
+                    "Your next step (if you scored below 15)"
                   </td>
                   <td style={{ padding: "0.5rem 0.75rem", border: `1px solid ${T.lightGray}`, color: T.textPrimary, verticalAlign: "top", background: "#FDFDFD" }}>
                     Day 7
@@ -377,7 +377,7 @@ export default function EmailSequenceContent() {
           {/* === Existing email_sequence content ends === */}
         </div>
 
-        {/* Section 5 — CTA */}
+        {/* Section 5 -- CTA */}
         <div style={{
           background: T.bgSecondary,
           borderRadius: 12,
@@ -392,19 +392,9 @@ export default function EmailSequenceContent() {
           <p style={{ fontSize: "0.95rem", color: T.textPrimary, margin: "0 auto 1.25rem", lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif', maxWidth: 560 }}>
             Read through Email 1 above. If the tone, structure, and voice feel right, let us know and we will finalize Emails 2 through 5 using the same approach.
           </p>
-          <div style={{
-            display: "inline-block",
-            background: T.bgLight,
-            border: `1.5px solid ${T.teal}`,
-            borderRadius: 8,
-            padding: "0.85rem 1.5rem",
-            fontSize: "0.9rem",
-            color: T.textPrimary,
-            fontFamily: "system-ui, sans-serif",
-            lineHeight: 1.6,
-          }}>
-            Reply to your Maple 360 contact or leave feedback directly in the portal.
-          </div>
+          <p style={{ fontSize: "0.95rem", color: T.textPrimary, margin: "0 auto 1.25rem", lineHeight: 1.75, fontFamily: 'Georgia, "Times New Roman", serif', maxWidth: 560 }}>
+            Use the feedback section below to share your thoughts, request changes, or approve.
+          </p>
           <p style={{ fontSize: "0.8rem", color: T.textSecondary, margin: "1rem 0 0", fontFamily: 'Georgia, "Times New Roman", serif', fontStyle: "italic" }}>
             Once approved, the full sequence will be loaded into your email platform.
           </p>
