@@ -1,16 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
-  trailingSlash: true,
-  skipTrailingSlashRedirect: true,
+  // Remove standalone output for now
   images: {
     unoptimized: true,
   },
-  experimental: {
-    outputFileTracingIncludes: {
-      '/landing/*': ['./src/app/landing/**/*'],
-      '/portal/*': ['./src/app/portal/**/*'],
-    },
+  // Ensure static generation works properly
+  generateBuildId: async () => {
+    return 'build-' + Date.now()
   },
 };
 
