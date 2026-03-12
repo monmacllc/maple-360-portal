@@ -3,6 +3,10 @@ import { getAllClientSlugs } from '@/lib/clients';
 import VanessaLanding from './VanessaLanding';
 import JamilaLanding from './JamilaLanding';
 
+// Force static generation for Render deployment
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return getAllClientSlugs().map((client) => ({ client }));
 }
