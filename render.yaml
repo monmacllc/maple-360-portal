@@ -2,7 +2,7 @@ services:
   - type: web
     name: maple-360-portal
     runtime: node
-    branch: main
+    branch: sandbox
     rootDir: .
     buildCommand: npm install && npm run build
     startCommand: npm start
