@@ -261,8 +261,29 @@ export default function VanessaPortalPage() {
     questionnaire: false,
   });
   const [showQuestionnaire, setShowQuestionnaire] = useState(false);
+  const [ndaLoading, setNdaLoading] = useState(false);
+  const [ndaError, setNdaError] = useState<string | null>(null);
 
   const completedCount = Object.values(steps).filter(Boolean).length;
+
+  const handleNdaSign = async () => {
+    setNdaLoading(true);
+    setNdaError(null);
+    try {
+      const res = await fetch('/api/docuseal/nda', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: 'Vanessa Michele', email: 'venetabg829@gmail.com' }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.signingUrl) throw new Error(data.error || 'Failed to open signing session');
+      window.open(data.signingUrl, '_blank', 'noopener,noreferrer');
+    } catch (err) {
+      setNdaError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setNdaLoading(false);
+    }
+  };
 
   const markComplete = (key: keyof typeof steps) => setSteps(s => ({ ...s, [key]: true }));
 
@@ -316,18 +337,30 @@ export default function VanessaPortalPage() {
           <StepCard
             number={1}
             title="Non-Disclosure Agreement"
-            description="Review and acknowledge our mutual NDA. This keeps both parties protected."
+            description="Review and sign our mutual NDA via DocuSeal. Takes about 2 minutes — no account needed."
             status={getStatus(0)}
             cta={
-              <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
-                <a href="#" style={{ background: T.coral, color: 'white', padding: '10px 20px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 14, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                  ↗ Review &amp; Sign NDA
-                </a>
-                {!steps.nda && (
-                  <button onClick={() => markComplete('nda')} style={{ background: 'none', border: `1.5px solid ${T.border}`, color: T.muted, padding: '10px 16px', borderRadius: 8, cursor: 'pointer', fontSize: 13 }}>
-                    Mark as Signed
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
+                  <button
+                    onClick={handleNdaSign}
+                    disabled={ndaLoading}
+                    style={{ background: ndaLoading ? '#ccc' : T.coral, color: 'white', padding: '10px 20px', borderRadius: 8, fontWeight: 700, fontSize: 14, border: 'none', cursor: ndaLoading ? 'not-allowed' : 'pointer', display: 'inline-flex', alignItems: 'center', gap: 6 }}
+                  >
+                    {ndaLoading ? '⏳ Opening...' : '✍️ Review & Sign NDA'}
                   </button>
+                  {!steps.nda && (
+                    <button onClick={() => markComplete('nda')} style={{ background: 'none', border: `1.5px solid ${T.border}`, color: T.muted, padding: '10px 16px', borderRadius: 8, cursor: 'pointer', fontSize: 13 }}>
+                      Mark as Signed
+                    </button>
+                  )}
+                </div>
+                {ndaError && (
+                  <p style={{ color: T.coral, fontSize: 13, margin: 0 }}>⚠️ {ndaError}</p>
                 )}
+                <p style={{ color: T.muted, fontSize: 12, margin: 0 }}>
+                  Opens DocuSeal signing page in a new tab. Once signed, click &quot;Mark as Signed&quot; above to unlock the next step.
+                </p>
               </div>
             }
           />
