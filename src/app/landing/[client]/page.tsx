@@ -1,6 +1,3 @@
-"use client";
-
-import { useParams } from 'next/navigation';
 import VanessaLanding from './VanessaLanding';
 import JamilaLanding from './JamilaLanding';
 
@@ -12,9 +9,12 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function LandingPage() {
-  const params = useParams();
-  const client = params?.client;
+interface LandingPageProps {
+  params: Promise<{ client: string }>;
+}
+
+export default async function LandingPage({ params }: LandingPageProps) {
+  const { client } = await params;
 
   if (client === 'vanessa-michele') {
     return <VanessaLanding />;
